@@ -1,0 +1,729 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "StudMarket",
+ "width": 720,
+ "height": 900,
+ "root": {
+  "name": "ShopPanel",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 720,
+  "h": 900,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [
+   {
+    "type": "SOLID",
+    "color": {
+     "r": 58,
+     "g": 32,
+     "b": 18
+    },
+    "opacity": 1.0
+   }
+  ],
+  "radius": 16,
+  "clips": true,
+  "children": [
+   {
+    "name": "Header",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 720,
+    "h": 120,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 1.0,
+      "file": "stud_texture.png"
+     }
+    ],
+    "radius": 16,
+    "ei": {
+     "imageW": 64,
+     "imageH": 64,
+     "sf": 0.5,
+     "tileW": 32,
+     "tileH": 32
+    },
+    "clips": true,
+    "children": [
+     {
+      "name": "Title",
+      "kind": "text",
+      "x": 0,
+      "y": 30,
+      "w": 720,
+      "h": 60,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "MARKET",
+       "fontSize": 44,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 255,
+        "g": 240,
+        "b": 210
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ]
+   },
+   {
+    "name": "Header_Shadow",
+    "kind": "frame",
+    "x": 0,
+    "y": 10,
+    "w": 720,
+    "h": 120,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 38,
+       "g": 20,
+       "b": 10
+      },
+      "opacity": 1.0
+     }
+    ],
+    "radius": 16
+   },
+   {
+    "name": "Shine",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 720,
+    "h": 120,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT",
+      "angle": 118.0,
+      "opacity": 0.22,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 255,
+         "g": 255,
+         "b": 255
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 255,
+         "g": 255,
+         "b": 255
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "radius": 16,
+    "clips": true
+   },
+   {
+    "name": "Buy_Button",
+    "kind": "frame",
+    "x": 40,
+    "y": 160,
+    "w": 300,
+    "h": 96,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "radius": 12,
+    "clips": false,
+    "children": [
+     {
+      "name": "Buy_Button_Shadow",
+      "kind": "frame",
+      "x": 0,
+      "y": 6,
+      "w": 300,
+      "h": 96,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 92,
+         "g": 44,
+         "b": 20
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 12
+     },
+     {
+      "name": "Buy_Button_Top",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "h": 90,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "opacity": 1.0,
+        "file": "button_stud.png"
+       }
+      ],
+      "radius": 12,
+      "ei": {
+       "imageW": 64,
+       "imageH": 64
+      },
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 300,
+        "h": 90,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "SATIN AL",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Sell_Button",
+    "kind": "frame",
+    "x": 380,
+    "y": 160,
+    "w": 300,
+    "h": 96,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "radius": 12,
+    "clips": false,
+    "children": [
+     {
+      "name": "Sell_Button_Shadow",
+      "kind": "frame",
+      "x": 0,
+      "y": 6,
+      "w": 300,
+      "h": 96,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 92,
+         "g": 44,
+         "b": 20
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 12
+     },
+     {
+      "name": "Sell_Button_Top",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "h": 90,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "opacity": 1.0,
+        "file": "button_stud.png"
+       }
+      ],
+      "radius": 12,
+      "ei": {
+       "imageW": 64,
+       "imageH": 64
+      },
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 300,
+        "h": 90,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "SAT",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Back_Button",
+    "kind": "frame",
+    "x": 40,
+    "y": 280,
+    "w": 300,
+    "h": 96,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "radius": 12,
+    "clips": false,
+    "children": [
+     {
+      "name": "Back_Button_Shadow",
+      "kind": "frame",
+      "x": 0,
+      "y": 6,
+      "w": 300,
+      "h": 96,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 92,
+         "g": 44,
+         "b": 20
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 12
+     },
+     {
+      "name": "Back_Button_Top",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "h": 90,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "opacity": 1.0,
+        "file": "button_stud.png"
+       }
+      ],
+      "radius": 12,
+      "ei": {
+       "imageW": 64,
+       "imageH": 64
+      },
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 300,
+        "h": 90,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "GERİ",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Option_Button",
+    "kind": "frame",
+    "x": 380,
+    "y": 280,
+    "w": 300,
+    "h": 96,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "radius": 12,
+    "clips": false,
+    "children": [
+     {
+      "name": "Option_Button_Shadow",
+      "kind": "frame",
+      "x": 0,
+      "y": 6,
+      "w": 300,
+      "h": 96,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 92,
+         "g": 44,
+         "b": 20
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 12
+     },
+     {
+      "name": "Option_Button_Top",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "h": 90,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "opacity": 1.0,
+        "file": "button_stud.png"
+       }
+      ],
+      "radius": 12,
+      "ei": {
+       "imageW": 64,
+       "imageH": 64
+      },
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 300,
+        "h": 90,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "SEÇENEKLER",
+         "fontSize": 22,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Menu",
+    "kind": "frame",
+    "x": 40,
+    "y": 400,
+    "w": 640,
+    "h": 420,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 1.0,
+      "file": "stud_texture.png"
+     }
+    ],
+    "radius": 14,
+    "ei": {
+     "imageW": 64,
+     "imageH": 64,
+     "sf": 0.5,
+     "tileW": 32,
+     "tileH": 32
+    },
+    "clips": true,
+    "children": [
+     {
+      "name": "Menu_Inner",
+      "kind": "frame",
+      "x": 12,
+      "y": 12,
+      "w": 616,
+      "h": 396,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 74,
+         "g": 40,
+         "b": 22
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 10,
+      "clips": true,
+      "children": [
+       {
+        "name": "Item_Slot",
+        "kind": "frame",
+        "x": 20,
+        "y": 20,
+        "w": 180,
+        "h": 180,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 96,
+           "g": 54,
+           "b": 28
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 8,
+        "children": []
+       },
+       {
+        "name": "Item_Slot",
+        "kind": "frame",
+        "x": 218,
+        "y": 20,
+        "w": 180,
+        "h": 180,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 96,
+           "g": 54,
+           "b": 28
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 8,
+        "children": []
+       },
+       {
+        "name": "Item_Slot",
+        "kind": "frame",
+        "x": 416,
+        "y": 20,
+        "w": 180,
+        "h": 180,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 96,
+           "g": 54,
+           "b": 28
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 8,
+        "children": []
+       },
+       {
+        "name": "Item_Slot",
+        "kind": "frame",
+        "x": 20,
+        "y": 216,
+        "w": 180,
+        "h": 160,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 96,
+           "g": 54,
+           "b": 28
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 8,
+        "children": []
+       },
+       {
+        "name": "Item_Slot",
+        "kind": "frame",
+        "x": 218,
+        "y": 216,
+        "w": 180,
+        "h": 160,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 96,
+           "g": 54,
+           "b": 28
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 8,
+        "children": []
+       },
+       {
+        "name": "Empty_Text",
+        "kind": "text",
+        "x": 416,
+        "y": 260,
+        "w": 180,
+        "h": 40,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "BOŞ",
+         "fontSize": 20,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 700,
+         "italic": false,
+         "color": {
+          "r": 200,
+          "g": 170,
+          "b": 130
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hint",
+    "kind": "text",
+    "x": 0,
+    "y": 840,
+    "w": 720,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "text": {
+     "characters": "Bir şey seç",
+     "fontSize": 18,
+     "fontFamily": "GothamSSm",
+     "fontWeight": 700,
+     "italic": false,
+     "color": {
+      "r": 190,
+      "g": 160,
+      "b": 120
+     },
+     "opacity": 1,
+     "align": "CENTER",
+     "vAlign": "CENTER",
+     "wrap": true,
+     "autoW": false
+    }
+   }
+  ]
+ }
+}

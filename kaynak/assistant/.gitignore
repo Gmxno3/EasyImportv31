@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Node (test bağımlılıkları; gömülü fengari tools/vendor altında tutulur)
+node_modules/
+.luavm/
+
+# Geçici çıktılar
+*.tmp

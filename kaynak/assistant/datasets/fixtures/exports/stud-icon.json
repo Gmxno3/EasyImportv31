@@ -1,0 +1,179 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "StudIcon",
+ "width": 420,
+ "height": 320,
+ "root": {
+  "name": "Card",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 420,
+  "h": 320,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [
+   {
+    "type": "SOLID",
+    "color": {
+     "r": 28,
+     "g": 30,
+     "b": 44
+    },
+    "opacity": 1.0
+   }
+  ],
+  "radius": 18,
+  "shadows": [
+   {
+    "x": 0,
+    "y": 8,
+    "blur": 24,
+    "spread": 0,
+    "color": {
+     "r": 0,
+     "g": 0,
+     "b": 0
+    },
+    "opacity": 0.4
+   }
+  ],
+  "children": [
+   {
+    "name": "Glow_A",
+    "kind": "frame",
+    "x": 20,
+    "y": 20,
+    "w": 120,
+    "h": 120,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 0.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 120,
+         "g": 160,
+         "b": 255
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 30,
+         "g": 34,
+         "b": 56
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 120,
+       "g": 160,
+       "b": 255
+      },
+      "opacity": 0.5
+     }
+    ]
+   },
+   {
+    "name": "Ikon_1",
+    "kind": "vector",
+    "x": 44,
+    "y": 44,
+    "w": 72,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "image": "ikon_1.png"
+   },
+   {
+    "name": "Ikon_2",
+    "kind": "vector",
+    "x": 150,
+    "y": 44,
+    "w": 72,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "image": "ikon_2.png"
+   },
+   {
+    "name": "Stud_Rozet",
+    "kind": "vector",
+    "x": 256,
+    "y": 44,
+    "w": 72,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "image": "stud_rozet.png"
+   },
+   {
+    "name": "Ikon_3",
+    "kind": "vector",
+    "x": 44,
+    "y": 170,
+    "w": 72,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "image": "ikon_3.png"
+   },
+   {
+    "name": "Ikon_4",
+    "kind": "vector",
+    "x": 150,
+    "y": 170,
+    "w": 72,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "image": "ikon_4.png"
+   },
+   {
+    "name": "Baslik",
+    "kind": "text",
+    "x": 240,
+    "y": 168,
+    "w": 160,
+    "h": 80,
+    "rot": 0,
+    "opacity": 1,
+    "text": {
+     "characters": "ROZET",
+     "fontSize": 22,
+     "fontFamily": "GothamSSm",
+     "fontWeight": 800,
+     "italic": false,
+     "color": {
+      "r": 230,
+      "g": 236,
+      "b": 255
+     },
+     "opacity": 1,
+     "align": "CENTER",
+     "vAlign": "CENTER",
+     "wrap": true,
+     "autoW": false
+    }
+   }
+  ]
+ }
+}

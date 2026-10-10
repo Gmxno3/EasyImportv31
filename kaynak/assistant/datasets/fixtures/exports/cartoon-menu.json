@@ -1,0 +1,385 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "CartoonMenu",
+ "width": 1280,
+ "height": 720,
+ "root": {
+  "name": "MainMenu",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 1280,
+  "h": 720,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [
+   {
+    "type": "IMAGE",
+    "scaleMode": "TILE",
+    "opacity": 1.0,
+    "file": "wood_bg.png"
+   },
+   {
+    "type": "IMAGE",
+    "scaleMode": "TILE",
+    "opacity": 0.9
+   }
+  ],
+  "radius": 0,
+  "clips": true,
+  "children": [
+   {
+    "name": "Logo",
+    "kind": "frame",
+    "x": 340,
+    "y": 60,
+    "w": 600,
+    "h": 180,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "FIT",
+      "opacity": 1.0,
+      "file": "logo.png"
+     }
+    ],
+    "radius": 0
+   },
+   {
+    "name": "Panel",
+    "kind": "frame",
+    "x": 300,
+    "y": 280,
+    "w": 680,
+    "h": 360,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "STRETCH",
+      "opacity": 1.0,
+      "file": "panel_wood.png"
+     },
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 0.9
+     }
+    ],
+    "radius": 20,
+    "clips": true,
+    "children": [
+     {
+      "name": "Play_Button",
+      "kind": "frame",
+      "x": 40,
+      "y": 40,
+      "w": 600,
+      "h": 90,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "STRETCH",
+        "opacity": 1.0,
+        "file": "btn_wood.png"
+       },
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 0.9
+       }
+      ],
+      "radius": 16,
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 600,
+        "h": 90,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "OYNA",
+         "fontSize": 36,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 60,
+          "g": 40,
+          "b": 20
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     },
+     {
+      "name": "Settings_Button",
+      "kind": "frame",
+      "x": 40,
+      "y": 145,
+      "w": 290,
+      "h": 80,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "STRETCH",
+        "opacity": 1.0,
+        "file": "btn_wood.png"
+       },
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 0.9
+       }
+      ],
+      "radius": 16,
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 290,
+        "h": 80,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "AYARLAR",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 60,
+          "g": 40,
+          "b": 20
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     },
+     {
+      "name": "Shop_Button",
+      "kind": "frame",
+      "x": 350,
+      "y": 145,
+      "w": 290,
+      "h": 80,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "STRETCH",
+        "opacity": 1.0,
+        "file": "btn_wood.png"
+       }
+      ],
+      "radius": 16,
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 290,
+        "h": 80,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "MARKET",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 60,
+          "g": 40,
+          "b": 20
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     },
+     {
+      "name": "Exit_Button",
+      "kind": "frame",
+      "x": 40,
+      "y": 240,
+      "w": 600,
+      "h": 80,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "STRETCH",
+        "opacity": 1.0,
+        "file": "btn_wood.png"
+       },
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 0.9
+       }
+      ],
+      "radius": 16,
+      "children": [
+       {
+        "name": "Label",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 600,
+        "h": 80,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "ÇIKIŞ",
+         "fontSize": 26,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 90,
+          "g": 50,
+          "b": 30
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Badge",
+    "kind": "frame",
+    "x": 60,
+    "y": 60,
+    "w": 140,
+    "h": 140,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 250,
+       "g": 210,
+       "b": 90
+      },
+      "opacity": 1.0
+     },
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 0.9
+     }
+    ],
+    "radius": 70,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 8,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 100,
+       "b": 20
+      },
+      "opacity": 1.0
+     }
+    ],
+    "children": [
+     {
+      "name": "New",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 140,
+      "h": 60,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "YENİ",
+       "fontSize": 28,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 90,
+        "g": 60,
+        "b": 10
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ]
+   },
+   {
+    "name": "Version",
+    "kind": "text",
+    "x": 40,
+    "y": 660,
+    "w": 400,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "text": {
+     "characters": "v1.4.2",
+     "fontSize": 18,
+     "fontFamily": "GothamSSm",
+     "fontWeight": 400,
+     "italic": false,
+     "color": {
+      "r": 70,
+      "g": 55,
+      "b": 40
+     },
+     "opacity": 1,
+     "align": "CENTER",
+     "vAlign": "CENTER",
+     "wrap": true,
+     "autoW": false
+    }
+   }
+  ]
+ }
+}

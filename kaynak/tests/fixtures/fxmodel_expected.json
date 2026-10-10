@@ -1,0 +1,432 @@
+{
+ "classes": [
+  "burst",
+  "confetti",
+  "fall",
+  "none",
+  "orbit",
+  "twinkle"
+ ],
+ "samples": [
+  {
+   "id": "ikon_animal_bunny_1st",
+   "name": "Bunny",
+   "label": "Bunny 1st",
+   "cat": "Animal",
+   "probs": {
+    "burst": 0.08928489359077775,
+    "confetti": 0.01120909783875602,
+    "fall": 0.10906184115125987,
+    "none": 0.730191492609007,
+    "orbit": 0.023063659246493666,
+    "twinkle": 0.03718901556370577
+   }
+  },
+  {
+   "id": "ikon_currency_coin_black",
+   "name": "Coin",
+   "label": "Coin Black",
+   "cat": "Currency",
+   "probs": {
+    "burst": 0.019019835987466524,
+    "confetti": 0.003515384317667919,
+    "fall": 0.7866885190716265,
+    "none": 0.1621024066293691,
+    "orbit": 0.008679837809194301,
+    "twinkle": 0.0199940161846757
+   }
+  },
+  {
+   "id": "ikon_currency_diamond_blue_diamond_1st_outline",
+   "name": "Diamond",
+   "label": "Blue Diamond 1st Outline",
+   "cat": "Currency",
+   "probs": {
+    "burst": 0.053147310921550575,
+    "confetti": 0.0008399727707403444,
+    "fall": 0.32241519989779344,
+    "none": 0.26587292421856634,
+    "orbit": 0.0018141528969199496,
+    "twinkle": 0.35591043929442934
+   }
+  },
+  {
+   "id": "ikon_currency_robux_golden_robux_2nd_outline",
+   "name": "Robux",
+   "label": "Golden Robux 2nd Outline",
+   "cat": "Currency",
+   "probs": {
+    "burst": 0.007742136996789975,
+    "confetti": 0.0018158445425354452,
+    "fall": 0.9149837363988057,
+    "none": 0.06924403492205512,
+    "orbit": 0.001830181347430606,
+    "twinkle": 0.004384065792383205
+   }
+  },
+  {
+   "id": "ikon_exclusive_magical_teleport_purple_magical_teleport_1st",
+   "name": "Magical Teleport",
+   "label": "Purple Magical Teleport 1st",
+   "cat": "Exclusive",
+   "probs": {
+    "burst": 0.9172276348302074,
+    "confetti": 0.0027692983940278094,
+    "fall": 0.035432255520225706,
+    "none": 0.00642302473803396,
+    "orbit": 0.004893597627174968,
+    "twinkle": 0.03325418889033021
+   }
+  },
+  {
+   "id": "ikon_food_blueberry_black_w",
+   "name": "Blueberry",
+   "label": "Blueberry Black",
+   "cat": "Food",
+   "probs": {
+    "burst": 0.02684387018265111,
+    "confetti": 0.00496147918035622,
+    "fall": 0.24137002907244876,
+    "none": 0.68635543903558,
+    "orbit": 0.012250391617993898,
+    "twinkle": 0.028218790910969956
+   }
+  },
+  {
+   "id": "ikon_item_axe_2nd",
+   "name": "Axe",
+   "label": "Axe 2nd",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.04569217367099899,
+    "confetti": 0.012161029845441967,
+    "fall": 0.10955917769244387,
+    "none": 0.8016975316185823,
+    "orbit": 0.011677091634758986,
+    "twinkle": 0.01921299553777393
+   }
+  },
+  {
+   "id": "ikon_item_book_green_book_2nd_outline",
+   "name": "Book",
+   "label": "Green Book 2nd Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.036358756509547493,
+    "confetti": 0.003279846259532076,
+    "fall": 0.06735050644223893,
+    "none": 0.8821686036943819,
+    "orbit": 0.0006611483864421702,
+    "twinkle": 0.010181138707857413
+   }
+  },
+  {
+   "id": "ikon_item_calendar_golden_calendar_2nd_outline",
+   "name": "Calendar",
+   "label": "Golden Calendar 2nd Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.008995822192332236,
+    "confetti": 0.0021098844725091427,
+    "fall": 0.09664974230021049,
+    "none": 0.8850240300919382,
+    "orbit": 0.002126542837983236,
+    "twinkle": 0.0050939781050267
+   }
+  },
+  {
+   "id": "ikon_item_cracked_egg_2nd",
+   "name": "Cracked Egg",
+   "label": "Cracked Egg 2nd",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.008042787925156137,
+    "confetti": 0.004340933992415522,
+    "fall": 0.012438080282822266,
+    "none": 0.9663839792254917,
+    "orbit": 0.0038627623620895958,
+    "twinkle": 0.004931456212024704
+   }
+  },
+  {
+   "id": "ikon_item_egg_golden_egg_2nd_outline",
+   "name": "Egg",
+   "label": "Golden Egg 2nd Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.004985030035685328,
+    "confetti": 0.0011691913470954613,
+    "fall": 0.05355840277928896,
+    "none": 0.9362861280359361,
+    "orbit": 0.0011784225713747226,
+    "twinkle": 0.002822825230619419
+   }
+  },
+  {
+   "id": "ikon_item_key_blue_key_2nd_outline",
+   "name": "Key",
+   "label": "Blue Key 2nd Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.03117401190726689,
+    "confetti": 0.0010445096824266585,
+    "fall": 0.07424530752567425,
+    "none": 0.876271834459209,
+    "orbit": 0.0010527564960592548,
+    "twinkle": 0.01621157992936397
+   }
+  },
+  {
+   "id": "ikon_item_magnet_golden_magnet_1st_outline",
+   "name": "Magnet",
+   "label": "Golden Magnet 1st Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.0139697254984653,
+    "confetti": 0.0015455029014589138,
+    "fall": 0.0764602307966182,
+    "none": 0.8968507256504847,
+    "orbit": 0.0033379398279882936,
+    "twinkle": 0.007835875324984636
+   }
+  },
+  {
+   "id": "ikon_item_potion_green_potion_1st_outline",
+   "name": "Potion",
+   "label": "Green Potion 1st Outline",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.08903917282874951,
+    "confetti": 0.003788695665369434,
+    "fall": 0.08402351688365894,
+    "none": 0.7968146311240392,
+    "orbit": 0.001636546673011788,
+    "twinkle": 0.024697436825171136
+   }
+  },
+  {
+   "id": "ikon_item_shoe_yellow_shoe_1st",
+   "name": "Shoe",
+   "label": "Yellow Shoe 1st",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.0465893650976367,
+    "confetti": 0.0039537230194936785,
+    "fall": 0.012234892852989836,
+    "none": 0.9013861144681554,
+    "orbit": 0.0075390091312036575,
+    "twinkle": 0.02829689543052079
+   }
+  },
+  {
+   "id": "ikon_item_torch_1st_purple_w",
+   "name": "Torch",
+   "label": "Torch 1st Purple",
+   "cat": "Item",
+   "probs": {
+    "burst": 0.8835807237851835,
+    "confetti": 0.0009107307143308526,
+    "fall": 0.036637620917484945,
+    "none": 0.061925378739693365,
+    "orbit": 0.0017365928613500099,
+    "twinkle": 0.015208952981957364
+   }
+  },
+  {
+   "id": "ikon_main_downgrade_black_w",
+   "name": "Downgrade",
+   "label": "Downgrade Black",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.015588371388926145,
+    "confetti": 0.002881156091709999,
+    "fall": 0.028032959701682156,
+    "none": 0.9299968535321423,
+    "orbit": 0.007113864465210179,
+    "twinkle": 0.016386794820329075
+   }
+  },
+  {
+   "id": "ikon_main_house_blue_house_2nd_outline",
+   "name": "House",
+   "label": "Blue House 2nd Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.01904002249590115,
+    "confetti": 0.0006379508646416545,
+    "fall": 0.04534649982520885,
+    "none": 0.9244310593618497,
+    "orbit": 0.0006429877369425706,
+    "twinkle": 0.009901479715456084
+   }
+  },
+  {
+   "id": "ikon_main_lighting_green_lighting_2nd_outline",
+   "name": "Lighting",
+   "label": "Green Lighting 2nd Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.874667499350529,
+    "confetti": 0.0034305173384953976,
+    "fall": 0.0704444848398197,
+    "none": 0.040117133428787706,
+    "orbit": 0.0006915205236881132,
+    "twinkle": 0.010648844518680112
+   }
+  },
+  {
+   "id": "ikon_main_paw_golden_paw_1st_outline",
+   "name": "Paw",
+   "label": "Golden Paw 1st Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.0139697254984653,
+    "confetti": 0.0015455029014589138,
+    "fall": 0.0764602307966182,
+    "none": 0.8968507256504847,
+    "orbit": 0.0033379398279882936,
+    "twinkle": 0.007835875324984636
+   }
+  },
+  {
+   "id": "ikon_main_shopping_bag_red_shopping_bag_1st_outline",
+   "name": "Shopping Bag",
+   "label": "Red Shopping Bag 1st Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.011042425975798938,
+    "confetti": 0.0003539129370227383,
+    "fall": 0.008641089392838485,
+    "none": 0.9709596009540201,
+    "orbit": 0.0007083625490064278,
+    "twinkle": 0.008294608191313321
+   }
+  },
+  {
+   "id": "ikon_main_star_green_star_2nd_outline",
+   "name": "Star",
+   "label": "Green Star 2nd Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.08903917295305312,
+    "confetti": 0.008032034821796367,
+    "fall": 0.16493505189077393,
+    "none": 0.1878563381883375,
+    "orbit": 0.0016190901774266711,
+    "twinkle": 0.5485183119686124
+   }
+  },
+  {
+   "id": "ikon_main_upgrade_green_upgrade_1st_outline",
+   "name": "Upgrade",
+   "label": "Green Upgrade 1st Outline",
+   "cat": "Main",
+   "probs": {
+    "burst": 0.10147918855054472,
+    "confetti": 0.004318029352385393,
+    "fall": 0.09576277543498889,
+    "none": 0.7684267979607962,
+    "orbit": 0.001865195094767395,
+    "twinkle": 0.028148013606517544
+   }
+  },
+  {
+   "id": "ikon_nature_cloud_2_cloud_1st_outline_w",
+   "name": "Cloud 2",
+   "label": "Cloud 1st Outline",
+   "cat": "Nature",
+   "probs": {
+    "burst": 0.07512338419614703,
+    "confetti": 0.004098350212060316,
+    "fall": 0.10991452547850256,
+    "none": 0.7042600589309501,
+    "orbit": 0.0859626470321256,
+    "twinkle": 0.020641034150214326
+   }
+  },
+  {
+   "id": "ikon_nature_orange_black",
+   "name": "Orange",
+   "label": "Orange Black",
+   "cat": "Nature",
+   "probs": {
+    "burst": 0.02684387018265111,
+    "confetti": 0.00496147918035622,
+    "fall": 0.24137002907244876,
+    "none": 0.68635543903558,
+    "orbit": 0.012250391617993898,
+    "twinkle": 0.028218790910969956
+   }
+  },
+  {
+   "id": "ikon_player_4_players_1st_outline_w",
+   "name": "4 Players",
+   "label": "4 Players 1st Outline",
+   "cat": "Player",
+   "probs": {
+    "burst": 0.06232791346022426,
+    "confetti": 0.003400294330191908,
+    "fall": 0.0911932164046077,
+    "none": 0.8180286959477627,
+    "orbit": 0.007924551918245632,
+    "twinkle": 0.017125327938967816
+   }
+  },
+  {
+   "id": "ikon_player_friend_1st",
+   "name": "Friend",
+   "label": "Friend 1st",
+   "cat": "Player",
+   "probs": {
+    "burst": 0.06910185804391965,
+    "confetti": 0.00867525800281774,
+    "fall": 0.08440818555246962,
+    "none": 0.7911822658127688,
+    "orbit": 0.01785007119490097,
+    "twinkle": 0.028782361393123193
+   }
+  },
+  {
+   "id": "ikon_player_smiling_face_with_horns_1st_outline_w",
+   "name": "Smiling Face With Horns",
+   "label": "Smiling Face With Horns 1st Outline",
+   "cat": "Player",
+   "probs": {
+    "burst": 0.06553883025257866,
+    "confetti": 0.0099392918261497,
+    "fall": 0.008575841709156175,
+    "none": 0.8788986796725373,
+    "orbit": 0.01843593086704064,
+    "twinkle": 0.01861142567253749
+   }
+  },
+  {
+   "id": "ikon_ui_chat_black_w",
+   "name": "Chat",
+   "label": "Chat Black",
+   "cat": "UI",
+   "probs": {
+    "burst": 0.015588371388926145,
+    "confetti": 0.002881156091709999,
+    "fall": 0.028032959701682156,
+    "none": 0.9299968535321423,
+    "orbit": 0.007113864465210179,
+    "twinkle": 0.016386794820329075
+   }
+  },
+  {
+   "id": "ikon_ui_minus_1st",
+   "name": "Minus",
+   "label": "Minus 1st",
+   "cat": "UI",
+   "probs": {
+    "burst": 0.06910185804391965,
+    "confetti": 0.00867525800281774,
+    "fall": 0.08440818555246962,
+    "none": 0.7911822658127688,
+    "orbit": 0.01785007119490097,
+    "twinkle": 0.028782361393123193
+   }
+  }
+ ]
+}

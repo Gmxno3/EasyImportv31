@@ -1,0 +1,436 @@
+{
+ "_meta": {
+  "format": "ei-style-rules",
+  "version": 2,
+  "createdAt": "2026-10-05",
+  "source": "Kullanıcı tarifi — tur 1 (C1/C2) + tur 2 (Anime renk + Stud tespiti + detay seviyeleri)",
+  "note": "Stil tespiti, ASİSTANIN SINIF/ANİMASYON kararına ÖNCELİK (prior) verir. Tek başına çıktı değildir. Eşikler sentetik veriyle kalibre edildi (6/6); GERÇEK export etiketleriyle doğrulanacak.",
+  "studDetection": {
+   "version": "stud-v3",
+   "source": "ARASTIRMA.md Bölüm C1c (tur 3 araştırması) + kullanıcı tarifi C1/C1b",
+   "channels": [
+    "olculmus doseme geometrisi (Figma scalingFactor x gorsel px)",
+    "doku tekrari / tek doku (dedupe hash)",
+    "guclu ad kanitlari (>=2 dugum VEYA ad + geometri)"
+   ],
+   "strongTokens": [
+    "stud",
+    "studs",
+    "studded",
+    "studtexture",
+    "studpattern",
+    "studtile",
+    "studbg",
+    "studsui",
+    "studs3x3",
+    "civi",
+    "civili"
+   ],
+   "weakTokens": [
+    "brick",
+    "tugla",
+    "texture",
+    "pattern",
+    "desen"
+   ],
+   "strongTokensNote": "weak tek basina YETMEZ: duvar/ahsap dokusunda da gecer",
+   "evidence": {
+    "strongName": 3,
+    "strongGeo": 3,
+    "weakName": 1,
+    "grid2to8": 1,
+    "reuseRate>=0.50": 1,
+    "fewTextures(<=2)": 1,
+    "imageDriven>=0.50": 1,
+    "tileRate>=0.15": 1,
+    "cellUniform": 1,
+    "shineFrame": 0.5,
+    "darkerUnderlay": 0.5,
+    "effect<=0.25": 0.5,
+    "detail<=0.55": 0.5
+   },
+   "veto": {
+    "uniqueImages>3": "'baska texture kullanilmaz' ihlali",
+    "effectDensity>0.60": "anime gibi yogun efekt",
+    "detailIndex>0.62": "yuksek detay"
+   },
+   "decision": "strongName OR (evidence>=4 AND no-veto AND (geo OR weakName OR tileRate>=0.15))",
+   "negatives": [
+    "tek stud IKONU (dosemiyor) -> stud degil (stud-icon.json)",
+    "karisik doku (uniqueImages>3) -> stud degil (cartoon-menu.json)"
+   ],
+   "measuredCellPx": "8..96 px bandi (Roblox topluluk pratigi: 64-256 px doku, kucuk hucre uyarisi)",
+   "transferToStudio": "TileSize = UDim2.fromOffset(hucreW, hucreH)",
+   "nextChannel": "piksel kaniti (getBytesAsync -> canvas: kenar surekliligi + ozilinti) — kapali, gerekce C1c §7"
+  }
+ },
+ "order": [
+  "stud",
+  "anime",
+  "cartoon"
+ ],
+ "_detailLevels": {
+  "_desc": "Kullanıcı: 'Cartoonda çok fazla yok, Anime'de detay fazladır, Stud orta-düşük derece, efekti olan basit bir stildir.'",
+  "anime": {
+   "detailIndex": ">= 0.55",
+   "label": "YÜKSEK"
+  },
+  "stud": {
+   "detailIndex": "0.25 – 0.50",
+   "label": "ORTA / DÜŞÜK — sade, efektli"
+  },
+  "cartoon": {
+   "detailIndex": "<= 0.35",
+   "label": "DÜŞÜK"
+  }
+ },
+ "_signals": {
+  "_desc": "GUI düzeyinde hesaplanan ara değerler (0..1). Kaynak: EI_*_egitim.json -> guiSummary.",
+  "hasStud": {
+   "type": "bool",
+   "desc": "Stud tespiti. Kullanıcı: 'UI için stud, header için stud, menüler için stud — birden fazla aynı şeyi kullanmışsa.' + 'size ve boyutundan da anlaşılıyor.' + 'button ve header'da stud texture olmazsa olmazıdır.'",
+   "detect": {
+    "nameTokens": [
+     "stud",
+     "studs",
+     "studded",
+     "civi",
+     "civili",
+     "brick",
+     "tugla",
+     "studtexture",
+     "studpattern"
+    ],
+    "repeatUse": "AYNI image dosyası (dedupe hash'i) GUI içinde birden fazla yerde kullanılmışsa → bu bir DOKU'dur. Stud dokusu tipik olarak UI + header + menüde tekrar eder.",
+    "imageDriven": "Buton / header / panel'in kendisi image'dan yapılmışsa stud olma ihtimali YÜKSEK.",
+    "onButtonOrHeader": "Stud texture button VEYA header üzerinde (OLMAZSA OLMAZ koşulu).",
+    "tileCellSize": "Döşeme hücresi küçük (< 128 px) ve tutarlı → stud dokusu boyutu karakteristiktir.",
+    "noOtherTexture": "Stud dokusu dışında başka doku kullanılmamış (çok az doku çeşidi).",
+    "pixelGrid": "OPSİYONEL: PNG üzerinde düzenli dairesel nokta ızgarası (maliyetli, E4 onayı bekliyor)",
+    "manual": "Kullanıcı elle işaretler"
+   },
+   "decision": "(nameTokens OR repeatUse OR tileCellSize OR pixelGrid OR manual) AND onButtonOrHeader",
+   "status": "proposed"
+  },
+  "reuseRate": {
+   "desc": "Aynı image dosyasının kaç farklı düğümde kullanıldığı (plugin'in mevcut dedupe hash'i ücretsiz veriyor!). Yüksek = doku.",
+   "formula": "1 - (benzersiz image sayısı / toplam image referansı)",
+   "studHint": "yüksek (> 0.5)",
+   "status": "proposed"
+  },
+  "imageDrivenRate": {
+   "desc": "UI'nin ne kadarı image'dan yapılmış (buton/header/panel). Kullanıcı: 'image kullanarak yapılmış UI... stud olma ihtimali yüksektir.'",
+   "formula": "image içeren düğüm / toplam düğüm",
+   "studHint": "yüksek (> 0.5)",
+   "status": "proposed"
+  },
+  "darkerUnderlayRate": {
+   "desc": "⭐ 3D GÖRÜNÜM — Kullanıcı: 'aynı rengin kapalısını altta geçirerek 3D görünüm verirler.' İki üst üste katman: alttaki ÜSTTEKİYLE AYNI HUE ama daha düşük VALUE → 3D kabartma.",
+   "formula": "3D-underlay çifti sayısı / toplam katman sayısı",
+   "detect": "|Δhue| < 12° AND (V_alt < V_üst * 0.8) AND kutular üst üste biniyor AND alt katman üsttekini kapsıyor",
+   "alsoClassSignal": true,
+   "_classNote": "Bu çiftin ALTTAKİ elemanı ayrı bir sınıf DEĞİLDİR → Frame kalmalı. Üstteki asıl elemandır (ImageButton/ImageLabel).",
+   "status": "proposed"
+  },
+  "shineFrameRate": {
+   "desc": "⭐ Kullanıcı: 'en sık shine efekleri... shine efektini Frame ile yapılır.' Yarı saydam / gradyanlı bir FRAME, bir butonun veya panelin ÜSTÜNE bindirilmiş → bu shine katmanıdır, kap değil.",
+   "formula": "shine-frame sayısı / toplam katman",
+   "detect": "Frame AND (gradyan dolgu OR düşük opaklık) AND üstte VE alttaki elemanı kapsıyor AND çok ince veya eğik",
+   "alsoClassSignal": true,
+   "_classNote": "Bu katman 'Frame' olarak sınıflandırılmamalı → FX/shine katmanı olarak işaretlenip fx_shine_sweep animasyonu almalı.",
+   "animation": "fx_shine_sweep | hover_shine_sweep | fx_gloss_sweep",
+   "status": "proposed"
+  },
+  "lightingIndex": {
+   "desc": "IŞIKLANDIRMA — Anime'nin ayırt edici ekseni ('en iyi ışıklandırma stili')",
+   "formula": "0.30*glowRate + 0.24*gradientRate + 0.18*radialGradientRate + 0.12*multiStopGradientRate + 0.10*lightLayerRate + 0.06*darknessIndex",
+   "inputs": {
+    "glowRate": "glowPattern sayısı / düğüm (glowPattern = DROP_SHADOW && |offset| < 2 && blur > 8)",
+    "gradientRate": "gradyan dolgulu düğüm / toplam düğüm",
+    "radialGradientRate": "GRADIENT_RADIAL / gradyan sayısı",
+    "multiStopGradientRate": "3+ duraklı gradyan / gradyan sayısı",
+    "lightLayerRate": "SCREEN/ADD/LINEAR_DODGE blend modlu katman / toplam katman",
+    "darknessIndex": "1 - ortalama dolgu VALUE (aşağıda)"
+   },
+   "status": "proposed"
+  },
+  "darknessIndex": {
+   "desc": "⭐ KOYULUK — Kullanıcı: 'Anime stiller genellikle koyu renk.' 1 = tamamen koyu, 0 = tamamen açık.",
+   "formula": "1 - ortalama(dolgu VALUE)   [HSV V, 0..1]",
+   "animeHint": "yüksek (> 0.55)",
+   "status": "proposed"
+  },
+  "mutedBaseRate": {
+   "desc": "⭐ KAPALI RENK — Kullanıcı: 'çoğu renk kapalı olur çünkü ışıklandırma yaptığında en verimli en güzel gözükür.' Taban renkler DÜŞÜK doygunluk + DÜŞÜK parlaklık; ışık/efekt üstünde patlar.",
+   "formula": "kapalı dolgu sayısı / toplam dolgu   [kapalı = saturation < 0.35 AND value < 0.50]",
+   "animeHint": "yüksek (> 0.50)",
+   "status": "proposed"
+  },
+  "hueDiversity": {
+   "desc": "⭐ ÇOK RENK — Kullanıcı: 'birden fazla renkli olur.' 12 hue kovasından en az %2 pay alanların sayısı / 12.",
+   "formula": "aktif hue kovası / 12",
+   "animeHint": "yüksek (> 0.35)",
+   "status": "proposed"
+  },
+  "accentPopRate": {
+   "desc": "Koyu/kapalı taban ÜSTÜNDE küçük, yüksek doygunluklu vurgu öğeleri (neon vurgu).",
+   "formula": "yüksek doygunluklu küçük öğe / toplam öğe   [saturation > 0.6 AND alan < %2]",
+   "animeHint": "orta-yüksek",
+   "status": "proposed"
+  },
+  "detailIndex": {
+   "desc": "DETAY — Anime YÜKSEK, Stud ORTA/DÜŞÜK, Cartoon DÜŞÜK",
+   "formula": "0.40*norm(log10(nodeCount)/3) + 0.30*norm(maxDepth/8) + 0.30*effectDensity",
+   "status": "proposed"
+  },
+  "textureIndex": {
+   "desc": "DOKU — Cartoon'un ayırt edici ekseni ('texture'den olan'). Stud'da da yüksek ama Stud zaten önce ayrılır.",
+   "formula": "0.40*imageFillRate + 0.25*tileRate + 0.15*textureEffectRate + 0.10*vectorDecorRate + 0.10*reuseRate",
+   "status": "proposed"
+  },
+  "effectDensity": {
+   "desc": "EFEKT YOĞUNLUĞU — Cartoon AZ, Stud ÇOK AZ, Anime ÇOK",
+   "formula": "toplam efekt sayısı / düğüm sayısı",
+   "ranges": {
+    "cartoon": "<= 0.40",
+    "stud": "<= 0.25",
+    "anime": ">= 0.60"
+   }
+  },
+  "gradientRate": {
+   "desc": "GRADYAN ORANI — Cartoon AZ, Anime ÇOK",
+   "formula": "gradyan dolgulu düğüm / toplam düğüm"
+  }
+ },
+ "styles": {
+  "stud": {
+   "priority": 1,
+   "type": "deterministic",
+   "rule": "hasStud",
+   "confidence": 1.0,
+   "overridable": false,
+   "desc": "Stud kullanılmışsa Stud. Başka hiçbir özellik okunmaz.",
+   "profile": {
+    "detail": "ORTA / DÜŞÜK — sade, efektli (efekt genelde SADECE shine)",
+    "texture": "TEK doku = stud. Başka doku kullanılmaz.",
+    "effects": "ÇOK AZ — en sık Shine (ve Shine genelde FRAME ile yapılır)",
+    "image": "Image ağırlıklı UI (buton/header/panel image'dan)",
+    "other": "3D görünüm: aynı rengin kapalısı altta"
+   },
+   "mustHave": "stud texture button VEYA header üzerinde"
+  },
+  "anime": {
+   "priority": 2,
+   "type": "threshold",
+   "rule": "lightingIndex >= 0.55 AND detailIndex >= 0.55 AND darknessIndex >= 0.50",
+   "score": "0.40*lightingIndex + 0.22*detailIndex + 0.18*darknessIndex + 0.12*hueDiversity + 0.08*mutedBaseRate",
+   "desc": "Koyu + çok renkli, kapalı taban üstünde en iyi ışıklandırma, efekt çok, detay yüksek, doku orta",
+   "profile": {
+    "color": "KOYU, birden fazla renk, çoğu renk KAPALI (doygunluk+parlaklık düşük)",
+    "detail": "ÇOK YÜKSEK",
+    "lighting": "EN İYİ — glow, radyal gradyan, çok duraklı gradyan, ışık katmanları",
+    "effects": "ÇOK",
+    "texture": "ORTA"
+   }
+  },
+  "cartoon": {
+   "priority": 3,
+   "type": "threshold",
+   "rule": "textureIndex >= 0.40 AND effectDensity <= 0.40 AND detailIndex <= 0.35",
+   "score": "0.45*textureIndex + 0.25*(1 - effectDensity) + 0.18*(1 - gradientRate) + 0.12*(1 - detailIndex)",
+   "desc": "Doku ağırlıklı (birden fazla doku olabilir), efekt az, detay düşük",
+   "profile": {
+    "texture": "Birden fazla texture OLABİLİR",
+    "effects": "Olabilir ama GENELLİKLE AZ",
+    "detail": "DÜŞÜK",
+    "stroke": "kontur ayırt edici DEĞİL (C6 cevabı: cartoon'da çok fazla yok)"
+   }
+  },
+  "belirsiz": {
+   "priority": 4,
+   "type": "fallback",
+   "rule": "hiçbiri eşleşmezse VEYA |score_anime - score_cartoon| < 0.12",
+   "desc": "Stil önceliği UYGULANMAZ; sınıf/animasyon modeli nötr kalır. Zorlama yok."
+  }
+ },
+ "_thresholds": {
+  "anime": {
+   "lightingIndex_min": 0.55,
+   "detailIndex_min": 0.55,
+   "darknessIndex_min": 0.5,
+   "mutedBaseRate_min": 0.5,
+   "hueDiversity_min": 0.35,
+   "textureIndex_range": [
+    0.2,
+    0.7
+   ]
+  },
+  "cartoon": {
+   "textureIndex_min": 0.4,
+   "effectDensity_max": 0.4,
+   "detailIndex_max": 0.35
+  },
+  "margin_min": 0.12,
+  "status": "proposed",
+  "stud": {
+   "effectDensity_max": 0.25,
+   "reuseRate_min": 0.5,
+   "imageDrivenRate_min": 0.5
+  },
+  "studCellPxMax": 96,
+  "studCellPxMin": 8,
+  "studDetailVeto": 0.62,
+  "studEffectVeto": 0.6,
+  "studEvidenceMin": 4,
+  "studGridMax": 8,
+  "studGridMin": 2,
+  "studNameScopeMin": 2,
+  "studTileRateMin": 0.15,
+  "studUniqueTexHardMax": 3
+ },
+ "_stylePriors": {
+  "_desc": "Stil tahmininin sınıf/animasyon kararına etkisi",
+  "stud": {
+   "classBias": {
+    "ImageLabel": 1.2,
+    "ImageButton": 1.15,
+    "Frame": 1.0,
+    "TextLabel": 0.95
+   },
+   "classRules": [
+    "3D underlay'ın ALTTAKİ elemanı → Frame (ayrı sınıf değil, süs)",
+    "Shine FRAME katmanı → FX katmanı olarak işaretle (Frame değil)",
+    "Buton + header image'dan yapılmış → ImageButton / ImageLabel"
+   ],
+   "animBias": {
+    "cat": {
+     "basma": 1.2,
+     "giris": 1.0,
+     "fx": 1.1,
+     "dongu": 0.7
+    },
+    "prefer": [
+     "press_shrink_bounce",
+     "press_squash",
+     "enter_pop_scale",
+     "hover_stroke_grow",
+     "fx_shine_sweep",
+     "fx_gloss_sweep",
+     "hover_shine_sweep"
+    ],
+    "avoid": [
+     "fx_rays_rotate",
+     "loop_shimmer",
+     "fx_noise_drift",
+     "fx_vignette_breathe"
+    ]
+   }
+  },
+  "anime": {
+   "classBias": {
+    "ImageLabel": 1.25,
+    "CanvasGroup": 1.15,
+    "Frame": 1.0,
+    "TextLabel": 0.95
+   },
+   "classRules": [
+    "Kapalı/koyu taban üstünde küçük yüksek-doygunluklu katman → efekt ImageLabel (fx)",
+    "glowPattern katmanı → ayrı efekt ImageLabel olarak değerlendir"
+   ],
+   "animBias": {
+    "cat": {
+     "fx": 1.7,
+     "dongu": 1.45,
+     "giris": 1.1,
+     "basma": 0.85
+    },
+    "prefer": [
+     "fx_glow_pulse",
+     "fx_rays_rotate",
+     "fx_sparkle_twinkle",
+     "loop_shimmer",
+     "loop_pulse_glow",
+     "attention_glow_burst",
+     "fx_aura_rotate_pulse",
+     "fx_shine_sweep",
+     "enter_zoom_out",
+     "fx_star_burst"
+    ],
+    "avoid": [
+     "press_squash",
+     "attention_shake_strong",
+     "loop_shake_slight",
+     "enter_bounce_drop"
+    ]
+   }
+  },
+  "cartoon": {
+   "classBias": {
+    "ImageLabel": 1.3,
+    "ImageButton": 1.1,
+    "Frame": 1.0,
+    "TextLabel": 0.9
+   },
+   "classRules": [
+    "Birden fazla doku katmanı olabilir → dokulu panel ImageLabel, üstündeki içerik ayrı"
+   ],
+   "animBias": {
+    "cat": {
+     "basma": 1.3,
+     "giris": 1.2,
+     "dikkat": 1.1,
+     "fx": 0.55,
+     "dongu": 0.75
+    },
+    "prefer": [
+     "enter_pop_scale",
+     "enter_elastic_pop",
+     "press_shrink_bounce",
+     "press_squash",
+     "hover_scale_up",
+     "hover_bounce_small",
+     "attention_bounce_big",
+     "state_unlock_pop",
+     "enter_bounce_drop"
+    ],
+    "avoid": [
+     "fx_rays_rotate",
+     "fx_noise_drift",
+     "loop_shimmer",
+     "fx_vignette_breathe",
+     "fx_aura_rotate_pulse"
+    ]
+   }
+  }
+ },
+ "_output": {
+  "desc": "ei.assistant.style tahmin bloğu (JSON v10)",
+  "example": {
+   "style": "anime",
+   "confidence": 0.86,
+   "signals": {
+    "hasStud": false,
+    "lightingIndex": 0.74,
+    "detailIndex": 0.68,
+    "darknessIndex": 0.63,
+    "mutedBaseRate": 0.58,
+    "hueDiversity": 0.42,
+    "textureIndex": 0.4,
+    "effectDensity": 1.1,
+    "darkerUnderlayRate": 0.02,
+    "shineFrameRate": 0.05
+   },
+   "runnersUp": [
+    [
+     "cartoon",
+     0.1
+    ],
+    [
+     "belirsiz",
+     0.04
+    ]
+   ],
+   "oneLiner": "%86 Anime: koyu taban (0.63) + kapalı renkler (0.58) + 8 ayrı renk + güçlü ışıklandırma (0.74) + yüksek detay (0.68)."
+  }
+ }
+}

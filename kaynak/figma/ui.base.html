@@ -1,0 +1,830 @@
+<style>
+  :root { --bg:#0f1015; --card:#15161d; --card2:#1b1d26; --line:#272a35; --txt:#ffffff; --mut:#c2c7d6; --acc:#b9a4ff; --acc2:#a68cff; --acct:#e4dcff; --ok:#34d399; --bad:#f87171; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--txt); font: 13px/1.45 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .page { flex: 1; padding: 24px 24px 12px; }
+  svg { flex: none; display: block; }
+  button { font: inherit; border: 0; cursor: pointer; color: var(--txt); display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: filter .15s, transform .05s; }
+  button:hover { filter: brightness(1.12); } button:active { transform: translateY(1px); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .hd { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .logo { width: 52px; height: 52px; border-radius: 14px; background: #241e47; border: 1px solid #4a3d94; display: grid; place-items: center; color: var(--acct); }
+  .ttl { font-size: 22px; font-weight: 700; letter-spacing: -.3px; display: flex; align-items: center; gap: 10px; line-height: 1.2; }
+  .pill { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: #2a2150; color: var(--acct); border: 1px solid #3f3380; letter-spacing: 0; }
+  .sub { color: var(--mut); font-size: 12px; margin-top: 2px; }
+  .tag { margin-left: auto; align-self: flex-start; font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 8px; background: var(--card2); color: var(--mut); letter-spacing: .3px; }
+  .steps { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+  .st { display: flex; align-items: center; gap: 8px; color: var(--mut); font-size: 12px; white-space: nowrap; }
+  .st i { font-style: normal; font: 600 10px ui-monospace, monospace; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--card2); color: var(--mut); }
+  .st.on { color: var(--txt); font-weight: 600; } .st.on i { background: var(--acc); color: #0f1015; }
+  .st.done i { background: #123a2c; color: var(--ok); font-size: 12px; } .ln { flex: 1; height: 1px; background: var(--line); }
+  h2 { font-size: 27px; margin: 0 0 10px; font-weight: 500; letter-spacing: -.5px; line-height: 1.2; }
+  .lead { margin: 0 0 22px; color: var(--mut); font-size: 14px; line-height: 1.5; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 16px; overflow: hidden; }
+  .sel { padding: 16px 18px; display: flex; align-items: center; gap: 14px; background: var(--card2); }
+  .sel svg { color: var(--mut); } .sel .nm { font-weight: 600; font-size: 14px; color: var(--txt); display: block; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sel .dim { font-size: 11px; color: var(--mut); margin-top: 2px; display: block; }
+  .chip { font: 600 10px ui-monospace, monospace; padding: 4px 9px; border-radius: 6px; background: var(--card2); color: var(--mut); letter-spacing: .4px; }
+  .sel .chip { margin-left: auto; background: #2a2150; color: var(--acct); border: 1px solid #3f3380; }
+  .ch { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; font-weight: 600; font-size: 14px; }
+  label.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); cursor: pointer; }
+  label.row b { display: block; font-weight: 500; font-size: 13px; margin-bottom: 2px; } label.row small { color: var(--mut); font-size: 12px; }
+  label.row input { display: none; } .tg { flex: none; width: 42px; height: 24px; border-radius: 99px; background: #2b2e3a; position: relative; transition: background .15s; }
+  .tg::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .15s; }
+  label.row input:checked + .tg { background: var(--acc); } label.row input:checked + .tg::after { transform: translateX(18px); }
+  .ana { background: #231d3f; border: 1px solid #3a2f6b; border-radius: 14px; padding: 18px; margin-bottom: 24px; }
+  .ana h3 { margin: 0 0 14px; font-size: 14px; font-weight: 600; }
+  .ana .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ana .big { font-size: 26px; font-weight: 400; letter-spacing: -.3px; display: flex; align-items: center; gap: 12px; } .ana .big em { font-style: normal; color: var(--acct); }
+  .ana .cap { color: var(--acct); font-size: 12px; margin-top: 4px; }
+  .ana .meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid #3a2f6b; color: var(--mut); font-size: 11px; line-height: 1.8; }
+  .primary { width: 100%; height: 48px; border-radius: 12px; background: var(--acc); color: #fff; font-weight: 600; font-size: 14px; }
+  .fmt { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--mut); font-size: 11px; margin: 14px 0 6px; }
+  .ghost { background: var(--card2); border: 1px solid var(--line); border-radius: 12px; height: 46px; padding: 0 14px; font-weight: 500; font-size: 13px; }
+  .okbox { background: #0f2a22; border: 1px solid #1d5a43; border-radius: 14px; padding: 16px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 14px; color: var(--ok); }
+  .okbox b { display: block; font-size: 17px; font-weight: 500; color: var(--txt); } .okbox span { font-size: 12px; color: var(--ok); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .stat { padding: 18px; margin: 0; } .stat b { display: block; font-size: 30px; font-weight: 400; line-height: 1.1; margin-bottom: 8px; } .stat span { font-weight: 600; font-size: 14px; } .stat small { display: block; color: var(--mut); font-size: 11px; margin-top: 3px; }
+  #stats { color: var(--mut); font: 11px ui-monospace, monospace; margin: 0 0 16px; }
+  .tabs { display: flex; padding: 6px; gap: 6px; } .tab { flex: 1; height: 40px; background: transparent; border-radius: 10px; color: var(--mut); font-weight: 500; font-size: 13px; } .tab.active { background: #241f45; color: var(--txt); font-weight: 600; }
+  .fh { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--mut); font-size: 12px; }
+  .code { height: 250px; overflow: auto; background: #0e0f14; padding: 12px 0; font: 11.5px/1.7 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .code div { display: flex; white-space: pre; } .code .n { flex: none; width: 36px; text-align: right; padding-right: 14px; color: #555a6b; user-select: none; }
+  .code .k { color: var(--acct); } .code .s { color: #d9d0ff; } .code .v { color: #f0b7d4; } .code .c { color: #6b7088; }
+  #codebox { position: fixed; left: -9999px; top: 0; width: 10px; height: 10px; opacity: 0; }
+  .row2 { display: flex; gap: 12px; margin-bottom: 12px; } .row2 > button { flex: 1; height: 48px; border-radius: 12px; background: var(--card2); border: 1px solid var(--line); font-size: 13px; font-weight: 500; }
+  .row2 > .accent { background: var(--acc); border: 0; font-weight: 600; flex: 2; color: #fff; }
+  .row2 > .wide { width: 100%; }
+  .hint { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; color: var(--mut); margin: 18px 0 12px; display: flex; gap: 12px; align-items: flex-start; font-size: 13px; line-height: 1.5; } .hint svg { color: var(--acct); margin-top: 2px; }
+  #imgs { display: none; } #status { min-height: 0; font-size: 12px; margin: 8px 0 0; color: var(--mut); } #status:empty { display: none; } #status.ok { color: var(--ok); } #status.err { color: var(--bad); }
+  .ft { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding: 12px 24px; color: var(--mut); font: 11px ui-monospace, monospace; } .ft .dot { color: var(--ok); }
+  details.adv { margin: 0 0 14px; }
+  details.adv > summary { cursor: pointer; list-style: none; padding: 12px 14px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 12px; font-weight: 600; color: var(--txt); }
+  details.adv[open] > summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin-bottom: 0; }
+  details.adv > summary::-webkit-details-marker { display: none; }
+  #kt-card .kt-tabs, #kt-card .kt-bar, #kt-card .kt-body { margin-left:12px; margin-right:12px; }
+  #kt-card { padding-bottom:12px; }
+  .kt-tabs { display:flex; gap:6px; margin-bottom:8px; }
+  .kt-tab { background:var(--card2); color:var(--txt); border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:12px; }
+  .kt-tab.on { border-color:var(--acc); background:#2a2150; }
+  .kt-bar { display:flex; gap:6px; margin-bottom:8px; }
+  .kt-bar select, .kt-bar input { flex:1 1 0; width:100%; min-width:0; box-sizing:border-box; background:var(--card2); color:var(--txt); border:1px solid var(--line); border-radius:6px; padding:5px 7px; font-size:12px; }
+  .kt-body { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:10px; }
+  .kt-body > * { min-width:0; }
+  .kt-list { max-height:260px; overflow:auto; display:flex; flex-direction:column; gap:5px; }
+  .kt-row { text-align:left; background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:7px 9px; font-size:12px; color:var(--txt); }
+  .kt-row.on { border-color:var(--acc); }
+  .kt-row small { display:block; color:var(--mut); font-size:10.5px; }
+  .kt-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(52px,1fr)); gap:5px; }
+  .kt-icon { background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:4px; height:56px; }
+  .kt-icon img { width:100%; height:100%; object-fit:contain; }
+  .kt-icon.on { border-color:var(--acc); }
+  .kt-prev { display:grid; gap:6px; align-content:start; }
+  .kt-box { position:relative; height:200px; border-radius:10px; background:#262a3a; border:1px solid var(--line); overflow:hidden; display:grid; place-items:center; }
+  .kt-info { font-size:11.5px; color:var(--mut); min-height:30px; }
+  .kt-sprite { width:120px; height:44px; border-radius:10px; background:#2fbf71; color:#fff; font:700 14px system-ui; display:grid; place-items:center; box-shadow:0 0 0 0 #fff; }
+  .kt-fxp { position:absolute; pointer-events:none; }
+  .kt-now { font-size:11.5px; color:var(--acct); min-height:16px; }
+  .kt-params { display:grid; gap:6px; font-size:12px; }
+  .kt-act { display:flex; gap:6px; }
+  .kt-act button { flex:1; }
+  .kt-row.picked { border-color:var(--ok); }
+  .kt-icon.picked { border-color:var(--ok); }
+  #kt-card .kt-bar select { width:100%; }
+  .kt-act button { min-width:0; padding:7px 6px; font-size:12px; }
+  .kt-act { flex-wrap:wrap; }
+  .kt-act button { flex:1 1 40%; }
+</style>
+<div class="page">
+<div class="hd">
+  <div class="logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4l3 3-3 3M20 7H8M7 20l-3-3 3-3M4 17h12"/></svg></div>
+  <div><div class="ttl">EasyImport <span class="pill">v30</span></div><div class="sub">Figma → Roblox Studio</div></div><span class="tag">FIGMA</span>
+</div>
+<div class="steps"><div class="st on" id="s1"><i>01</i>Hazırla</div><span class="ln"></span><div class="st" id="s2"><i>02</i>Dışa aktar</div><span class="ln"></span><div class="st" id="s3"><i>03</i>İçe aktar</div></div>
+
+<div id="view-setup">
+  <h2>Tasarımını Studio’ya taşı.</h2>
+  <p class="lead">Seçili Figma katmanını Roblox arayüzüne dönüştürmek için dışa aktarma seçeneklerini düzenle.</p>
+  <div class="card sel"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3L7 21M17 3l-2 18M3 9h18M2 15h18"/></svg><div><b class="nm selName">Tüm Sayfa</b><span class="dim mono selDim"></span></div><span class="chip">SEÇİLİ</span></div>
+  <div class="card" style="border-color:var(--acct)">
+    <div class="ch">Yeni (v30)</div>
+    <div class="hint" style="margin:0">Kütüphane ve önizleme: animasyonları, ikonları (256 px) ve efektleri aktarmadan görebilirsin. Efekt oynatma: katman adına <b>_fall</b>, <b>_burst</b>, <b>_orbit</b> yaz; ayarları ve simgeleri (1022 ikon) bu panelde seç. Etkileşim: <b>_open:Ad</b>, <b>_close</b>, <b>_tab:Ad</b>. Gölge: <b>_shadow</b>. Dışa aktardıktan sonra "Animasyonlar ve asistan" kutusunda kontrol et.</div>
+  </div>
+  <div class="card" id="kt-card">
+    <div class="ch">Kütüphane ve önizleme <span class="chip" id="kt-count"></span></div>
+    <div class="kt-tabs"><button class="kt-tab on" id="kt-t-anim">Animasyonlar</button><button class="kt-tab" id="kt-t-icon">İkonlar</button><button class="kt-tab" id="kt-t-fx">Efektler</button></div>
+    <div class="kt-bar"><select id="kt-layer" title="Katman"></select></div>
+    <div class="kt-bar"><select id="kt-cat"></select><input id="kt-q" type="search" placeholder="ara…"></div>
+    <div class="kt-body">
+      <div id="kt-list" class="kt-list"></div>
+      <div class="kt-prev">
+        <div id="kt-box" class="kt-box"></div>
+        <div class="kt-info" id="kt-info"></div>
+        <div class="kt-act">
+          <button class="ghost" id="kt-play">Oynat</button>
+          <button class="primary" id="kt-apply">Uygula</button>
+          <button class="ghost" id="kt-insert" style="display:none">İçeri ekle</button>
+          <button class="ghost" id="kt-remove" style="display:none">Kaldır</button>
+        </div>
+        <div id="kt-now" class="kt-now"></div>
+        <div id="kt-params" class="kt-params"></div>
+      </div>
+    </div>
+  </div>
+  <details class="adv"><summary>Gelişmiş ayarlar <span class="mono">(genelde dokunmana gerek yok)</span></summary>
+  <div class="card">
+    <div class="ch">Dışa aktarma ayarları <span class="chip" id="act">5 AKTİF</span></div>
+    <label class="row"><span><b>Görselleri (PNG) dışa aktar</b><small>Görsel dolgularını aktarım paketine dahil et.</small></span><input type="checkbox" id="opt-img" checked><i class="tg"></i></label>
+    <label class="row"><span><b>Vektör ikon parçalarını tek PNG’de birleştir</b><small>Parçalı ikonları tek bir görsel olarak koru.</small></span><input type="checkbox" id="opt-merge" checked><i class="tg"></i></label>
+    <label class="row"><span><b>Aynı görselleri tekilleştir</b><small id="dedupeHint">80 görsel → çok daha az yükleme.</small></span><input type="checkbox" id="opt-dedupe" checked><i class="tg"></i></label>
+    <label class="row"><span><b>Gereksiz frame’leri sadeleştir</b><small>Görünümü koru, katman yapısını temizle.</small></span><input type="checkbox" id="opt-flatten" checked><i class="tg"></i></label>
+    <label class="row"><span><b>Metinsiz süs/ikon gruplarını tek PNG yap</b><small>Dekoratif grupları tek bir görsele dönüştür.</small></span><input type="checkbox" id="opt-decor" checked><i class="tg"></i></label>
+  </div>
+  <div class="ana">
+    <h3>Seçim analizi</h3>
+    <div class="cols">
+      <div><div class="big"><span id="anA1">–</span><em>→</em><span id="anA2">–</span></div><div class="cap">Figma katmanı → Roblox nesnesi</div></div>
+      <div><div class="big"><span id="anB1">–</span><em>→</em><span id="anB2">–</span></div><div class="cap">Kullanım → benzersiz PNG</div></div>
+    </div>
+    <div class="meta mono"><div id="anM1">Seçim analiz ediliyor…</div><div id="anM2"></div></div>
+  </div>
+  </details>
+  <button class="primary" id="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>Seçimi dışa aktar</button>
+  <div class="fmt mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8zM14 3v5h5"/></svg>JSON · Lua · RBXMX · PNG ZIP</div>
+</div>
+
+<div id="view-result" style="display:none">
+  <div class="okbox"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l3 3 5-6"/></svg><div><b>Dışa aktarma tamamlandı</b><span>Çıktın Roblox Studio’ya aktarılmaya hazır.</span></div></div>
+  <div class="card sel"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3L7 21M17 3l-2 18M3 9h18M2 15h18"/></svg><div><b class="nm selName">Tüm Sayfa</b><span class="dim mono selDim"></span></div><span class="chip">SEÇİLİ</span></div>
+  <div class="row2"><button class="accent" id="copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><span>JSON’u kopyala</span></button><button id="dl"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>.json indir</button></div>
+  <div class="row2"><button class="wide" id="dlall"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/></svg><span>Tüm görselleri indir</span></button></div>
+  <div class="hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span>JSON’u Studio Plugin’e yapıştır. Görselleri ZIP’ten çıkarıp Asset Manager ile yükle.</span></div>
+  <details class="adv" open><summary>Animasyonlar ve asistan</summary>
+  <div id="asist" class="mono" style="color:var(--acct);font-size:11px;margin:-8px 0 14px"></div>
+  </details>
+  <details class="adv"><summary>Teknik detaylar</summary>
+  <div class="grid2">
+    <div class="card stat"><b id="stA">0</b><span>Roblox nesnesi</span><small id="stA2"></small></div>
+    <div class="card stat"><b id="stB">0</b><span>Benzersiz PNG</span><small id="stB2"></small></div>
+  </div>
+  <div id="stats"></div>
+  <div id="out" class="card" style="display:none">
+    <div class="tabs"><button class="tab active" id="tab-json">Studio Plugin için JSON</button><button class="tab" id="tab-luau">Doğrudan Luau Kodu</button></div>
+    <div class="fh mono"><span id="fileName">design.json</span><span class="chip" id="fileKind">JSON</span></div>
+    <div class="code" id="codeView"></div>
+    <textarea id="codebox" readonly></textarea>
+  </div>
+  <div class="row2"><button class="wide" id="dl-train" title="Asistan eğitim verisi: kırpılmamış katman dökümü (katman adları dâhil)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><span>Eğitim dosyasını indir (_egitim.json)</span></button></div>
+  <div class="row2"><button id="copy-luau"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>Luau kodunu kopyala</button><button id="dl-rbxmx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>RBXMX model indir</button></div>
+  </details>
+  <button class="ghost" id="back" style="width:100%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg>Dışa aktarma ayarlarına dön</button>
+  <div id="imgs"></div>
+</div>
+<div id="status"></div>
+</div>
+<div class="ft"><span><span class="dot">●</span> Figma · Seçim hazır</span><span>EasyImport / v30</span></div>
+
+<script>
+  var $ = function (id) { return document.getElementById(id); };
+  var files = [];
+  // Önizleme: sonuçtaki düğüm kimlikleri (DFS, satırlarla aynı sıra) ve eklentiden gelen PNG'ler
+  var lastFids = [];
+  var snaps = {};
+  function requestSnap(fid) {
+    if (!fid || snaps[fid] !== undefined) return;
+    snaps[fid] = null;
+    parent.postMessage({ pluginMessage: { type: 'snap', fid: fid } }, '*');
+  }
+  var lastName = 'design';
+  var lastDoc = null;
+  var lastJsonStr = '';
+  // Efekt resimleri: satır → [{file, base, bytes, url}] (en çok 4; her biri en çok 2 MB). ZIP'e görsellerle birlikte girer.
+  var fxUploads = {};
+  function refreshDlAll() {
+    var n = allImageFiles().length;
+    $('dlall').style.display = n ? '' : 'none';
+    if (n) $('dlall').querySelector('span').textContent = 'Tüm görselleri indir · ' + n + ' PNG / ZIP';
+  }
+  function allImageFiles() {
+    var out = (files || []).slice();
+    Object.keys(fxUploads).forEach(function (k) {
+      (fxUploads[k] || []).forEach(function (u) { out.push({ file: u.file, bytes: u.bytes }); });
+    });
+    return out;
+  }
+  var lastTrainStr = '';
+  var lastLuauStr = '';
+  var activeTab = 'json';
+
+  function setStatus(msg, cls) { $('status').className = cls || ''; $('status').textContent = msg || ''; }
+
+  // ==========================================================================
+  // Saf JavaScript ZIP Oluşturucu (80 Görseli Tek 1 .ZIP Dosyası Yapar, Çökmez!)
+  // ==========================================================================
+  var CRC_TABLE = new Uint32Array(256);
+  for (var ci = 0; ci < 256; ci++) {
+    var c = ci;
+    for (var ck = 0; ck < 8; ck++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+    CRC_TABLE[ci] = c >>> 0;
+  }
+
+  function crc32(u8) {
+    var crc = 0xFFFFFFFF;
+    for (var i = 0; i < u8.length; i++) {
+      crc = (crc >>> 8) ^ CRC_TABLE[(crc ^ u8[i]) & 0xFF];
+    }
+    return (crc ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  function buildZipBlob(entries) {
+    var encoder = new TextEncoder();
+    var localParts = [];
+    var centralParts = [];
+    var offset = 0;
+
+    for (var i = 0; i < entries.length; i++) {
+      var nameBytes = encoder.encode(entries[i].name);
+      var isDir = /\/$/.test(entries[i].name); // "Klasor/" = klasör girdisi
+      var raw = entries[i].data || new Uint8Array(0);
+      var data = raw instanceof Uint8Array ? raw : new Uint8Array(raw);
+      var crc = crc32(data);
+      var size = data.length;
+
+      var lh = new Uint8Array(30 + nameBytes.length);
+      var lhv = new DataView(lh.buffer);
+      lhv.setUint32(0, 0x04034b50, true);
+      lhv.setUint16(4, 20, true);
+      lhv.setUint16(6, 0x0800, true);
+      lhv.setUint16(8, 0, true);
+      lhv.setUint16(10, 0, true);
+      lhv.setUint16(12, 0x21, true);
+      lhv.setUint32(14, crc, true);
+      lhv.setUint32(18, size, true);
+      lhv.setUint32(22, size, true);
+      lhv.setUint16(26, nameBytes.length, true);
+      lhv.setUint16(28, 0, true);
+      lh.set(nameBytes, 30);
+
+      var ch = new Uint8Array(46 + nameBytes.length);
+      var chv = new DataView(ch.buffer);
+      chv.setUint32(0, 0x02014b50, true);
+      chv.setUint16(4, 20, true);
+      chv.setUint16(6, 20, true);
+      chv.setUint16(8, 0x0800, true);
+      chv.setUint16(10, 0, true);
+      chv.setUint16(12, 0, true);
+      chv.setUint16(14, 0x21, true);
+      chv.setUint32(16, crc, true);
+      chv.setUint32(20, size, true);
+      chv.setUint32(24, size, true);
+      chv.setUint16(28, nameBytes.length, true);
+      chv.setUint16(30, 0, true);
+      chv.setUint16(32, 0, true);
+      chv.setUint16(34, 0, true);
+      chv.setUint16(36, 0, true);
+      chv.setUint32(38, isDir ? 0x10 : 0, true); // DOS dizin özniteliği
+      chv.setUint32(42, offset, true);
+      ch.set(nameBytes, 46);
+
+      localParts.push(lh, data);
+      centralParts.push(ch);
+      offset += lh.length + data.length;
+    }
+
+    var centralSize = 0;
+    for (var j = 0; j < centralParts.length; j++) centralSize += centralParts[j].length;
+
+    var eocd = new Uint8Array(22);
+    var eocdv = new DataView(eocd.buffer);
+    eocdv.setUint32(0, 0x06054b50, true);
+    eocdv.setUint16(4, 0, true);
+    eocdv.setUint16(6, 0, true);
+    eocdv.setUint16(8, entries.length, true);
+    eocdv.setUint16(10, entries.length, true);
+    eocdv.setUint32(12, centralSize, true);
+    eocdv.setUint32(16, offset, true);
+    eocdv.setUint16(20, 0, true);
+
+    var blobParts = localParts.concat(centralParts, [eocd]);
+    return new Blob(blobParts, { type: 'application/zip' });
+  }
+
+  // ==========================================================================
+  // Font & Luau / RBXMX Dönüştürücü
+  // ==========================================================================
+  var FONT_FAMILY_MAP = [
+    { keys: ['inter', 'gotham', 'sf pro', 'plus jakarta', 'manrope', 'dm sans', 'geist'], family: 'GothamSSm.json' },
+    { keys: ['montserrat', 'poppins', 'outfit', 'urbanist', 'lexend', 'syne'], family: 'Montserrat.json' },
+    { keys: ['builder', 'rubik', 'figtree', 'work sans'], family: 'BuilderSans.json' },
+    { keys: ['roboto mono', 'jetbrains', 'fira code', 'consolas', 'courier', 'space mono'], family: 'RobotoMono.json' },
+    { keys: ['roboto', 'open sans', 'lato', 'noto'], family: 'Roboto.json' },
+    { keys: ['ubuntu', 'quicksand'], family: 'Ubuntu.json' },
+    { keys: ['nunito', 'mulish'], family: 'Nunito.json' },
+    { keys: ['fredoka', 'baloo'], family: 'FredokaOne.json' },
+    { keys: ['bangers', 'komika'], family: 'Bangers.json' },
+    { keys: ['luckiest', 'titan one'], family: 'LuckiestGuy.json' },
+    { keys: ['oswald', 'bebas', 'anton', 'impact', 'teko'], family: 'Oswald.json' },
+    { keys: ['merriweather', 'lora', 'serif', 'georgia', 'times', 'playfair'], family: 'Merriweather.json' },
+    { keys: ['comic', 'patrick'], family: 'ComicNeueAngular.json' },
+    { keys: ['press start', 'pixel', 'arcade', 'vt323'], family: 'PressStart2P.json' },
+    { keys: ['orbitron', 'michroma', 'rajdhani'], family: 'Michroma.json' },
+    { keys: ['titillium', 'exo', 'kanit'], family: 'TitilliumWeb.json' }
+  ];
+
+  function mapFontFamilyAsset(fam) {
+    var f = String(fam || '').toLowerCase();
+    for (var i = 0; i < FONT_FAMILY_MAP.length; i++) {
+      var row = FONT_FAMILY_MAP[i];
+      for (var j = 0; j < row.keys.length; j++) {
+        if (f.indexOf(row.keys[j]) > -1) return 'rbxasset://fonts/families/' + row.family;
+      }
+    }
+    return 'rbxasset://fonts/families/GothamSSm.json';
+  }
+
+  function mapFontWeightEnum(w) {
+    var n = Number(w) || 400;
+    if (n <= 150) return 'Thin';
+    if (n <= 250) return 'ExtraLight';
+    if (n <= 350) return 'Light';
+    if (n <= 450) return 'Regular';
+    if (n <= 550) return 'Medium';
+    if (n <= 650) return 'SemiBold';
+    if (n <= 750) return 'Bold';
+    if (n <= 850) return 'ExtraBold';
+    return 'Heavy';
+  }
+
+  function parseLayerTags(rawName) {
+    var name = String(rawName || 'Layer');
+    var lower = name.toLowerCase();
+    var tags = {
+      isButton: lower.indexOf('_button') > -1 || lower.indexOf('imagebutton') > -1 || lower.indexOf('textbutton') > -1,
+      isScroll: lower.indexOf('_scroll') > -1 || lower.indexOf('scrollingframe') > -1,
+      isCanvas: lower.indexOf('_canvas') > -1 || lower.indexOf('canvasgroup') > -1,
+      isAspect: lower.indexOf('_aspect') > -1,
+      isHover:  lower.indexOf('_hover') > -1,
+      isClicked: lower.indexOf('_clicked') > -1,
+      isInput:  lower.indexOf('_input') > -1 || lower.indexOf('_textbox') > -1 || lower.indexOf('textbox') > -1
+    };
+    var clean = name
+      .replace(/^#/, '')
+      .replace(/^img:/i, '')
+      .replace(/_(button|scroll|canvas|aspect|ignore|keep|image|lock|nodim|hover|clicked|input|textbox)/gi, '')
+      .trim() || 'Element';
+    return { cleanName: clean, tags: tags };
+  }
+
+  function wispfreeToLuau(doc) {
+    if (!doc || !doc.root) return '-- Geçersiz EasyImport JSON';
+    var lines = [];
+    lines.push('-- EasyImport — Figma -> Roblox Studio Native UI');
+    lines.push('local StarterGui = game:GetService("StarterGui")');
+    lines.push('local gui = Instance.new("ScreenGui")');
+    lines.push('gui.Name = ' + JSON.stringify('EasyImport_' + String(doc.name || 'UI')));
+    lines.push('gui.ResetOnSpawn = false');
+    lines.push('gui.IgnoreGuiInset = true');
+    lines.push('gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling');
+    lines.push('gui.Parent = StarterGui');
+    lines.push('');
+
+    var counter = 0;
+    var r4 = function (n) { return Math.round((Number(n) || 0) * 10000) / 10000; };
+
+    function emit(item, parentVar, pW, pH, isRoot, zIdx) {
+      counter++;
+      var v = 'n' + counter;
+      var parsed = parseLayerTags(item.name);
+      var tags = parsed.tags;
+
+      var cls = 'Frame';
+      if (item.kind === 'text') cls = tags.isInput ? 'TextBox' : (tags.isButton ? 'TextButton' : 'TextLabel');
+      else if (item.image) cls = tags.isButton ? 'ImageButton' : 'ImageLabel';
+      else if (tags.isScroll) cls = 'ScrollingFrame';
+      else if (tags.isCanvas) cls = 'CanvasGroup';
+      else if (tags.isButton) cls = 'TextButton';
+
+      var w = item.w || 100, h = item.h || 100, x = item.x || 0, y = item.y || 0;
+      lines.push('do');
+      lines.push('\tlocal ' + v + ' = Instance.new(' + JSON.stringify(cls) + ')');
+      lines.push('\t' + v + '.Name = ' + JSON.stringify(parsed.cleanName));
+      lines.push('\t' + v + '.BorderSizePixel = 0');
+      lines.push('\t' + v + '.ZIndex = ' + zIdx);
+      if (item.clips) lines.push('\t' + v + '.ClipsDescendants = true');
+
+      if (isRoot) {
+        lines.push('\t' + v + '.AnchorPoint = Vector2.new(0.5, 0.5)');
+        lines.push('\t' + v + '.Position = UDim2.fromScale(0.5, 0.5)');
+        lines.push('\t' + v + '.Size = UDim2.fromScale(0.85, 0.85)');
+      } else if (pW > 0 && pH > 0) {
+        lines.push('\t' + v + '.Position = UDim2.fromScale(' + r4(x / pW) + ', ' + r4(y / pH) + ')');
+        lines.push('\t' + v + '.Size = UDim2.fromScale(' + r4(w / pW) + ', ' + r4(h / pH) + ')');
+      }
+
+      if (item.rot && Math.abs(item.rot) > 0.01) lines.push('\t' + v + '.Rotation = ' + item.rot);
+
+      var fills = Array.isArray(item.fills) ? item.fills : [];
+      var solidFill = fills.find(function (f) { return f.type === 'SOLID'; });
+      var gradFill = fills.find(function (f) { return f.type === 'GRADIENT' || f.type === 'GRADIENT_OTHER'; });
+      var nodeOp = item.opacity == null ? 1 : item.opacity;
+
+      if (item.kind !== 'text' && (solidFill || gradFill)) {
+        if (solidFill && !gradFill) {
+          var sc = solidFill.color || { r: 255, g: 255, b: 255 };
+          var fOp = (solidFill.opacity == null ? 1 : solidFill.opacity) * nodeOp;
+          lines.push('\t' + v + '.BackgroundColor3 = Color3.fromRGB(' + sc.r + ', ' + sc.g + ', ' + sc.b + ')');
+          lines.push('\t' + v + '.BackgroundTransparency = ' + r4(1 - fOp));
+        } else if (gradFill) {
+          var gOp = (gradFill.opacity == null ? 1 : gradFill.opacity) * nodeOp;
+          lines.push('\t' + v + '.BackgroundColor3 = Color3.fromRGB(255, 255, 255)');
+          lines.push('\t' + v + '.BackgroundTransparency = ' + r4(1 - gOp));
+        }
+      } else {
+        lines.push('\t' + v + '.BackgroundTransparency = 1');
+      }
+
+      if (cls === 'ImageLabel' || cls === 'ImageButton') {
+        lines.push('\t' + v + '.Image = "" -- ' + (item.image || ''));
+        lines.push('\t' + v + '.ScaleType = Enum.ScaleType.Fit');
+      }
+
+      if (item.kind === 'text' && item.text) {
+        var t = item.text;
+        var tc = t.color || { r: 255, g: 255, b: 255 };
+        lines.push('\t' + v + '.Text = ' + JSON.stringify(t.characters || ''));
+        lines.push('\t' + v + '.FontFace = Font.new(' + JSON.stringify(mapFontFamilyAsset(t.fontFamily)) + ', Enum.FontWeight.' + mapFontWeightEnum(t.fontWeight) + ', Enum.FontStyle.' + (t.italic ? 'Italic' : 'Normal') + ')');
+        lines.push('\t' + v + '.TextSize = ' + (t.fontSize || 16));
+        lines.push('\t' + v + '.TextColor3 = Color3.fromRGB(' + tc.r + ', ' + tc.g + ', ' + tc.b + ')');
+        lines.push('\t' + v + '.TextWrapped = true');
+      }
+
+      if (item.radius === 'full' || (typeof item.radius === 'number' && item.radius > 0)) {
+        lines.push('\tlocal cr = Instance.new("UICorner", ' + v + ')');
+        lines.push('\tcr.CornerRadius = UDim.new(' + (item.radius === 'full' ? '1, 0' : '0, ' + Math.round(item.radius)) + ')');
+      }
+
+      if (item.stroke && item.stroke.weight > 0) {
+        var st = item.stroke;
+        var stc = st.color || { r: 255, g: 255, b: 255 };
+        lines.push('\tlocal st = Instance.new("UIStroke", ' + v + ')');
+        lines.push('\tst.Color = Color3.fromRGB(' + stc.r + ', ' + stc.g + ', ' + stc.b + ')');
+        lines.push('\tst.Thickness = ' + st.weight);
+      }
+
+      if (isRoot || tags.isAspect) {
+        lines.push('\tlocal ar = Instance.new("UIAspectRatioConstraint", ' + v + ')');
+        lines.push('\tar.AspectRatio = ' + r4(w / Math.max(1, h)));
+      }
+
+      lines.push('\t' + v + '.Parent = ' + parentVar);
+      if (Array.isArray(item.children)) {
+        for (var ci = 0; ci < item.children.length; ci++) {
+          emit(item.children[ci], v, w, h, false, ci + 1);
+        }
+      }
+      lines.push('end');
+    }
+
+    emit(doc.root, 'gui', doc.width || 800, doc.height || 600, true, 1);
+    return lines.join('\n');
+  }
+
+  function escXml(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function wispfreeToRbxmx(doc) {
+    if (!doc || !doc.root) return '';
+    var refId = 100;
+    var nextRef = function () { return 'RBX_WF_' + (++refId); };
+    var r4 = function (n) { return Math.round((Number(n) || 0) * 10000) / 10000; };
+    function c3Xml(name, c) {
+      return '<Color3 name="' + name + '"><R>' + r4((c.r || 0) / 255) + '</R><G>' + r4((c.g || 0) / 255) + '</G><B>' + r4((c.b || 0) / 255) + '</B></Color3>';
+    }
+    function udim2Xml(name, xs, xo, ys, yo) {
+      return '<UDim2 name="' + name + '"><XS>' + xs + '</XS><XO>' + Math.round(xo) + '</XO><YS>' + ys + '</YS><YO>' + Math.round(yo) + '</YO></UDim2>';
+    }
+    function buildItemXml(item, pW, pH, isRoot, zIdx) {
+      var parsed = parseLayerTags(item.name);
+      var tags = parsed.tags;
+      var cls = 'Frame';
+      if (item.kind === 'text') cls = tags.isInput ? 'TextBox' : (tags.isButton ? 'TextButton' : 'TextLabel');
+      else if (item.image) cls = tags.isButton ? 'ImageButton' : 'ImageLabel';
+      else if (tags.isScroll) cls = 'ScrollingFrame';
+      else if (tags.isCanvas) cls = 'CanvasGroup';
+      else if (tags.isButton) cls = 'TextButton';
+
+      var w = item.w || 100, h = item.h || 100, x = item.x || 0, y = item.y || 0;
+      var posXml = isRoot ? udim2Xml('Position', 0.5, 0, 0.5, 0) : udim2Xml('Position', r4(x / Math.max(1, pW)), 0, r4(y / Math.max(1, pH)), 0);
+      var sizeXml = isRoot ? udim2Xml('Size', 0.85, 0, 0.85, 0) : udim2Xml('Size', r4(w / Math.max(1, pW)), 0, r4(h / Math.max(1, pH)), 0);
+      var anchorXml = isRoot ? '<Vector2 name="AnchorPoint"><X>0.5</X><Y>0.5</Y></Vector2>' : '<Vector2 name="AnchorPoint"><X>0</X><Y>0</Y></Vector2>';
+
+      var fills = Array.isArray(item.fills) ? item.fills : [];
+      var solidFill = fills.find(function (f) { return f.type === 'SOLID'; });
+      var nodeOp = item.opacity == null ? 1 : item.opacity;
+      var bgColor = (solidFill && solidFill.color) ? solidFill.color : { r: 255, g: 255, b: 255 };
+      var bgTrans = (item.kind !== 'text' && solidFill) ? r4(1 - ((solidFill.opacity == null ? 1 : solidFill.opacity) * nodeOp)) : 1;
+
+      var extraProps = '';
+      if (item.kind === 'text' && item.text) {
+        var t = item.text;
+        extraProps += '<string name="Text">' + escXml(t.characters || '') + '</string><float name="TextSize">' + (t.fontSize || 16) + '</float>' + c3Xml('TextColor3', t.color || { r: 255, g: 255, b: 255 }) + '<bool name="TextWrapped">true</bool>';
+      }
+      var childrenXml = '';
+      if (Array.isArray(item.children)) {
+        for (var ci = 0; ci < item.children.length; ci++) {
+          childrenXml += buildItemXml(item.children[ci], w, h, false, ci + 1);
+        }
+      }
+      return '<Item class="' + cls + '" referent="' + nextRef() + '"><Properties><string name="Name">' + escXml(parsed.cleanName) + '</string><int name="ZIndex">' + zIdx + '</int><int name="BorderSizePixel">0</int>' + anchorXml + posXml + sizeXml + c3Xml('BackgroundColor3', bgColor) + '<float name="BackgroundTransparency">' + bgTrans + '</float>' + extraProps + '</Properties>' + childrenXml + '</Item>';
+    }
+    return '<roblox version="4"><Item class="ScreenGui" referent="' + nextRef() + '"><Properties><string name="Name">' + escXml('EasyImport_' + (doc.name || 'UI')) + '</string><bool name="ResetOnSpawn">false</bool><bool name="IgnoreGuiInset">true</bool></Properties>' + buildItemXml(doc.root, doc.width || 800, doc.height || 600, true, 1) + '</Item></roblox>';
+  }
+
+  function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  // JSON'u okunaklı ama kısa göstermek için: düz değerler aynı satırda gruplanır, iç içe nesneler ayrı satıra iner.
+  function fmtJson(v, ind, out, lead) {
+    var pad = new Array(ind + 1).join('  ');
+    var isArr = Array.isArray(v);
+    var keys = isArr ? v.map(function (_, i) { return i; }) : Object.keys(v);
+    if (keys.length === 0) { out.push(pad + (lead || '') + (isArr ? '[]' : '{}')); return; }
+    out.push(pad + (lead || '') + (isArr ? '[' : '{'));
+    var buf = '';
+    var flush = function () { if (buf) { out.push(pad + '  ' + buf.replace(/,\s*$/, '')); buf = ''; } };
+    keys.forEach(function (k, idx) {
+      var val = v[k];
+      var comma = idx < keys.length - 1 ? ',' : '';
+      var label = isArr ? '' : JSON.stringify(k) + ': ';
+      if (val !== null && typeof val === 'object') {
+        flush();
+        var sub = [];
+        fmtJson(val, ind + 1, sub, label);
+        sub[sub.length - 1] += comma;
+        for (var q = 0; q < sub.length; q++) out.push(sub[q]);
+      } else {
+        var piece = label + JSON.stringify(val) + comma;
+        if (buf && (buf.length + piece.length) > 46) flush();
+        buf += (buf ? ' ' : '') + piece;
+      }
+    });
+    flush();
+    out.push(pad + (isArr ? ']' : '}'));
+  }
+
+  function hiJson(line) {
+    return esc(line)
+      .replace(/(&quot;|")((?:[^"\\]|\\.)*?)(&quot;|")(\s*:)/g, '<span class="k">"$2"</span>$4')
+      .replace(/:\s*"((?:[^"\\]|\\.)*)"/g, function (m, a) { return ': <span class="s">"' + a + '"</span>'; })
+      .replace(/(:\s|\[\s*|,\s+)(-?\d+(?:\.\d+)?|true|false|null)(?=[,\s\]}]|$)/g, '$1<span class="v">$2</span>');
+  }
+
+  function hiLua(line) {
+    var e = esc(line);
+    var ci = e.indexOf('--');
+    if (ci > -1) return e.slice(0, ci) + '<span class="c">' + e.slice(ci) + '</span>';
+    return e.replace(/(&quot;|")(.*?)(&quot;|")/g, '<span class="s">"$2"</span>').replace(/\b(local|do|end|then|if|else|function|return|for|in|true|false|nil)\b/g, '<span class="k">$1</span>');
+  }
+
+  function renderCode(text, kind) {
+    var lines;
+    if (kind === 'json') {
+      try { lines = []; fmtJson(JSON.parse(text), 0, lines, ''); } catch (err) { lines = text.split('\n'); }
+    } else {
+      lines = text.split('\n');
+    }
+    var MAX = 400, extra = 0;
+    if (lines.length > MAX) { extra = lines.length - MAX; lines = lines.slice(0, MAX); }
+    var html = '';
+    for (var i = 0; i < lines.length; i++) {
+      html += '<div><span class="n">' + (i + 1) + '</span><span>' + (kind === 'json' ? hiJson(lines[i]) : hiLua(lines[i])) + '</span></div>';
+    }
+    if (extra) html += '<div><span class="n">…</span><span class="c">' + extra + ' satır daha (kopyalayınca tamamı gelir)</span></div>';
+    $('codeView').innerHTML = html;
+    $('codeView').scrollTop = 0;
+  }
+
+  function refreshBox() {
+    if (!lastDoc) return;
+    lastLuauStr = wispfreeToLuau(lastDoc);
+    $('codebox').value = activeTab === 'json' ? lastJsonStr : lastLuauStr;
+    $('fileName').textContent = lastName + (activeTab === 'json' ? '.json' : '.lua');
+    $('fileKind').textContent = activeTab === 'json' ? 'JSON' : 'LUA';
+    renderCode(activeTab === 'json' ? lastJsonStr : lastLuauStr, activeTab);
+  }
+
+  $('tab-json').onclick = function () {
+    activeTab = 'json';
+    $('tab-json').classList.add('active');
+    $('tab-luau').classList.remove('active');
+    refreshBox();
+  };
+  $('tab-luau').onclick = function () {
+    activeTab = 'luau';
+    $('tab-luau').classList.add('active');
+    $('tab-json').classList.remove('active');
+    refreshBox();
+  };
+
+  function readOpts() {
+    return {
+      images: $('opt-img').checked,
+      mergeVectors: $('opt-merge').checked,
+      dedupe: $('opt-dedupe').checked,
+      flatten: $('opt-flatten').checked,
+      mergeDecor: $('opt-decor').checked
+    };
+  }
+
+  var exporting = false;
+  var analyzeTimer = null;
+  function requestAnalysis() {
+    clearTimeout(analyzeTimer);
+    analyzeTimer = setTimeout(function () {
+      if (exporting) return;
+      $('anM1').textContent = 'Seçim analiz ediliyor…';
+      parent.postMessage({ pluginMessage: { type: 'analyze', opts: readOpts() } }, '*');
+    }, 350);
+  }
+
+  $('go').onclick = function () {
+    exporting = true;
+    $('go').disabled = true;
+    setStatus('Katmanlar ve görseller hazırlanıyor…');
+    parent.postMessage({ pluginMessage: { type: 'export', opts: readOpts() } }, '*');
+  };
+
+  function download(name, blob) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+
+  $('copy').onclick = function () {
+    activeTab = 'json';
+    $('tab-json').classList.add('active');
+    $('tab-luau').classList.remove('active');
+    refreshBox();
+    $('codebox').select();
+    document.execCommand('copy');
+    setStatus('JSON kopyalandı ✓ Şimdi Roblox Studio EasyImport eklentisine yapıştır.', 'ok');
+  };
+
+  $('copy-luau').onclick = function () {
+    activeTab = 'luau';
+    $('tab-luau').classList.add('active');
+    $('tab-json').classList.remove('active');
+    refreshBox();
+    $('codebox').select();
+    document.execCommand('copy');
+    setStatus('Luau kodu kopyalandı ✓', 'ok');
+  };
+
+  $('dl-train').onclick = function () {
+    if (!lastTrainStr) return;
+    download(lastName + '_egitim.json', new Blob([lastTrainStr], { type: 'application/json' }));
+  };
+  $('dl').onclick = function () {
+    download(lastName + '.easyimport.json', new Blob([lastJsonStr], { type: 'application/json' }));
+  };
+
+  $('dl-rbxmx').onclick = function () {
+    if (!lastDoc) return;
+    download(lastName + '.rbxmx', new Blob([wispfreeToRbxmx(lastDoc)], { type: 'application/xml' }));
+  };
+
+  // TEK ZIP İNDİRME: 80 sekme açmak yerine tüm PNG'leri tek bir .ZIP dosyasında indirir!
+  $('dlall').onclick = function () {
+    // ZIP içinde TEK bir klasör olur, görseller onun içindedir (Asset Manager'a "Klasör" olarak aktarılabilir).
+    var folderName = lastName + '_Gorseller';
+    var validEntries = [];
+    var allF = allImageFiles();
+    for (var i = 0; i < allF.length; i++) {
+      if (allF[i] && allF[i].bytes) {
+        validEntries.push({ name: folderName + '/' + allF[i].file, data: allF[i].bytes });
+      }
+    }
+    if (validEntries.length > 0) validEntries.unshift({ name: folderName + '/', data: new Uint8Array(0) });
+    if (validEntries.length === 0) {
+      setStatus('İndirilecek PNG görseli yok.', 'err');
+      return;
+    }
+    var imgCount = validEntries.length - 1;
+    setStatus(imgCount + ' görsel TEK ZIP dosyasında paketleniyor…');
+    var zipBlob = buildZipBlob(validEntries);
+    var zipFileName = lastName + '_Gorseller.zip';
+    download(zipFileName, zipBlob);
+    setStatus('✓ ' + imgCount + ' görsel "' + zipFileName + '" içinde "' + folderName + '/" klasörüne konuldu. ZIP\'i çıkar, klasörü Asset Manager\'a aktar.', 'ok');
+  };
+
+  // Kütüphane kartı: kurulumda ilk ekranda; sonuçta (katmanlar oluşunca) sonuç ekranının başında.
+  function placeLib(v) {
+    var card = document.getElementById('kt-card');
+    if (!card) return;
+    if (v === 'result') {
+      var res = $('view-result');
+      res.insertBefore(card, res.firstChild);
+    } else {
+      var setup = $('view-setup');
+      var anchor = setup.querySelector('details.adv');
+      setup.insertBefore(card, anchor || setup.firstChild);
+    }
+  }
+  function showView(v) {
+    $('view-setup').style.display = v === 'setup' ? '' : 'none';
+    $('view-result').style.display = v === 'result' ? '' : 'none';
+    placeLib(v);
+    $('s1').className = 'st ' + (v === 'setup' ? 'on' : 'done'); $('s2').className = 'st ' + (v === 'result' ? 'on' : '');
+    $('s1').querySelector('i').textContent = v === 'setup' ? '01' : '✓';
+    if (v === 'setup') { exporting = false; $('go').disabled = false; requestAnalysis(); }
+  }
+  $('back').onclick = function () { showView('setup'); };
+  function countOpts() { $('act').textContent = document.querySelectorAll('label.row input:checked').length + ' AKTİF'; }
+  Array.prototype.forEach.call(document.querySelectorAll('label.row input'), function (i) { i.onchange = function () { countOpts(); requestAnalysis(); }; });
+  countOpts();
+  function setSel(name, dim) {
+    Array.prototype.forEach.call(document.querySelectorAll('.selName'), function (n) { n.textContent = name; });
+    Array.prototype.forEach.call(document.querySelectorAll('.selDim'), function (n) { n.textContent = dim; });
+  }
+
+  window.onmessage = function (e) {
+    var m = e.data.pluginMessage;
+    if (!m) return;
+    if (m.type === 'selection') {
+      $('go').disabled = exporting;
+      setSel(m.name, (m.w != null && m.h != null) ? (Math.round(m.w) + ' × ' + Math.round(m.h) + ' px') : '');
+      requestAnalysis();
+    }
+    if (m.type === 'analysis') {
+      var an = m.stats;
+      $('anA1').textContent = an.nodesBefore; $('anA2').textContent = an.itemsAfter;
+      $('anB1').textContent = an.imageRefs; $('anB2').textContent = an.imagesUnique;
+      $('anM1').textContent = an.framesAfter + ' frame · ' + an.dupes + ' kopya birleştirildi';
+      $('anM2').textContent = 'Sadeleşen: ' + an.flattened + ' · Tek PNG süs: ' + an.decorMerged + ' · Silinen boş/hayalet: ' + (an.emptyDropped + an.ghost);
+      if (an.imageRefs > 0) $('dedupeHint').textContent = an.imageRefs + ' görsel → ' + an.imagesUnique + ' yükleme';
+    }
+    if (m.type === 'snap-result') {
+      snaps[m.fid] = m.data ? ('data:image/png;base64,' + m.data) : null;
+      if (window.__ktRepaint) window.__ktRepaint();
+    }
+    if (m.type === 'progress') setStatus(m.message);
+    if (m.type === 'error') { exporting = false; $('go').disabled = false; setStatus(m.message, 'err'); }
+    if (m.type === 'result') {
+      lastFids = m.fids || []; snaps = {};
+      exporting = false;
+      lastName = String(m.name).replace(/[^a-zA-Z0-9_-]+/g, '_') || 'Tasarim';
+      files = m.files || [];
+      lastJsonStr = m.json;
+      lastTrainStr = m.train || '';
+      try { lastDoc = JSON.parse(m.json); } catch (err) { lastDoc = null; }
+      $('out').style.display = 'block';
+      showView('result');
+      refreshBox();
+
+      $('imgs').innerHTML = '';
+      files.forEach(function (f) {
+        var row = document.createElement('div');
+        row.className = 'img-item';
+        var a = document.createElement('a');
+        a.href = '#';
+        a.textContent = '🖼️ ' + f.file + (f.bytes ? ' (Tek indir)' : ' (PNG yok)');
+        a.onclick = function (ev) {
+          ev.preventDefault();
+          if (f.bytes) download(f.file, new Blob([f.bytes], { type: 'image/png' }));
+        };
+        row.appendChild(a);
+        $('imgs').appendChild(row);
+      });
+
+      var st = m.stats;
+      if (st) {
+        $('stA').textContent = st.itemsAfter; $('stA2').textContent = st.nodesBefore + ' katman · ' + st.framesAfter + ' frame';
+        $('stB').textContent = st.imagesUnique; $('stB2').textContent = st.imageRefs + ' kullanım · ' + st.dupes + ' birleştirme';
+        $('stats').textContent = 'Sadeleşen: ' + st.flattened + ' · Tek PNG süs: ' + st.decorMerged + ' · Silinen boş/hayalet: ' + (st.emptyDropped + st.ghost) + (st.exportFailed ? ' · ⚠ ' + st.exportFailed + ' görsel dışa aktarılamadı' : '');
+      }
+      var eiCount = 0;
+      (function countEi(it) { if (!it) return; if (it.ei) eiCount++; (it.children || []).forEach(countEi); })(lastDoc && lastDoc.root);
+      var asist = $('asist');
+      if (asist) asist.textContent = (eiCount > 0
+        ? '🤖 Asistan: ' + eiCount + ' katmanda görsel ölçümü var (döşeme/boyut tespiti açık)'
+        : '🤖 Asistan: ölçülebilir görsel yok (kural motoru kullanılır)')
+        + (lastTrainStr ? ' · eğitim dosyası hazır' : '');
+      $('dl-train').style.display = lastTrainStr ? '' : 'none';
+      $('dlall').style.display = allImageFiles().length ? '' : 'none';
+      setSel(m.name, $('view-setup').querySelector('.selDim').textContent);
+      if (allImageFiles().length > 0) {
+        $('dlall').querySelector('span').textContent = 'Tüm görselleri indir · ' + allImageFiles().length + ' PNG / ZIP';
+      }
+      $('codebox').select();
+      document.execCommand('copy');
+      setStatus('');
+    }
+  };
+  requestAnalysis();
+</script>

@@ -1,0 +1,11 @@
+{
+  "name": "EasyImport Pro — Figma to Roblox Studio (JSON + Luau + RBXMX)",
+  "id": "easyimport-pro-figma-to-roblox-studio",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page"
+}

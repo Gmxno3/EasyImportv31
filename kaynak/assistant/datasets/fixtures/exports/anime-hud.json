@@ -1,0 +1,2702 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "AnimeHUD",
+ "width": 1600,
+ "height": 900,
+ "root": {
+  "name": "HUD",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 900,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [
+   {
+    "type": "GRADIENT",
+    "angle": 135.0,
+    "opacity": 1.0,
+    "stops": [
+     {
+      "pos": 0.0,
+      "color": {
+       "r": 16,
+       "g": 14,
+       "b": 30
+      },
+      "opacity": 1.0
+     },
+     {
+      "pos": 0.55,
+      "color": {
+       "r": 26,
+       "g": 22,
+       "b": 46
+      },
+      "opacity": 1.0
+     },
+     {
+      "pos": 1.0,
+      "color": {
+       "r": 12,
+       "g": 10,
+       "b": 24
+      },
+      "opacity": 1.0
+     }
+    ]
+   }
+  ],
+  "radius": 0,
+  "clips": true,
+  "children": [
+   {
+    "name": "TopBar",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 1600,
+    "h": 110,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 92.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 34,
+         "g": 28,
+         "b": 58
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 48,
+         "g": 40,
+         "b": 78
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 28,
+         "g": 24,
+         "b": 50
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 140,
+      "g": 170,
+      "b": 255
+     },
+     "opacity": 0.85,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 0,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 6,
+      "blur": 24,
+      "spread": 0,
+      "color": {
+       "r": 110,
+       "g": 130,
+       "b": 255
+      },
+      "opacity": 0.45
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 60,
+      "spread": -6,
+      "color": {
+       "r": 170,
+       "g": 190,
+       "b": 255
+      },
+      "opacity": 0.25
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Title",
+      "kind": "text",
+      "x": 40,
+      "y": 24,
+      "w": 520,
+      "h": 60,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "RUH ÇAĞIRMA",
+       "fontSize": 38,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 222,
+        "g": 226,
+        "b": 255
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 18,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 170,
+         "b": 255
+        },
+        "opacity": 0.9
+       }
+      }
+     },
+     {
+      "name": "Currency",
+      "kind": "frame",
+      "x": 1160,
+      "y": 26,
+      "w": 400,
+      "h": 58,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 30,
+         "g": 26,
+         "b": 48
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 29,
+      "stroke": {
+       "color": {
+        "r": 255,
+        "g": 200,
+        "b": 110
+       },
+       "opacity": 1.0,
+       "weight": 2
+      },
+      "strokeWeight": 2,
+      "strokeAlign": "INSIDE",
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 22,
+        "spread": 0,
+        "color": {
+         "r": 255,
+         "g": 190,
+         "b": 90
+        },
+        "opacity": 0.55
+       },
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "children": [
+       {
+        "name": "Value",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 400,
+        "h": 58,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "12 480",
+         "fontSize": 30,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 255,
+          "g": 232,
+          "b": 180
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 22,
+       "spread": 0,
+       "color": {
+        "r": 255,
+        "g": 190,
+        "b": 90
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 6,
+     "blur": 24,
+     "spread": 0,
+     "color": {
+      "r": 110,
+      "g": 130,
+      "b": 255
+     },
+     "opacity": 0.45
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Glow",
+    "kind": "vector",
+    "x": 560,
+    "y": 300,
+    "w": 480,
+    "h": 480,
+    "rot": 0,
+    "opacity": 0.85,
+    "image": "glow_soft.png",
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Rays",
+    "kind": "vector",
+    "x": 600,
+    "y": 340,
+    "w": 400,
+    "h": 400,
+    "rot": 0,
+    "opacity": 0.55,
+    "image": "rays_radial.png",
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "CharacterCard",
+    "kind": "frame",
+    "x": 120,
+    "y": 180,
+    "w": 420,
+    "h": 620,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 158.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 40,
+         "g": 34,
+         "b": 66
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 31,
+         "g": 26,
+         "b": 52
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 22,
+         "g": 18,
+         "b": 38
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 170,
+      "g": 175,
+      "b": 255
+     },
+     "opacity": 0.9,
+     "weight": 3
+    },
+    "strokeWeight": 3,
+    "strokeAlign": "INSIDE",
+    "radius": 22,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 14,
+      "blur": 40,
+      "spread": -4,
+      "color": {
+       "r": 90,
+       "g": 80,
+       "b": 180
+      },
+      "opacity": 0.6
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 90,
+      "spread": -10,
+      "color": {
+       "r": 140,
+       "g": 150,
+       "b": 255
+      },
+      "opacity": 0.18
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Portrait",
+      "kind": "frame",
+      "x": 20,
+      "y": 20,
+      "w": 380,
+      "h": 380,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "FILL",
+        "opacity": 1.0,
+        "file": "portrait_akira.png"
+       }
+      ],
+      "radius": 18,
+      "clips": true,
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 30,
+       "spread": 0,
+       "color": {
+        "r": 150,
+        "g": 165,
+        "b": 255
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     },
+     {
+      "name": "Name",
+      "kind": "text",
+      "x": 20,
+      "y": 420,
+      "w": 380,
+      "h": 46,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "AKIRA",
+       "fontSize": 34,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 236,
+        "g": 236,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 2,
+        "blur": 10,
+        "spread": 0,
+        "color": {
+         "r": 0,
+         "g": 0,
+         "b": 0
+        },
+        "opacity": 0.7
+       }
+      }
+     },
+     {
+      "name": "Desc",
+      "kind": "text",
+      "x": 20,
+      "y": 476,
+      "w": 380,
+      "h": 96,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "Karanlık rüzgarın varisi. Gölge patlaması 3. seviye.",
+       "fontSize": 18,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 400,
+       "italic": false,
+       "color": {
+        "r": 172,
+        "g": 172,
+        "b": 200
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     },
+     {
+      "name": "HP_Bar",
+      "kind": "frame",
+      "x": 20,
+      "y": 560,
+      "w": 380,
+      "h": 26,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 22,
+         "g": 20,
+         "b": 38
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 13,
+      "clips": true,
+      "children": [
+       {
+        "name": "Fill",
+        "kind": "frame",
+        "x": 0,
+        "y": 0,
+        "w": 250,
+        "h": 26,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "GRADIENT",
+          "angle": 0.0,
+          "opacity": 1.0,
+          "stops": [
+           {
+            "pos": 0.0,
+            "color": {
+             "r": 230,
+             "g": 90,
+             "b": 130
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 0.5,
+            "color": {
+             "r": 242,
+             "g": 132,
+             "b": 120
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 1.0,
+            "color": {
+             "r": 255,
+             "g": 175,
+             "b": 110
+            },
+            "opacity": 1.0
+           }
+          ]
+         }
+        ],
+        "radius": 13,
+        "shadows": [
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 30,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 165,
+           "b": 255
+          },
+          "opacity": 0.55
+         }
+        ],
+        "shadow": {
+         "x": 0,
+         "y": 0,
+         "blur": 30,
+         "spread": 0,
+         "color": {
+          "r": 150,
+          "g": 165,
+          "b": 255
+         },
+         "opacity": 0.55
+        },
+        "ei": {
+         "blendMode": "SCREEN"
+        }
+       }
+      ],
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 30,
+       "spread": 0,
+       "color": {
+        "r": 150,
+        "g": 165,
+        "b": 255
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     },
+     {
+      "name": "MP_Bar",
+      "kind": "frame",
+      "x": 20,
+      "y": 596,
+      "w": 380,
+      "h": 20,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 22,
+         "g": 20,
+         "b": 38
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 10,
+      "clips": true,
+      "children": [
+       {
+        "name": "Fill",
+        "kind": "frame",
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 20,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "GRADIENT",
+          "angle": 0.0,
+          "opacity": 1.0,
+          "stops": [
+           {
+            "pos": 0.0,
+            "color": {
+             "r": 110,
+             "g": 180,
+             "b": 240
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 0.5,
+            "color": {
+             "r": 140,
+             "g": 200,
+             "b": 247
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 1.0,
+            "color": {
+             "r": 170,
+             "g": 220,
+             "b": 255
+            },
+            "opacity": 1.0
+           }
+          ]
+         }
+        ],
+        "radius": 10,
+        "shadows": [
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 30,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 165,
+           "b": 255
+          },
+          "opacity": 0.55
+         }
+        ],
+        "shadow": {
+         "x": 0,
+         "y": 0,
+         "blur": 30,
+         "spread": 0,
+         "color": {
+          "r": 150,
+          "g": 165,
+          "b": 255
+         },
+         "opacity": 0.55
+        },
+        "ei": {
+         "blendMode": "SCREEN"
+        }
+       }
+      ],
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 30,
+       "spread": 0,
+       "color": {
+        "r": 150,
+        "g": 165,
+        "b": 255
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 14,
+     "blur": 40,
+     "spread": -4,
+     "color": {
+      "r": 90,
+      "g": 80,
+      "b": 180
+     },
+     "opacity": 0.6
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_1",
+    "kind": "frame",
+    "x": 600,
+    "y": 200,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 58,
+         "g": 42,
+         "b": 96
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 45,
+         "g": 29,
+         "b": 83
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 32,
+         "g": 16,
+         "b": 70
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 150,
+      "g": 190,
+      "b": 255
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 190,
+       "b": 255
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "Q",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 190,
+         "b": 255
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 150,
+      "g": 190,
+      "b": 255
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_2",
+    "kind": "frame",
+    "x": 750,
+    "y": 200,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 96,
+         "g": 40,
+         "b": 92
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 83,
+         "g": 27,
+         "b": 79
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 70,
+         "g": 14,
+         "b": 66
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 255,
+      "g": 150,
+      "b": 230
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 255,
+       "g": 150,
+       "b": 230
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "W",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 255,
+         "g": 150,
+         "b": 230
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 255,
+      "g": 150,
+      "b": 230
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_3",
+    "kind": "frame",
+    "x": 900,
+    "y": 200,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 40,
+         "g": 88,
+         "b": 92
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 27,
+         "g": 75,
+         "b": 79
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 14,
+         "g": 62,
+         "b": 66
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 140,
+      "g": 245,
+      "b": 235
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 140,
+       "g": 245,
+       "b": 235
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "E",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 140,
+         "g": 245,
+         "b": 235
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 140,
+      "g": 245,
+      "b": 235
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_4",
+    "kind": "frame",
+    "x": 600,
+    "y": 350,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 92,
+         "g": 82,
+         "b": 38
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 79,
+         "g": 69,
+         "b": 25
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 66,
+         "g": 56,
+         "b": 12
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 255,
+      "g": 220,
+      "b": 130
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 255,
+       "g": 220,
+       "b": 130
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "A",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 255,
+         "g": 220,
+         "b": 130
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 255,
+      "g": 220,
+      "b": 130
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_5",
+    "kind": "frame",
+    "x": 750,
+    "y": 350,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 48,
+         "g": 90,
+         "b": 56
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 35,
+         "g": 77,
+         "b": 43
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 22,
+         "g": 64,
+         "b": 30
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 160,
+      "g": 245,
+      "b": 170
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 160,
+       "g": 245,
+       "b": 170
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "S",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 160,
+         "g": 245,
+         "b": 170
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 160,
+      "g": 245,
+      "b": 170
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Skill_Button_6",
+    "kind": "frame",
+    "x": 900,
+    "y": 350,
+    "w": 130,
+    "h": 130,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 140.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 78,
+         "g": 42,
+         "b": 96
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 65,
+         "g": 29,
+         "b": 83
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 52,
+         "g": 16,
+         "b": 70
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 205,
+      "g": 160,
+      "b": 255
+     },
+     "opacity": 1.0,
+     "weight": 2
+    },
+    "strokeWeight": 2,
+    "strokeAlign": "INSIDE",
+    "radius": 18,
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 26,
+      "spread": 0,
+      "color": {
+       "r": 205,
+       "g": 160,
+       "b": 255
+      },
+      "opacity": 0.7
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Key",
+      "kind": "text",
+      "x": 0,
+      "y": 40,
+      "w": 130,
+      "h": 50,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "D",
+       "fontSize": 30,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 238,
+        "g": 238,
+        "b": 252
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false,
+       "shadow": {
+        "x": 0,
+        "y": 0,
+        "blur": 12,
+        "spread": 0,
+        "color": {
+         "r": 205,
+         "g": 160,
+         "b": 255
+        },
+        "opacity": 0.8
+       }
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 26,
+     "spread": 0,
+     "color": {
+      "r": 205,
+      "g": 160,
+      "b": 255
+     },
+     "opacity": 0.7
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Tag_Damage",
+    "kind": "frame",
+    "x": 600,
+    "y": 520,
+    "w": 130,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 64,
+       "g": 34,
+       "b": 40
+      },
+      "opacity": 1.0
+     }
+    ],
+    "radius": 8,
+    "stroke": {
+     "color": {
+      "r": 255,
+      "g": 130,
+      "b": 140
+     },
+     "opacity": 1,
+     "weight": 1
+    },
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "children": [
+     {
+      "name": "Lbl",
+      "kind": "text",
+      "x": 0,
+      "y": 8,
+      "w": 130,
+      "h": 24,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "HASAR",
+       "fontSize": 16,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 700,
+       "italic": false,
+       "color": {
+        "r": 255,
+        "g": 180,
+        "b": 185
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ],
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 30,
+     "spread": 0,
+     "color": {
+      "r": 150,
+      "g": 165,
+      "b": 255
+     },
+     "opacity": 0.55
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Tag_Heal",
+    "kind": "frame",
+    "x": 750,
+    "y": 520,
+    "w": 130,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 34,
+       "g": 62,
+       "b": 44
+      },
+      "opacity": 1.0
+     }
+    ],
+    "radius": 8,
+    "stroke": {
+     "color": {
+      "r": 150,
+      "g": 240,
+      "b": 170
+     },
+     "opacity": 1,
+     "weight": 1
+    },
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "children": [
+     {
+      "name": "Lbl",
+      "kind": "text",
+      "x": 0,
+      "y": 8,
+      "w": 130,
+      "h": 24,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "İYİLEŞTİR",
+       "fontSize": 14,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 700,
+       "italic": false,
+       "color": {
+        "r": 190,
+        "g": 245,
+        "b": 200
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ],
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 30,
+     "spread": 0,
+     "color": {
+      "r": 150,
+      "g": 165,
+      "b": 255
+     },
+     "opacity": 0.55
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Tag_Shield",
+    "kind": "frame",
+    "x": 900,
+    "y": 520,
+    "w": 130,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 34,
+       "g": 52,
+       "b": 68
+      },
+      "opacity": 1.0
+     }
+    ],
+    "radius": 8,
+    "stroke": {
+     "color": {
+      "r": 140,
+      "g": 210,
+      "b": 255
+     },
+     "opacity": 1,
+     "weight": 1
+    },
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "children": [
+     {
+      "name": "Lbl",
+      "kind": "text",
+      "x": 0,
+      "y": 8,
+      "w": 130,
+      "h": 24,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "KALKAN",
+       "fontSize": 16,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 700,
+       "italic": false,
+       "color": {
+        "r": 185,
+        "g": 225,
+        "b": 255
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ],
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 30,
+     "spread": 0,
+     "color": {
+      "r": 150,
+      "g": 165,
+      "b": 255
+     },
+     "opacity": 0.55
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "StatsBox",
+    "kind": "frame",
+    "x": 600,
+    "y": 620,
+    "w": 420,
+    "h": 220,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT_OTHER",
+      "angle": 160.0,
+      "opacity": 1.0,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 38,
+         "g": 32,
+         "b": 62
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 0.5,
+        "color": {
+         "r": 29,
+         "g": 24,
+         "b": 48
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 20,
+         "g": 17,
+         "b": 34
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "radius": 14,
+    "stroke": {
+     "color": {
+      "r": 160,
+      "g": 170,
+      "b": 255
+     },
+     "opacity": 0.8,
+     "weight": 1
+    },
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "clips": true,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 34,
+      "spread": 0,
+      "color": {
+       "r": 140,
+       "g": 150,
+       "b": 255
+      },
+      "opacity": 0.5
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 30,
+      "spread": 0,
+      "color": {
+       "r": 150,
+       "g": 165,
+       "b": 255
+      },
+      "opacity": 0.55
+     }
+    ],
+    "children": [
+     {
+      "name": "Row_A",
+      "kind": "frame",
+      "x": 14,
+      "y": 14,
+      "w": 392,
+      "h": 60,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 30,
+         "g": 26,
+         "b": 50
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 10,
+      "children": [
+       {
+        "name": "Cell_A1",
+        "kind": "frame",
+        "x": 8,
+        "y": 8,
+        "w": 180,
+        "h": 44,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "GRADIENT_OTHER",
+          "angle": 0.0,
+          "opacity": 1.0,
+          "stops": [
+           {
+            "pos": 0.0,
+            "color": {
+             "r": 120,
+             "g": 90,
+             "b": 200
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 1.0,
+            "color": {
+             "r": 40,
+             "g": 30,
+             "b": 70
+            },
+            "opacity": 1.0
+           }
+          ]
+         }
+        ],
+        "radius": 8,
+        "shadows": [
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 22,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 120,
+           "b": 255
+          },
+          "opacity": 0.5
+         },
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 30,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 165,
+           "b": 255
+          },
+          "opacity": 0.55
+         }
+        ],
+        "children": [
+         {
+          "name": "Icon_A",
+          "kind": "frame",
+          "x": 6,
+          "y": 6,
+          "w": 32,
+          "h": 32,
+          "rot": 0,
+          "opacity": 1,
+          "fills": [
+           {
+            "type": "IMAGE",
+            "scaleMode": "FIT",
+            "opacity": 1.0,
+            "file": "Icon_A.png"
+           }
+          ],
+          "radius": 16,
+          "shadows": [
+           {
+            "x": 0,
+            "y": 0,
+            "blur": 18,
+            "spread": 0,
+            "color": {
+             "r": 200,
+             "g": 180,
+             "b": 255
+            },
+            "opacity": 0.6
+           },
+           {
+            "x": 0,
+            "y": 0,
+            "blur": 30,
+            "spread": 0,
+            "color": {
+             "r": 150,
+             "g": 165,
+             "b": 255
+            },
+            "opacity": 0.55
+           }
+          ],
+          "children": [
+           {
+            "name": "Icon_Inner",
+            "kind": "frame",
+            "x": 4,
+            "y": 4,
+            "w": 24,
+            "h": 24,
+            "rot": 0,
+            "opacity": 1,
+            "fills": [
+             {
+              "type": "GRADIENT_OTHER",
+              "angle": 0.0,
+              "opacity": 0.8,
+              "stops": [
+               {
+                "pos": 0.0,
+                "color": {
+                 "r": 255,
+                 "g": 255,
+                 "b": 255
+                },
+                "opacity": 1.0
+               },
+               {
+                "pos": 1.0,
+                "color": {
+                 "r": 170,
+                 "g": 150,
+                 "b": 255
+                },
+                "opacity": 1.0
+               }
+              ]
+             }
+            ],
+            "radius": 12,
+            "shadows": [
+             {
+              "x": 0,
+              "y": 0,
+              "blur": 16,
+              "spread": 0,
+              "color": {
+               "r": 255,
+               "g": 255,
+               "b": 255
+              },
+              "opacity": 0.5
+             },
+             {
+              "x": 0,
+              "y": 0,
+              "blur": 30,
+              "spread": 0,
+              "color": {
+               "r": 150,
+               "g": 165,
+               "b": 255
+              },
+              "opacity": 0.55
+             }
+            ],
+            "shadow": {
+             "x": 0,
+             "y": 0,
+             "blur": 16,
+             "spread": 0,
+             "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+             },
+             "opacity": 0.5
+            },
+            "ei": {
+             "blendMode": "SCREEN"
+            }
+           }
+          ],
+          "shadow": {
+           "x": 0,
+           "y": 0,
+           "blur": 18,
+           "spread": 0,
+           "color": {
+            "r": 200,
+            "g": 180,
+            "b": 255
+           },
+           "opacity": 0.6
+          },
+          "ei": {
+           "blendMode": "SCREEN"
+          }
+         },
+         {
+          "name": "Val_A",
+          "kind": "text",
+          "x": 44,
+          "y": 6,
+          "w": 128,
+          "h": 32,
+          "rot": 0,
+          "opacity": 1,
+          "text": {
+           "characters": "42",
+           "fontSize": 22,
+           "fontFamily": "GothamSSm",
+           "fontWeight": 900,
+           "italic": false,
+           "color": {
+            "r": 228,
+            "g": 226,
+            "b": 255
+           },
+           "opacity": 1,
+           "align": "CENTER",
+           "vAlign": "CENTER",
+           "wrap": true,
+           "autoW": false,
+           "shadow": {
+            "x": 0,
+            "y": 0,
+            "blur": 14,
+            "spread": 0,
+            "color": {
+             "r": 150,
+             "g": 160,
+             "b": 255
+            },
+            "opacity": 0.8
+           }
+          }
+         }
+        ],
+        "shadow": {
+         "x": 0,
+         "y": 0,
+         "blur": 22,
+         "spread": 0,
+         "color": {
+          "r": 150,
+          "g": 120,
+          "b": 255
+         },
+         "opacity": 0.5
+        },
+        "ei": {
+         "blendMode": "SCREEN"
+        }
+       },
+       {
+        "name": "Cell_A2",
+        "kind": "frame",
+        "x": 200,
+        "y": 8,
+        "w": 184,
+        "h": 44,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "GRADIENT_OTHER",
+          "angle": 0.0,
+          "opacity": 1.0,
+          "stops": [
+           {
+            "pos": 0.0,
+            "color": {
+             "r": 90,
+             "g": 160,
+             "b": 220
+            },
+            "opacity": 1.0
+           },
+           {
+            "pos": 1.0,
+            "color": {
+             "r": 28,
+             "g": 44,
+             "b": 70
+            },
+            "opacity": 1.0
+           }
+          ]
+         }
+        ],
+        "radius": 8,
+        "shadows": [
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 22,
+          "spread": 0,
+          "color": {
+           "r": 120,
+           "g": 190,
+           "b": 255
+          },
+          "opacity": 0.5
+         },
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 30,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 165,
+           "b": 255
+          },
+          "opacity": 0.55
+         }
+        ],
+        "children": [
+         {
+          "name": "Val_B",
+          "kind": "text",
+          "x": 10,
+          "y": 6,
+          "w": 164,
+          "h": 32,
+          "rot": 0,
+          "opacity": 1,
+          "text": {
+           "characters": "1280",
+           "fontSize": 22,
+           "fontFamily": "GothamSSm",
+           "fontWeight": 900,
+           "italic": false,
+           "color": {
+            "r": 214,
+            "g": 234,
+            "b": 255
+           },
+           "opacity": 1,
+           "align": "CENTER",
+           "vAlign": "CENTER",
+           "wrap": true,
+           "autoW": false
+          }
+         }
+        ],
+        "shadow": {
+         "x": 0,
+         "y": 0,
+         "blur": 22,
+         "spread": 0,
+         "color": {
+          "r": 120,
+          "g": 190,
+          "b": 255
+         },
+         "opacity": 0.5
+        },
+        "ei": {
+         "blendMode": "SCREEN"
+        }
+       }
+      ],
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 30,
+       "spread": 0,
+       "color": {
+        "r": 150,
+        "g": 165,
+        "b": 255
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     },
+     {
+      "name": "Row_B",
+      "kind": "frame",
+      "x": 14,
+      "y": 84,
+      "w": 392,
+      "h": 122,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 26,
+         "g": 23,
+         "b": 44
+        },
+        "opacity": 1.0
+       }
+      ],
+      "radius": 10,
+      "children": [
+       {
+        "name": "Bar_Outer",
+        "kind": "frame",
+        "x": 12,
+        "y": 76,
+        "w": 368,
+        "h": 26,
+        "rot": 0,
+        "opacity": 1,
+        "fills": [
+         {
+          "type": "SOLID",
+          "color": {
+           "r": 18,
+           "g": 16,
+           "b": 32
+          },
+          "opacity": 1.0
+         }
+        ],
+        "radius": 13,
+        "clips": true,
+        "children": [
+         {
+          "name": "Bar_Fill",
+          "kind": "frame",
+          "x": 0,
+          "y": 0,
+          "w": 250,
+          "h": 26,
+          "rot": 0,
+          "opacity": 1,
+          "fills": [
+           {
+            "type": "GRADIENT_OTHER",
+            "angle": 0.0,
+            "opacity": 1.0,
+            "stops": [
+             {
+              "pos": 0.0,
+              "color": {
+               "r": 255,
+               "g": 160,
+               "b": 120
+              },
+              "opacity": 1.0
+             },
+             {
+              "pos": 1.0,
+              "color": {
+               "r": 180,
+               "g": 60,
+               "b": 140
+              },
+              "opacity": 1.0
+             }
+            ]
+           }
+          ],
+          "radius": 13,
+          "shadows": [
+           {
+            "x": 0,
+            "y": 0,
+            "blur": 24,
+            "spread": 0,
+            "color": {
+             "r": 255,
+             "g": 140,
+             "b": 160
+            },
+            "opacity": 0.6
+           },
+           {
+            "x": 0,
+            "y": 0,
+            "blur": 30,
+            "spread": 0,
+            "color": {
+             "r": 150,
+             "g": 165,
+             "b": 255
+            },
+            "opacity": 0.55
+           }
+          ],
+          "shadow": {
+           "x": 0,
+           "y": 0,
+           "blur": 24,
+           "spread": 0,
+           "color": {
+            "r": 255,
+            "g": 140,
+            "b": 160
+           },
+           "opacity": 0.6
+          },
+          "ei": {
+           "blendMode": "SCREEN"
+          }
+         }
+        ],
+        "shadows": [
+         {
+          "x": 0,
+          "y": 0,
+          "blur": 30,
+          "spread": 0,
+          "color": {
+           "r": 150,
+           "g": 165,
+           "b": 255
+          },
+          "opacity": 0.55
+         }
+        ],
+        "shadow": {
+         "x": 0,
+         "y": 0,
+         "blur": 30,
+         "spread": 0,
+         "color": {
+          "r": 150,
+          "g": 165,
+          "b": 255
+         },
+         "opacity": 0.55
+        },
+        "ei": {
+         "blendMode": "SCREEN"
+        }
+       }
+      ],
+      "shadows": [
+       {
+        "x": 0,
+        "y": 0,
+        "blur": 30,
+        "spread": 0,
+        "color": {
+         "r": 150,
+         "g": 165,
+         "b": 255
+        },
+        "opacity": 0.55
+       }
+      ],
+      "shadow": {
+       "x": 0,
+       "y": 0,
+       "blur": 30,
+       "spread": 0,
+       "color": {
+        "r": 150,
+        "g": 165,
+        "b": 255
+       },
+       "opacity": 0.55
+      },
+      "ei": {
+       "blendMode": "SCREEN"
+      }
+     }
+    ],
+    "shadow": {
+     "x": 0,
+     "y": 0,
+     "blur": 34,
+     "spread": 0,
+     "color": {
+      "r": 140,
+      "g": 150,
+      "b": 255
+     },
+     "opacity": 0.5
+    },
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Sparkle_01",
+    "kind": "vector",
+    "x": 300,
+    "y": 120,
+    "w": 64,
+    "h": 64,
+    "rot": 0,
+    "opacity": 1.0,
+    "image": "sparkle.png",
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Sparkle_02",
+    "kind": "vector",
+    "x": 1240,
+    "y": 620,
+    "w": 48,
+    "h": 48,
+    "rot": 0,
+    "opacity": 1.0,
+    "image": "sparkle.png",
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   },
+   {
+    "name": "Vignette",
+    "kind": "vector",
+    "x": 0,
+    "y": 0,
+    "w": 1600,
+    "h": 900,
+    "rot": 0,
+    "opacity": 0.6,
+    "image": "vignette.png",
+    "ei": {
+     "blendMode": "SCREEN"
+    }
+   }
+  ]
+ }
+}

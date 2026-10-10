@@ -1,0 +1,502 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "StudUnnamed",
+ "width": 640,
+ "height": 520,
+ "root": {
+  "name": "Panel_A",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 640,
+  "h": 520,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [
+   {
+    "type": "SOLID",
+    "color": {
+     "r": 108,
+     "g": 76,
+     "b": 40
+    },
+    "opacity": 1.0
+   }
+  ],
+  "children": [
+   {
+    "name": "Bar_Top",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 1.0,
+      "file": "doku_kare.png"
+     }
+    ],
+    "ei": {
+     "imageW": 64,
+     "imageH": 64,
+     "sf": 0.5,
+     "tileW": 32,
+     "tileH": 32
+    },
+    "clips": true,
+    "children": [
+     {
+      "name": "Baslik",
+      "kind": "text",
+      "x": 0,
+      "y": 12,
+      "w": 640,
+      "h": 48,
+      "rot": 0,
+      "opacity": 1,
+      "text": {
+       "characters": "OYUN",
+       "fontSize": 34,
+       "fontFamily": "GothamSSm",
+       "fontWeight": 900,
+       "italic": false,
+       "color": {
+        "r": 255,
+        "g": 240,
+        "b": 220
+       },
+       "opacity": 1,
+       "align": "CENTER",
+       "vAlign": "CENTER",
+       "wrap": true,
+       "autoW": false
+      }
+     }
+    ]
+   },
+   {
+    "name": "Parlaklik",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 72,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "GRADIENT",
+      "angle": 116.0,
+      "opacity": 0.2,
+      "stops": [
+       {
+        "pos": 0.0,
+        "color": {
+         "r": 255,
+         "g": 255,
+         "b": 255
+        },
+        "opacity": 1.0
+       },
+       {
+        "pos": 1.0,
+        "color": {
+         "r": 255,
+         "g": 255,
+         "b": 255
+        },
+        "opacity": 1.0
+       }
+      ]
+     }
+    ],
+    "clips": true
+   },
+   {
+    "name": "Btn_1",
+    "kind": "frame",
+    "x": 36,
+    "y": 108,
+    "w": 268,
+    "h": 150,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "children": [
+     {
+      "name": "Btn_1_Alt",
+      "kind": "frame",
+      "x": 0,
+      "y": 5,
+      "w": 268,
+      "h": 150,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 72,
+         "g": 50,
+         "b": 26
+        },
+        "opacity": 1.0
+       }
+      ]
+     },
+     {
+      "name": "Btn_1_Yuz",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 268,
+      "h": 145,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 1.0,
+        "file": "doku_kare.png"
+       }
+      ],
+      "ei": {
+       "imageW": 64,
+       "imageH": 64,
+       "sf": 0.5,
+       "tileW": 32,
+       "tileH": 32
+      },
+      "children": [
+       {
+        "name": "Yazi",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 145,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "BİRİNCİ",
+         "fontSize": 24,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 250,
+          "g": 236,
+          "b": 214
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Btn_2",
+    "kind": "frame",
+    "x": 336,
+    "y": 108,
+    "w": 268,
+    "h": 150,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "children": [
+     {
+      "name": "Btn_2_Alt",
+      "kind": "frame",
+      "x": 0,
+      "y": 5,
+      "w": 268,
+      "h": 150,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 72,
+         "g": 50,
+         "b": 26
+        },
+        "opacity": 1.0
+       }
+      ]
+     },
+     {
+      "name": "Btn_2_Yuz",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 268,
+      "h": 145,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 1.0,
+        "file": "doku_kare.png"
+       }
+      ],
+      "ei": {
+       "imageW": 64,
+       "imageH": 64,
+       "sf": 0.5,
+       "tileW": 32,
+       "tileH": 32
+      },
+      "children": [
+       {
+        "name": "Yazi",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 145,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "İKİNCİ",
+         "fontSize": 24,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 250,
+          "g": 236,
+          "b": 214
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Btn_3",
+    "kind": "frame",
+    "x": 36,
+    "y": 286,
+    "w": 268,
+    "h": 150,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "children": [
+     {
+      "name": "Btn_3_Alt",
+      "kind": "frame",
+      "x": 0,
+      "y": 5,
+      "w": 268,
+      "h": 150,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 72,
+         "g": 50,
+         "b": 26
+        },
+        "opacity": 1.0
+       }
+      ]
+     },
+     {
+      "name": "Btn_3_Yuz",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 268,
+      "h": 145,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 1.0,
+        "file": "doku_kare.png"
+       }
+      ],
+      "ei": {
+       "imageW": 64,
+       "imageH": 64,
+       "sf": 0.5,
+       "tileW": 32,
+       "tileH": 32
+      },
+      "children": [
+       {
+        "name": "Yazi",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 145,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "ÜÇÜNCÜ",
+         "fontSize": 24,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 250,
+          "g": 236,
+          "b": 214
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Btn_4",
+    "kind": "frame",
+    "x": 336,
+    "y": 286,
+    "w": 268,
+    "h": 150,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "children": [
+     {
+      "name": "Btn_4_Alt",
+      "kind": "frame",
+      "x": 0,
+      "y": 5,
+      "w": 268,
+      "h": 150,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "SOLID",
+        "color": {
+         "r": 72,
+         "g": 50,
+         "b": 26
+        },
+        "opacity": 1.0
+       }
+      ]
+     },
+     {
+      "name": "Btn_4_Yuz",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 268,
+      "h": 145,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [
+       {
+        "type": "IMAGE",
+        "scaleMode": "TILE",
+        "opacity": 1.0,
+        "file": "doku_kare.png"
+       }
+      ],
+      "ei": {
+       "imageW": 64,
+       "imageH": 64,
+       "sf": 0.5,
+       "tileW": 32,
+       "tileH": 32
+      },
+      "children": [
+       {
+        "name": "Yazi",
+        "kind": "text",
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 145,
+        "rot": 0,
+        "opacity": 1,
+        "text": {
+         "characters": "DÖRDÜNCÜ",
+         "fontSize": 24,
+         "fontFamily": "GothamSSm",
+         "fontWeight": 900,
+         "italic": false,
+         "color": {
+          "r": 250,
+          "g": 236,
+          "b": 214
+         },
+         "opacity": 1,
+         "align": "CENTER",
+         "vAlign": "CENTER",
+         "wrap": true,
+         "autoW": false
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Liste",
+    "kind": "frame",
+    "x": 36,
+    "y": 452,
+    "w": 568,
+    "h": 48,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [
+     {
+      "type": "IMAGE",
+      "scaleMode": "TILE",
+      "opacity": 1.0,
+      "file": "doku_kare.png"
+     }
+    ],
+    "ei": {
+     "imageW": 64,
+     "imageH": 64,
+     "sf": 0.5,
+     "tileW": 32,
+     "tileH": 32
+    },
+    "clips": true
+   }
+  ]
+ }
+}

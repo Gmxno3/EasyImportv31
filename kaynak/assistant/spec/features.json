@@ -1,0 +1,4173 @@
+{
+ "format": "ei-features",
+ "version": "ei-feat-1",
+ "generatedBy": "tools/build_features.py",
+ "groups": {
+  "A": "Ad / isim tokenları",
+  "B": "Geometri — mutlak",
+  "C": "Geometri — bağlamsal & karşılaştırmalı",
+  "D": "Dolgu & renk",
+  "E": "Kontur (kalınlık) & köşe",
+  "F": "Metin",
+  "G": "Ağaç & düzen",
+  "H": "Efektler (drop shadow / blur)",
+  "I": "FX & doku (image + frame kanalları)",
+  "J": "Stil (GUI düzeyi)",
+  "K": "Ebeveyn bağlamı"
+ },
+ "normOps": [
+  "id",
+  "clamp01",
+  "log",
+  "log1p",
+  "div",
+  "divlog"
+ ],
+ "kindOps": [
+  "num",
+  "bool",
+  "onehot",
+  "bucket",
+  "token"
+ ],
+ "features": [
+  {
+   "k": "token",
+   "n": "tok_button",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "button"
+  },
+  {
+   "k": "token",
+   "n": "tok_btn",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "btn"
+  },
+  {
+   "k": "token",
+   "n": "tok_buton",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "buton"
+  },
+  {
+   "k": "token",
+   "n": "tok_icon",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "icon"
+  },
+  {
+   "k": "token",
+   "n": "tok_close",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "close"
+  },
+  {
+   "k": "token",
+   "n": "tok_exit",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "exit"
+  },
+  {
+   "k": "token",
+   "n": "tok_play",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "play"
+  },
+  {
+   "k": "token",
+   "n": "tok_start",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "start"
+  },
+  {
+   "k": "token",
+   "n": "tok_settings",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "settings"
+  },
+  {
+   "k": "token",
+   "n": "tok_option",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "option"
+  },
+  {
+   "k": "token",
+   "n": "tok_menu",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "menu"
+  },
+  {
+   "k": "token",
+   "n": "tok_back",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "back"
+  },
+  {
+   "k": "token",
+   "n": "tok_next",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "next"
+  },
+  {
+   "k": "token",
+   "n": "tok_prev",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "prev"
+  },
+  {
+   "k": "token",
+   "n": "tok_tab",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "tab"
+  },
+  {
+   "k": "token",
+   "n": "tok_nav",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "nav"
+  },
+  {
+   "k": "token",
+   "n": "tok_footer",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "footer"
+  },
+  {
+   "k": "token",
+   "n": "tok_header",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "header"
+  },
+  {
+   "k": "token",
+   "n": "tok_panel",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "panel"
+  },
+  {
+   "k": "token",
+   "n": "tok_bg",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "bg"
+  },
+  {
+   "k": "token",
+   "n": "tok_background",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "background"
+  },
+  {
+   "k": "token",
+   "n": "tok_overlay",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "overlay"
+  },
+  {
+   "k": "token",
+   "n": "tok_modal",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "modal"
+  },
+  {
+   "k": "token",
+   "n": "tok_popup",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "popup"
+  },
+  {
+   "k": "token",
+   "n": "tok_dialog",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "dialog"
+  },
+  {
+   "k": "token",
+   "n": "tok_card",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "card"
+  },
+  {
+   "k": "token",
+   "n": "tok_slot",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "slot"
+  },
+  {
+   "k": "token",
+   "n": "tok_item",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "item"
+  },
+  {
+   "k": "token",
+   "n": "tok_inventory",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "inventory"
+  },
+  {
+   "k": "token",
+   "n": "tok_bag",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "bag"
+  },
+  {
+   "k": "token",
+   "n": "tok_shop",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "shop"
+  },
+  {
+   "k": "token",
+   "n": "tok_list",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "list"
+  },
+  {
+   "k": "token",
+   "n": "tok_grid",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "grid"
+  },
+  {
+   "k": "token",
+   "n": "tok_scroll",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "scroll"
+  },
+  {
+   "k": "token",
+   "n": "tok_content",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "content"
+  },
+  {
+   "k": "token",
+   "n": "tok_container",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "container"
+  },
+  {
+   "k": "token",
+   "n": "tok_wrapper",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "wrapper"
+  },
+  {
+   "k": "token",
+   "n": "tok_divider",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "divider"
+  },
+  {
+   "k": "token",
+   "n": "tok_frame",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "frame"
+  },
+  {
+   "k": "token",
+   "n": "tok_label",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "label"
+  },
+  {
+   "k": "token",
+   "n": "tok_text",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "text"
+  },
+  {
+   "k": "token",
+   "n": "tok_title",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "title"
+  },
+  {
+   "k": "token",
+   "n": "tok_desc",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "desc"
+  },
+  {
+   "k": "token",
+   "n": "tok_value",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "value"
+  },
+  {
+   "k": "token",
+   "n": "tok_count",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "count"
+  },
+  {
+   "k": "token",
+   "n": "tok_timer",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "timer"
+  },
+  {
+   "k": "token",
+   "n": "tok_tooltip",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "tooltip"
+  },
+  {
+   "k": "token",
+   "n": "tok_badge",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "badge"
+  },
+  {
+   "k": "token",
+   "n": "tok_avatar",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "avatar"
+  },
+  {
+   "k": "token",
+   "n": "tok_profile",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "profile"
+  },
+  {
+   "k": "token",
+   "n": "tok_bar",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "bar"
+  },
+  {
+   "k": "token",
+   "n": "tok_hp",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "hp"
+  },
+  {
+   "k": "token",
+   "n": "tok_health",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "health"
+  },
+  {
+   "k": "token",
+   "n": "tok_mana",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "mana"
+  },
+  {
+   "k": "token",
+   "n": "tok_energy",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "energy"
+  },
+  {
+   "k": "token",
+   "n": "tok_xp",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "xp"
+  },
+  {
+   "k": "token",
+   "n": "tok_level",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "level"
+  },
+  {
+   "k": "token",
+   "n": "tok_coin",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "coin"
+  },
+  {
+   "k": "token",
+   "n": "tok_gem",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "gem"
+  },
+  {
+   "k": "token",
+   "n": "tok_gold",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "gold"
+  },
+  {
+   "k": "token",
+   "n": "tok_progress",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "progress"
+  },
+  {
+   "k": "token",
+   "n": "tok_fill",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "fill"
+  },
+  {
+   "k": "token",
+   "n": "tok_loader",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "loader"
+  },
+  {
+   "k": "token",
+   "n": "tok_slider",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "slider"
+  },
+  {
+   "k": "token",
+   "n": "tok_toggle",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "toggle"
+  },
+  {
+   "k": "token",
+   "n": "tok_check",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "check"
+  },
+  {
+   "k": "token",
+   "n": "tok_reward",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "reward"
+  },
+  {
+   "k": "token",
+   "n": "tok_currency",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "currency"
+  },
+  {
+   "k": "token",
+   "n": "tok_glow",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "glow"
+  },
+  {
+   "k": "token",
+   "n": "tok_ray",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "ray"
+  },
+  {
+   "k": "token",
+   "n": "tok_rays",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "rays"
+  },
+  {
+   "k": "token",
+   "n": "tok_shine",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "shine"
+  },
+  {
+   "k": "token",
+   "n": "tok_shining",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "shining"
+  },
+  {
+   "k": "token",
+   "n": "tok_sparkle",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "sparkle"
+  },
+  {
+   "k": "token",
+   "n": "tok_sparkles",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "sparkles"
+  },
+  {
+   "k": "token",
+   "n": "tok_star",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "star"
+  },
+  {
+   "k": "token",
+   "n": "tok_stars",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "stars"
+  },
+  {
+   "k": "token",
+   "n": "tok_twinkle",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "twinkle"
+  },
+  {
+   "k": "token",
+   "n": "tok_particle",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "particle"
+  },
+  {
+   "k": "token",
+   "n": "tok_flare",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "flare"
+  },
+  {
+   "k": "token",
+   "n": "tok_bloom",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "bloom"
+  },
+  {
+   "k": "token",
+   "n": "tok_vignette",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "vignette"
+  },
+  {
+   "k": "token",
+   "n": "tok_noise",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "noise"
+  },
+  {
+   "k": "token",
+   "n": "tok_grain",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "grain"
+  },
+  {
+   "k": "token",
+   "n": "tok_dust",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "dust"
+  },
+  {
+   "k": "token",
+   "n": "tok_smoke",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "smoke"
+  },
+  {
+   "k": "token",
+   "n": "tok_fog",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "fog"
+  },
+  {
+   "k": "token",
+   "n": "tok_ring",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "ring"
+  },
+  {
+   "k": "token",
+   "n": "tok_pulse",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "pulse"
+  },
+  {
+   "k": "token",
+   "n": "tok_aura",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "aura"
+  },
+  {
+   "k": "token",
+   "n": "tok_beam",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "beam"
+  },
+  {
+   "k": "token",
+   "n": "tok_streak",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "streak"
+  },
+  {
+   "k": "token",
+   "n": "tok_gloss",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "gloss"
+  },
+  {
+   "k": "token",
+   "n": "tok_shimmer",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "shimmer"
+  },
+  {
+   "k": "token",
+   "n": "tok_glint",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "glint"
+  },
+  {
+   "k": "token",
+   "n": "tok_blur",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "blur"
+  },
+  {
+   "k": "token",
+   "n": "tok_halo",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "halo"
+  },
+  {
+   "k": "token",
+   "n": "tok_neon",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "neon"
+  },
+  {
+   "k": "token",
+   "n": "tok_emission",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "emission"
+  },
+  {
+   "k": "token",
+   "n": "tok_energy2",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "energy2"
+  },
+  {
+   "k": "token",
+   "n": "tok_magic",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "magic"
+  },
+  {
+   "k": "token",
+   "n": "tok_fx",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "fx"
+  },
+  {
+   "k": "token",
+   "n": "tok_effect",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "effect"
+  },
+  {
+   "k": "token",
+   "n": "tok_stud",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "stud"
+  },
+  {
+   "k": "token",
+   "n": "tok_studs",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "studs"
+  },
+  {
+   "k": "token",
+   "n": "tok_brick",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "brick"
+  },
+  {
+   "k": "token",
+   "n": "tok_civi",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "civi"
+  },
+  {
+   "k": "token",
+   "n": "tok_civili",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "civili"
+  },
+  {
+   "k": "token",
+   "n": "tok_texture",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "texture"
+  },
+  {
+   "k": "token",
+   "n": "tok_pattern",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "pattern"
+  },
+  {
+   "k": "token",
+   "n": "tok_isik",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "isik"
+  },
+  {
+   "k": "token",
+   "n": "tok_parlama",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "parlama"
+  },
+  {
+   "k": "token",
+   "n": "tok_parilti",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "parilti"
+  },
+  {
+   "k": "token",
+   "n": "tok_huzme",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "huzme"
+  },
+  {
+   "k": "token",
+   "n": "tok_toz",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "toz"
+  },
+  {
+   "k": "token",
+   "n": "tok_duman",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "duman"
+  },
+  {
+   "k": "token",
+   "n": "tok_halka",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "halka"
+  },
+  {
+   "k": "token",
+   "n": "tok_efekt",
+   "g": "A",
+   "src": "nameTokens",
+   "t": "efekt"
+  },
+  {
+   "k": "bool",
+   "n": "name_hasUnderscoreTag",
+   "g": "A",
+   "src": "hasUnderscoreTag"
+  },
+  {
+   "k": "bool",
+   "n": "name_hasDigit",
+   "g": "A",
+   "src": "nameHasDigit"
+  },
+  {
+   "k": "bool",
+   "n": "name_isCamel",
+   "g": "A",
+   "src": "isCamel"
+  },
+  {
+   "k": "bool",
+   "n": "name_allUpper",
+   "g": "A",
+   "src": "nameAllUpper"
+  },
+  {
+   "k": "bool",
+   "n": "name_empty",
+   "g": "A",
+   "src": "nameEmpty"
+  },
+  {
+   "k": "num",
+   "n": "name_wordCount",
+   "g": "A",
+   "src": "nameWords",
+   "norm": "div",
+   "d": 8.0
+  },
+  {
+   "k": "num",
+   "n": "name_charLen",
+   "g": "A",
+   "src": "nameLen",
+   "norm": "div",
+   "d": 32.0
+  },
+  {
+   "k": "num",
+   "n": "geo_w_ratio",
+   "g": "B",
+   "src": "w",
+   "norm": "div",
+   "d": "docW"
+  },
+  {
+   "k": "num",
+   "n": "geo_h_ratio",
+   "g": "B",
+   "src": "h",
+   "norm": "div",
+   "d": "docH"
+  },
+  {
+   "k": "num",
+   "n": "geo_area_log",
+   "g": "B",
+   "src": "area",
+   "norm": "log",
+   "lo": -6.0,
+   "hi": 6.0
+  },
+  {
+   "k": "num",
+   "n": "geo_aspect_log",
+   "g": "B",
+   "src": "aspect",
+   "norm": "log",
+   "lo": -3.0,
+   "hi": 3.0
+  },
+  {
+   "k": "num",
+   "n": "geo_minDim_ratio",
+   "g": "B",
+   "src": "minDim",
+   "norm": "div",
+   "d": "docMin"
+  },
+  {
+   "k": "num",
+   "n": "geo_maxDim_ratio",
+   "g": "B",
+   "src": "maxDim",
+   "norm": "div",
+   "d": "docMax"
+  },
+  {
+   "k": "num",
+   "n": "geo_cx",
+   "g": "B",
+   "src": "cx",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_cy",
+   "g": "B",
+   "src": "cy",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_distCenter",
+   "g": "B",
+   "src": "distCenter",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_edgeTop",
+   "g": "B",
+   "src": "edgeTop",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_edgeBottom",
+   "g": "B",
+   "src": "edgeBottom",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_edgeLeft",
+   "g": "B",
+   "src": "edgeLeft",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "geo_edgeRight",
+   "g": "B",
+   "src": "edgeRight",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bucket",
+   "n": "geo_aspect_bucket",
+   "g": "B",
+   "src": "aspect",
+   "edges": [
+    0.25,
+    0.5,
+    0.8,
+    1.25,
+    2,
+    4,
+    10
+   ]
+  },
+  {
+   "k": "bucket",
+   "n": "geo_area_bucket",
+   "g": "B",
+   "src": "areaRatio",
+   "edges": [
+    0.0002,
+    0.001,
+    0.005,
+    0.02,
+    0.08,
+    0.3
+   ]
+  },
+  {
+   "k": "onehot",
+   "n": "geo_cornerRegion",
+   "g": "B",
+   "src": "cornerRegion",
+   "values": [
+    "tl",
+    "tc",
+    "tr",
+    "ml",
+    "mc",
+    "mr",
+    "bl",
+    "bc",
+    "br"
+   ]
+  },
+  {
+   "k": "num",
+   "n": "geo_rot",
+   "g": "B",
+   "src": "rot",
+   "norm": "div",
+   "d": 180.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_cluster_rank",
+   "g": "C",
+   "src": "clusterRank",
+   "norm": "div",
+   "d": 10.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_cluster_count",
+   "g": "C",
+   "src": "clusterCount",
+   "norm": "div",
+   "d": 10.0
+  },
+  {
+   "k": "bool",
+   "n": "ctx_cluster_singleton",
+   "g": "C",
+   "src": "clusterSingleton"
+  },
+  {
+   "k": "num",
+   "n": "ctx_cluster_w_ratio",
+   "g": "C",
+   "src": "clusterW",
+   "norm": "div",
+   "d": "docW"
+  },
+  {
+   "k": "num",
+   "n": "ctx_cluster_h_ratio",
+   "g": "C",
+   "src": "clusterH",
+   "norm": "div",
+   "d": "docH"
+  },
+  {
+   "k": "num",
+   "n": "ctx_cluster_aspect_log",
+   "g": "C",
+   "src": "clusterAspect",
+   "norm": "log",
+   "lo": -3.0,
+   "hi": 3.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_w_over_parentW",
+   "g": "C",
+   "src": "w",
+   "norm": "divlog",
+   "d": "parentW",
+   "lo": -4.0,
+   "hi": 4.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_h_over_parentH",
+   "g": "C",
+   "src": "h",
+   "norm": "divlog",
+   "d": "parentH",
+   "lo": -4.0,
+   "hi": 4.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_area_over_parent",
+   "g": "C",
+   "src": "area",
+   "norm": "divlog",
+   "d": "parentArea",
+   "lo": -6.0,
+   "hi": 6.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_w_over_sibMean",
+   "g": "C",
+   "src": "w",
+   "norm": "divlog",
+   "d": "sibMeanW",
+   "lo": -4.0,
+   "hi": 4.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_h_over_sibMean",
+   "g": "C",
+   "src": "h",
+   "norm": "divlog",
+   "d": "sibMeanH",
+   "lo": -4.0,
+   "hi": 4.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_w_over_maxW",
+   "g": "C",
+   "src": "w",
+   "norm": "div",
+   "d": "maxW"
+  },
+  {
+   "k": "num",
+   "n": "ctx_h_over_maxH",
+   "g": "C",
+   "src": "h",
+   "norm": "div",
+   "d": "maxH"
+  },
+  {
+   "k": "num",
+   "n": "ctx_sizeRank",
+   "g": "C",
+   "src": "sizeRank",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "ctx_sizePercentile",
+   "g": "C",
+   "src": "sizePercentile",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "ctx_nSameSize",
+   "g": "C",
+   "src": "nSameSize",
+   "norm": "div",
+   "d": 10.0
+  },
+  {
+   "k": "num",
+   "n": "ctx_sibSizeVar",
+   "g": "C",
+   "src": "sibSizeVar",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "ctx_alignedX",
+   "g": "C",
+   "src": "alignedX"
+  },
+  {
+   "k": "bool",
+   "n": "ctx_alignedY",
+   "g": "C",
+   "src": "alignedY"
+  },
+  {
+   "k": "num",
+   "n": "ctx_depth",
+   "g": "C",
+   "src": "depth",
+   "norm": "div",
+   "d": 8.0
+  },
+  {
+   "k": "bucket",
+   "n": "ctx_depth_bucket",
+   "g": "C",
+   "src": "depth",
+   "edges": [
+    1,
+    2,
+    3,
+    5,
+    8
+   ]
+  },
+  {
+   "k": "num",
+   "n": "ctx_depth_ratio",
+   "g": "C",
+   "src": "depth",
+   "norm": "div",
+   "d": "maxDepth"
+  },
+  {
+   "k": "num",
+   "n": "fill_n",
+   "g": "D",
+   "src": "nFills",
+   "norm": "div",
+   "d": 5.0
+  },
+  {
+   "k": "bool",
+   "n": "fill_hasSolid",
+   "g": "D",
+   "src": "hasSolid"
+  },
+  {
+   "k": "bool",
+   "n": "fill_hasGradient",
+   "g": "D",
+   "src": "hasGradient"
+  },
+  {
+   "k": "bool",
+   "n": "fill_hasImage",
+   "g": "D",
+   "src": "hasImage"
+  },
+  {
+   "k": "bool",
+   "n": "fill_transparent",
+   "g": "D",
+   "src": "isTransparentFill"
+  },
+  {
+   "k": "num",
+   "n": "fill_opacity",
+   "g": "D",
+   "src": "fillOpacity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "fill_alpha",
+   "g": "D",
+   "src": "fillAlpha",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "fill_hue",
+   "g": "D",
+   "src": "fillH",
+   "norm": "div",
+   "d": 360.0
+  },
+  {
+   "k": "num",
+   "n": "fill_sat",
+   "g": "D",
+   "src": "fillS",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "fill_val",
+   "g": "D",
+   "src": "fillV",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "fill_isDark",
+   "g": "D",
+   "src": "fillIsDark"
+  },
+  {
+   "k": "bool",
+   "n": "fill_isNeon",
+   "g": "D",
+   "src": "fillIsNeon"
+  },
+  {
+   "k": "onehot",
+   "n": "fill_paletteBucket",
+   "g": "D",
+   "src": "paletteBucket",
+   "values": [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "cyan",
+    "blue",
+    "purple",
+    "pink",
+    "brown",
+    "gray",
+    "white",
+    "black"
+   ]
+  },
+  {
+   "k": "num",
+   "n": "grad_stops",
+   "g": "D",
+   "src": "gradStops",
+   "norm": "div",
+   "d": 6.0
+  },
+  {
+   "k": "onehot",
+   "n": "grad_type",
+   "g": "D",
+   "src": "gradType",
+   "values": [
+    "LINEAR",
+    "RADIAL",
+    "ANGULAR",
+    "DIAMOND"
+   ]
+  },
+  {
+   "k": "num",
+   "n": "grad_angle_bucket",
+   "g": "D",
+   "src": "gradAngleBucket",
+   "norm": "div",
+   "d": 8.0
+  },
+  {
+   "k": "num",
+   "n": "color_nDistinct",
+   "g": "D",
+   "src": "nDistinctColors",
+   "norm": "div",
+   "d": 12.0
+  },
+  {
+   "k": "bool",
+   "n": "color_strokeDarker",
+   "g": "D",
+   "src": "strokeDarkerThanFill"
+  },
+  {
+   "k": "num",
+   "n": "color_contrast",
+   "g": "D",
+   "src": "contrastFS",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "color_isMonochrome",
+   "g": "D",
+   "src": "isMonochrome"
+  },
+  {
+   "k": "bool",
+   "n": "stroke_has",
+   "g": "E",
+   "src": "hasStroke"
+  },
+  {
+   "k": "num",
+   "n": "stroke_w_log",
+   "g": "E",
+   "src": "strokeW",
+   "norm": "log",
+   "lo": -2.0,
+   "hi": 3.0
+  },
+  {
+   "k": "bucket",
+   "n": "stroke_w_bucket",
+   "g": "E",
+   "src": "strokeW",
+   "edges": [
+    0,
+    1,
+    3,
+    6,
+    10
+   ]
+  },
+  {
+   "k": "num",
+   "n": "stroke_w_over_minDim",
+   "g": "E",
+   "src": "strokeW",
+   "norm": "divlog",
+   "d": "minDim",
+   "lo": -5.0,
+   "hi": 2.0
+  },
+  {
+   "k": "onehot",
+   "n": "stroke_align",
+   "g": "E",
+   "src": "strokeAlign",
+   "values": [
+    "INSIDE",
+    "CENTER",
+    "OUTSIDE"
+   ]
+  },
+  {
+   "k": "onehot",
+   "n": "stroke_join",
+   "g": "E",
+   "src": "strokeJoin",
+   "values": [
+    "MITER",
+    "BEVEL",
+    "ROUND"
+   ]
+  },
+  {
+   "k": "bool",
+   "n": "stroke_hasDash",
+   "g": "E",
+   "src": "hasDash"
+  },
+  {
+   "k": "bool",
+   "n": "stroke_perSideDiff",
+   "g": "E",
+   "src": "strokePerSideDiff"
+  },
+  {
+   "k": "num",
+   "n": "stroke_sat",
+   "g": "E",
+   "src": "strokeS",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "stroke_val",
+   "g": "E",
+   "src": "strokeV",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "stroke_opacity",
+   "g": "E",
+   "src": "strokeOpacity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "corner_r_log",
+   "g": "E",
+   "src": "r",
+   "norm": "log",
+   "lo": -2.0,
+   "hi": 3.0
+  },
+  {
+   "k": "bucket",
+   "n": "corner_r_bucket",
+   "g": "E",
+   "src": "r",
+   "edges": [
+    0,
+    4,
+    12,
+    28,
+    64
+   ]
+  },
+  {
+   "k": "num",
+   "n": "corner_r_over_minDim",
+   "g": "E",
+   "src": "r",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "bool",
+   "n": "corner_perSideDiff",
+   "g": "E",
+   "src": "rPerSideDiff"
+  },
+  {
+   "k": "bool",
+   "n": "corner_isFull",
+   "g": "E",
+   "src": "isFullRadius"
+  },
+  {
+   "k": "bool",
+   "n": "shape_isPill",
+   "g": "E",
+   "src": "isPill"
+  },
+  {
+   "k": "bool",
+   "n": "shape_isCircle",
+   "g": "E",
+   "src": "isCircle"
+  },
+  {
+   "k": "bool",
+   "n": "stroke_and_radius",
+   "g": "E",
+   "src": "strokeAndRadius"
+  },
+  {
+   "k": "num",
+   "n": "shape_borderRatio",
+   "g": "E",
+   "src": "borderRatio",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "text_isText",
+   "g": "F",
+   "src": "isText"
+  },
+  {
+   "k": "num",
+   "n": "text_len",
+   "g": "F",
+   "src": "textLen",
+   "norm": "div",
+   "d": 64.0
+  },
+  {
+   "k": "num",
+   "n": "text_words",
+   "g": "F",
+   "src": "textWords",
+   "norm": "div",
+   "d": 8.0
+  },
+  {
+   "k": "bool",
+   "n": "text_hasDigit",
+   "g": "F",
+   "src": "textHasDigit"
+  },
+  {
+   "k": "bool",
+   "n": "text_isNumeric",
+   "g": "F",
+   "src": "textIsNumeric"
+  },
+  {
+   "k": "bool",
+   "n": "text_allUpper",
+   "g": "F",
+   "src": "textAllUpper"
+  },
+  {
+   "k": "num",
+   "n": "text_fontSize_ratio",
+   "g": "F",
+   "src": "fontSize",
+   "norm": "divlog",
+   "d": "docH",
+   "lo": -4.0,
+   "hi": 1.0
+  },
+  {
+   "k": "num",
+   "n": "text_fontWeight",
+   "g": "F",
+   "src": "fontWeight",
+   "norm": "div",
+   "d": 900.0
+  },
+  {
+   "k": "bool",
+   "n": "text_italic",
+   "g": "F",
+   "src": "italic"
+  },
+  {
+   "k": "onehot",
+   "n": "text_alignH",
+   "g": "F",
+   "src": "alignH",
+   "values": [
+    "LEFT",
+    "CENTER",
+    "RIGHT"
+   ]
+  },
+  {
+   "k": "onehot",
+   "n": "text_alignV",
+   "g": "F",
+   "src": "alignV",
+   "values": [
+    "TOP",
+    "CENTER",
+    "BOTTOM"
+   ]
+  },
+  {
+   "k": "bool",
+   "n": "text_wrap",
+   "g": "F",
+   "src": "wrap"
+  },
+  {
+   "k": "num",
+   "n": "text_nLines",
+   "g": "F",
+   "src": "nLines",
+   "norm": "div",
+   "d": 5.0
+  },
+  {
+   "k": "num",
+   "n": "text_val",
+   "g": "F",
+   "src": "textV",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "text_sat",
+   "g": "F",
+   "src": "textS",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "text_density",
+   "g": "F",
+   "src": "textDensity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "tree_nChildren",
+   "g": "G",
+   "src": "nChildren",
+   "norm": "log1p"
+  },
+  {
+   "k": "bool",
+   "n": "tree_hasChildren",
+   "g": "G",
+   "src": "hasChildren"
+  },
+  {
+   "k": "num",
+   "n": "tree_nTextChildren",
+   "g": "G",
+   "src": "nTextChildren",
+   "norm": "log1p"
+  },
+  {
+   "k": "num",
+   "n": "tree_nImageChildren",
+   "g": "G",
+   "src": "nImageChildren",
+   "norm": "log1p"
+  },
+  {
+   "k": "num",
+   "n": "tree_nFrameChildren",
+   "g": "G",
+   "src": "nFrameChildren",
+   "norm": "log1p"
+  },
+  {
+   "k": "bool",
+   "n": "tree_isLeaf",
+   "g": "G",
+   "src": "isLeaf"
+  },
+  {
+   "k": "bool",
+   "n": "tree_isRoot",
+   "g": "G",
+   "src": "isRoot"
+  },
+  {
+   "k": "num",
+   "n": "tree_siblingIndex",
+   "g": "G",
+   "src": "siblingIndex",
+   "norm": "div",
+   "d": "nSiblings"
+  },
+  {
+   "k": "bool",
+   "n": "tree_isFirstChild",
+   "g": "G",
+   "src": "isFirstChild"
+  },
+  {
+   "k": "bool",
+   "n": "tree_isLastChild",
+   "g": "G",
+   "src": "isLastChild"
+  },
+  {
+   "k": "bool",
+   "n": "tree_clips",
+   "g": "G",
+   "src": "clips"
+  },
+  {
+   "k": "bool",
+   "n": "tree_hasScroll",
+   "g": "G",
+   "src": "hasScroll"
+  },
+  {
+   "k": "onehot",
+   "n": "layout_mode",
+   "g": "G",
+   "src": "layoutMode",
+   "values": [
+    "NONE",
+    "HORIZONTAL",
+    "VERTICAL",
+    "GRID"
+   ]
+  },
+  {
+   "k": "num",
+   "n": "layout_gap",
+   "g": "G",
+   "src": "gap",
+   "norm": "div",
+   "d": "docMin"
+  },
+  {
+   "k": "num",
+   "n": "layout_padAvg",
+   "g": "G",
+   "src": "padAvg",
+   "norm": "div",
+   "d": "docMin"
+  },
+  {
+   "k": "num",
+   "n": "tree_childSizeVar",
+   "g": "G",
+   "src": "childSizeVar",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "fx_nShadows",
+   "g": "H",
+   "src": "nShadows",
+   "norm": "log1p"
+  },
+  {
+   "k": "num",
+   "n": "fx_shadowOffsetX",
+   "g": "H",
+   "src": "shadowOffsetX",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "num",
+   "n": "fx_shadowOffsetY",
+   "g": "H",
+   "src": "shadowOffsetY",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "num",
+   "n": "fx_shadowBlur",
+   "g": "H",
+   "src": "shadowBlur",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "num",
+   "n": "fx_shadowSpread",
+   "g": "H",
+   "src": "shadowSpread",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "num",
+   "n": "fx_shadowAlpha",
+   "g": "H",
+   "src": "shadowAlpha",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "fx_shadowIsMulti",
+   "g": "H",
+   "src": "shadowIsMulti"
+  },
+  {
+   "k": "bool",
+   "n": "fx_hasInnerShadow",
+   "g": "H",
+   "src": "hasInnerShadow"
+  },
+  {
+   "k": "bool",
+   "n": "fx_hasLayerBlur",
+   "g": "H",
+   "src": "hasLayerBlur"
+  },
+  {
+   "k": "bool",
+   "n": "fx_hasBgBlur",
+   "g": "H",
+   "src": "hasBgBlur"
+  },
+  {
+   "k": "num",
+   "n": "fx_blurRadius",
+   "g": "H",
+   "src": "blurRadius",
+   "norm": "div",
+   "d": "minDim"
+  },
+  {
+   "k": "bool",
+   "n": "fx_hasGlowPattern",
+   "g": "H",
+   "src": "hasGlowPattern"
+  },
+  {
+   "k": "num",
+   "n": "fx_nGlow",
+   "g": "H",
+   "src": "nGlow",
+   "norm": "log1p"
+  },
+  {
+   "k": "bool",
+   "n": "fx_hasAnyEffect",
+   "g": "H",
+   "src": "hasAnyEffect"
+  },
+  {
+   "k": "num",
+   "n": "fx_opacity",
+   "g": "H",
+   "src": "opacity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "bool",
+   "n": "img_hasImageFill",
+   "g": "I",
+   "src": "hasImageFill"
+  },
+  {
+   "k": "bool",
+   "n": "img_aspectMatch",
+   "g": "I",
+   "src": "imageAspectMatch"
+  },
+  {
+   "k": "bool",
+   "n": "img_isVectorKind",
+   "g": "I",
+   "src": "isVectorKind"
+  },
+  {
+   "k": "bool",
+   "n": "img_tile",
+   "g": "I",
+   "src": "imageTile"
+  },
+  {
+   "k": "num",
+   "n": "img_reuse",
+   "g": "I",
+   "src": "imageReuse",
+   "norm": "div",
+   "d": 10.0
+  },
+  {
+   "k": "bool",
+   "n": "img_largerThanParent",
+   "g": "I",
+   "src": "imageLargerParent"
+  },
+  {
+   "k": "bool",
+   "n": "d_isFx",
+   "g": "I",
+   "src": "isFx"
+  },
+  {
+   "k": "onehot",
+   "n": "d_fxKind",
+   "g": "I",
+   "src": "fxKind",
+   "values": [
+    "glow",
+    "rays",
+    "sparkle",
+    "shine",
+    "vignette",
+    "noise",
+    "dust",
+    "ring",
+    "aura",
+    "beam",
+    "gloss",
+    "bubble",
+    "star",
+    "flare",
+    "smoke",
+    "gradient_overlay"
+   ]
+  },
+  {
+   "k": "onehot",
+   "n": "d_blendFx",
+   "g": "I",
+   "src": "blendMode",
+   "values": [
+    "SCREEN",
+    "ADD",
+    "LINEAR_DODGE",
+    "COLOR_DODGE",
+    "LIGHTEN",
+    "PLUS_LIGHTER",
+    "PLUS_DARKER"
+   ]
+  },
+  {
+   "k": "bool",
+   "n": "d_isShineFrame",
+   "g": "I",
+   "src": "isShineFrame"
+  },
+  {
+   "k": "bool",
+   "n": "d_isDarkerUnderlay",
+   "g": "I",
+   "src": "isDarkerUnderlay"
+  },
+  {
+   "k": "bool",
+   "n": "d_textureLike",
+   "g": "I",
+   "src": "textureLike"
+  },
+  {
+   "k": "bool",
+   "n": "d_hasStudToken",
+   "g": "I",
+   "src": "hasStudToken"
+  },
+  {
+   "k": "bool",
+   "n": "sty_stud",
+   "g": "J",
+   "src": "styleStud"
+  },
+  {
+   "k": "bool",
+   "n": "sty_anime",
+   "g": "J",
+   "src": "styleAnime"
+  },
+  {
+   "k": "bool",
+   "n": "sty_cartoon",
+   "g": "J",
+   "src": "styleCartoon"
+  },
+  {
+   "k": "bool",
+   "n": "sty_belirsiz",
+   "g": "J",
+   "src": "styleBelirsiz"
+  },
+  {
+   "k": "num",
+   "n": "sty_conf",
+   "g": "J",
+   "src": "styleConf",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_darkness",
+   "g": "J",
+   "src": "darknessIndex",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_mutedBase",
+   "g": "J",
+   "src": "mutedBaseRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_hueDiversity",
+   "g": "J",
+   "src": "hueDiversity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_accentPop",
+   "g": "J",
+   "src": "accentPopRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_effectDensity",
+   "g": "J",
+   "src": "effectDensity",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_gradientRate",
+   "g": "J",
+   "src": "gradientRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_reuseRate",
+   "g": "J",
+   "src": "reuseRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_imageDriven",
+   "g": "J",
+   "src": "imageDrivenRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_darkerUnderlayRate",
+   "g": "J",
+   "src": "darkerUnderlayRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "num",
+   "n": "sty_shineFrameRate",
+   "g": "J",
+   "src": "shineFrameRate",
+   "norm": "clamp01"
+  },
+  {
+   "k": "onehot",
+   "n": "par_cls",
+   "g": "K",
+   "src": "parentCls",
+   "values": [
+    "Frame",
+    "ImageLabel",
+    "ImageButton",
+    "TextLabel",
+    "TextButton",
+    "TextBox",
+    "ScrollingFrame",
+    "CanvasGroup",
+    "ViewportFrame",
+    "VideoFrame",
+    "Path2D",
+    "InputActionLabel"
+   ]
+  },
+  {
+   "k": "num",
+   "n": "par_clusterRank",
+   "g": "K",
+   "src": "parentClusterRank",
+   "norm": "div",
+   "d": 10.0
+  },
+  {
+   "k": "bool",
+   "n": "par_isRoot",
+   "g": "K",
+   "src": "parentIsRoot"
+  },
+  {
+   "k": "num",
+   "n": "par_depth",
+   "g": "K",
+   "src": "parentDepth",
+   "norm": "div",
+   "d": 8.0
+  },
+  {
+   "k": "bool",
+   "n": "par_hasScroll",
+   "g": "K",
+   "src": "parentHasScroll"
+  },
+  {
+   "k": "num",
+   "n": "par_w_ratio",
+   "g": "K",
+   "src": "parentW",
+   "norm": "div",
+   "d": "docW"
+  },
+  {
+   "k": "num",
+   "n": "par_h_ratio",
+   "g": "K",
+   "src": "parentH",
+   "norm": "div",
+   "d": "docH"
+  }
+ ],
+ "dim": 379,
+ "index": [
+  {
+   "n": "tok_button",
+   "g": "A",
+   "k": "token",
+   "offset": 0,
+   "count": 1
+  },
+  {
+   "n": "tok_btn",
+   "g": "A",
+   "k": "token",
+   "offset": 1,
+   "count": 1
+  },
+  {
+   "n": "tok_buton",
+   "g": "A",
+   "k": "token",
+   "offset": 2,
+   "count": 1
+  },
+  {
+   "n": "tok_icon",
+   "g": "A",
+   "k": "token",
+   "offset": 3,
+   "count": 1
+  },
+  {
+   "n": "tok_close",
+   "g": "A",
+   "k": "token",
+   "offset": 4,
+   "count": 1
+  },
+  {
+   "n": "tok_exit",
+   "g": "A",
+   "k": "token",
+   "offset": 5,
+   "count": 1
+  },
+  {
+   "n": "tok_play",
+   "g": "A",
+   "k": "token",
+   "offset": 6,
+   "count": 1
+  },
+  {
+   "n": "tok_start",
+   "g": "A",
+   "k": "token",
+   "offset": 7,
+   "count": 1
+  },
+  {
+   "n": "tok_settings",
+   "g": "A",
+   "k": "token",
+   "offset": 8,
+   "count": 1
+  },
+  {
+   "n": "tok_option",
+   "g": "A",
+   "k": "token",
+   "offset": 9,
+   "count": 1
+  },
+  {
+   "n": "tok_menu",
+   "g": "A",
+   "k": "token",
+   "offset": 10,
+   "count": 1
+  },
+  {
+   "n": "tok_back",
+   "g": "A",
+   "k": "token",
+   "offset": 11,
+   "count": 1
+  },
+  {
+   "n": "tok_next",
+   "g": "A",
+   "k": "token",
+   "offset": 12,
+   "count": 1
+  },
+  {
+   "n": "tok_prev",
+   "g": "A",
+   "k": "token",
+   "offset": 13,
+   "count": 1
+  },
+  {
+   "n": "tok_tab",
+   "g": "A",
+   "k": "token",
+   "offset": 14,
+   "count": 1
+  },
+  {
+   "n": "tok_nav",
+   "g": "A",
+   "k": "token",
+   "offset": 15,
+   "count": 1
+  },
+  {
+   "n": "tok_footer",
+   "g": "A",
+   "k": "token",
+   "offset": 16,
+   "count": 1
+  },
+  {
+   "n": "tok_header",
+   "g": "A",
+   "k": "token",
+   "offset": 17,
+   "count": 1
+  },
+  {
+   "n": "tok_panel",
+   "g": "A",
+   "k": "token",
+   "offset": 18,
+   "count": 1
+  },
+  {
+   "n": "tok_bg",
+   "g": "A",
+   "k": "token",
+   "offset": 19,
+   "count": 1
+  },
+  {
+   "n": "tok_background",
+   "g": "A",
+   "k": "token",
+   "offset": 20,
+   "count": 1
+  },
+  {
+   "n": "tok_overlay",
+   "g": "A",
+   "k": "token",
+   "offset": 21,
+   "count": 1
+  },
+  {
+   "n": "tok_modal",
+   "g": "A",
+   "k": "token",
+   "offset": 22,
+   "count": 1
+  },
+  {
+   "n": "tok_popup",
+   "g": "A",
+   "k": "token",
+   "offset": 23,
+   "count": 1
+  },
+  {
+   "n": "tok_dialog",
+   "g": "A",
+   "k": "token",
+   "offset": 24,
+   "count": 1
+  },
+  {
+   "n": "tok_card",
+   "g": "A",
+   "k": "token",
+   "offset": 25,
+   "count": 1
+  },
+  {
+   "n": "tok_slot",
+   "g": "A",
+   "k": "token",
+   "offset": 26,
+   "count": 1
+  },
+  {
+   "n": "tok_item",
+   "g": "A",
+   "k": "token",
+   "offset": 27,
+   "count": 1
+  },
+  {
+   "n": "tok_inventory",
+   "g": "A",
+   "k": "token",
+   "offset": 28,
+   "count": 1
+  },
+  {
+   "n": "tok_bag",
+   "g": "A",
+   "k": "token",
+   "offset": 29,
+   "count": 1
+  },
+  {
+   "n": "tok_shop",
+   "g": "A",
+   "k": "token",
+   "offset": 30,
+   "count": 1
+  },
+  {
+   "n": "tok_list",
+   "g": "A",
+   "k": "token",
+   "offset": 31,
+   "count": 1
+  },
+  {
+   "n": "tok_grid",
+   "g": "A",
+   "k": "token",
+   "offset": 32,
+   "count": 1
+  },
+  {
+   "n": "tok_scroll",
+   "g": "A",
+   "k": "token",
+   "offset": 33,
+   "count": 1
+  },
+  {
+   "n": "tok_content",
+   "g": "A",
+   "k": "token",
+   "offset": 34,
+   "count": 1
+  },
+  {
+   "n": "tok_container",
+   "g": "A",
+   "k": "token",
+   "offset": 35,
+   "count": 1
+  },
+  {
+   "n": "tok_wrapper",
+   "g": "A",
+   "k": "token",
+   "offset": 36,
+   "count": 1
+  },
+  {
+   "n": "tok_divider",
+   "g": "A",
+   "k": "token",
+   "offset": 37,
+   "count": 1
+  },
+  {
+   "n": "tok_frame",
+   "g": "A",
+   "k": "token",
+   "offset": 38,
+   "count": 1
+  },
+  {
+   "n": "tok_label",
+   "g": "A",
+   "k": "token",
+   "offset": 39,
+   "count": 1
+  },
+  {
+   "n": "tok_text",
+   "g": "A",
+   "k": "token",
+   "offset": 40,
+   "count": 1
+  },
+  {
+   "n": "tok_title",
+   "g": "A",
+   "k": "token",
+   "offset": 41,
+   "count": 1
+  },
+  {
+   "n": "tok_desc",
+   "g": "A",
+   "k": "token",
+   "offset": 42,
+   "count": 1
+  },
+  {
+   "n": "tok_value",
+   "g": "A",
+   "k": "token",
+   "offset": 43,
+   "count": 1
+  },
+  {
+   "n": "tok_count",
+   "g": "A",
+   "k": "token",
+   "offset": 44,
+   "count": 1
+  },
+  {
+   "n": "tok_timer",
+   "g": "A",
+   "k": "token",
+   "offset": 45,
+   "count": 1
+  },
+  {
+   "n": "tok_tooltip",
+   "g": "A",
+   "k": "token",
+   "offset": 46,
+   "count": 1
+  },
+  {
+   "n": "tok_badge",
+   "g": "A",
+   "k": "token",
+   "offset": 47,
+   "count": 1
+  },
+  {
+   "n": "tok_avatar",
+   "g": "A",
+   "k": "token",
+   "offset": 48,
+   "count": 1
+  },
+  {
+   "n": "tok_profile",
+   "g": "A",
+   "k": "token",
+   "offset": 49,
+   "count": 1
+  },
+  {
+   "n": "tok_bar",
+   "g": "A",
+   "k": "token",
+   "offset": 50,
+   "count": 1
+  },
+  {
+   "n": "tok_hp",
+   "g": "A",
+   "k": "token",
+   "offset": 51,
+   "count": 1
+  },
+  {
+   "n": "tok_health",
+   "g": "A",
+   "k": "token",
+   "offset": 52,
+   "count": 1
+  },
+  {
+   "n": "tok_mana",
+   "g": "A",
+   "k": "token",
+   "offset": 53,
+   "count": 1
+  },
+  {
+   "n": "tok_energy",
+   "g": "A",
+   "k": "token",
+   "offset": 54,
+   "count": 1
+  },
+  {
+   "n": "tok_xp",
+   "g": "A",
+   "k": "token",
+   "offset": 55,
+   "count": 1
+  },
+  {
+   "n": "tok_level",
+   "g": "A",
+   "k": "token",
+   "offset": 56,
+   "count": 1
+  },
+  {
+   "n": "tok_coin",
+   "g": "A",
+   "k": "token",
+   "offset": 57,
+   "count": 1
+  },
+  {
+   "n": "tok_gem",
+   "g": "A",
+   "k": "token",
+   "offset": 58,
+   "count": 1
+  },
+  {
+   "n": "tok_gold",
+   "g": "A",
+   "k": "token",
+   "offset": 59,
+   "count": 1
+  },
+  {
+   "n": "tok_progress",
+   "g": "A",
+   "k": "token",
+   "offset": 60,
+   "count": 1
+  },
+  {
+   "n": "tok_fill",
+   "g": "A",
+   "k": "token",
+   "offset": 61,
+   "count": 1
+  },
+  {
+   "n": "tok_loader",
+   "g": "A",
+   "k": "token",
+   "offset": 62,
+   "count": 1
+  },
+  {
+   "n": "tok_slider",
+   "g": "A",
+   "k": "token",
+   "offset": 63,
+   "count": 1
+  },
+  {
+   "n": "tok_toggle",
+   "g": "A",
+   "k": "token",
+   "offset": 64,
+   "count": 1
+  },
+  {
+   "n": "tok_check",
+   "g": "A",
+   "k": "token",
+   "offset": 65,
+   "count": 1
+  },
+  {
+   "n": "tok_reward",
+   "g": "A",
+   "k": "token",
+   "offset": 66,
+   "count": 1
+  },
+  {
+   "n": "tok_currency",
+   "g": "A",
+   "k": "token",
+   "offset": 67,
+   "count": 1
+  },
+  {
+   "n": "tok_glow",
+   "g": "A",
+   "k": "token",
+   "offset": 68,
+   "count": 1
+  },
+  {
+   "n": "tok_ray",
+   "g": "A",
+   "k": "token",
+   "offset": 69,
+   "count": 1
+  },
+  {
+   "n": "tok_rays",
+   "g": "A",
+   "k": "token",
+   "offset": 70,
+   "count": 1
+  },
+  {
+   "n": "tok_shine",
+   "g": "A",
+   "k": "token",
+   "offset": 71,
+   "count": 1
+  },
+  {
+   "n": "tok_shining",
+   "g": "A",
+   "k": "token",
+   "offset": 72,
+   "count": 1
+  },
+  {
+   "n": "tok_sparkle",
+   "g": "A",
+   "k": "token",
+   "offset": 73,
+   "count": 1
+  },
+  {
+   "n": "tok_sparkles",
+   "g": "A",
+   "k": "token",
+   "offset": 74,
+   "count": 1
+  },
+  {
+   "n": "tok_star",
+   "g": "A",
+   "k": "token",
+   "offset": 75,
+   "count": 1
+  },
+  {
+   "n": "tok_stars",
+   "g": "A",
+   "k": "token",
+   "offset": 76,
+   "count": 1
+  },
+  {
+   "n": "tok_twinkle",
+   "g": "A",
+   "k": "token",
+   "offset": 77,
+   "count": 1
+  },
+  {
+   "n": "tok_particle",
+   "g": "A",
+   "k": "token",
+   "offset": 78,
+   "count": 1
+  },
+  {
+   "n": "tok_flare",
+   "g": "A",
+   "k": "token",
+   "offset": 79,
+   "count": 1
+  },
+  {
+   "n": "tok_bloom",
+   "g": "A",
+   "k": "token",
+   "offset": 80,
+   "count": 1
+  },
+  {
+   "n": "tok_vignette",
+   "g": "A",
+   "k": "token",
+   "offset": 81,
+   "count": 1
+  },
+  {
+   "n": "tok_noise",
+   "g": "A",
+   "k": "token",
+   "offset": 82,
+   "count": 1
+  },
+  {
+   "n": "tok_grain",
+   "g": "A",
+   "k": "token",
+   "offset": 83,
+   "count": 1
+  },
+  {
+   "n": "tok_dust",
+   "g": "A",
+   "k": "token",
+   "offset": 84,
+   "count": 1
+  },
+  {
+   "n": "tok_smoke",
+   "g": "A",
+   "k": "token",
+   "offset": 85,
+   "count": 1
+  },
+  {
+   "n": "tok_fog",
+   "g": "A",
+   "k": "token",
+   "offset": 86,
+   "count": 1
+  },
+  {
+   "n": "tok_ring",
+   "g": "A",
+   "k": "token",
+   "offset": 87,
+   "count": 1
+  },
+  {
+   "n": "tok_pulse",
+   "g": "A",
+   "k": "token",
+   "offset": 88,
+   "count": 1
+  },
+  {
+   "n": "tok_aura",
+   "g": "A",
+   "k": "token",
+   "offset": 89,
+   "count": 1
+  },
+  {
+   "n": "tok_beam",
+   "g": "A",
+   "k": "token",
+   "offset": 90,
+   "count": 1
+  },
+  {
+   "n": "tok_streak",
+   "g": "A",
+   "k": "token",
+   "offset": 91,
+   "count": 1
+  },
+  {
+   "n": "tok_gloss",
+   "g": "A",
+   "k": "token",
+   "offset": 92,
+   "count": 1
+  },
+  {
+   "n": "tok_shimmer",
+   "g": "A",
+   "k": "token",
+   "offset": 93,
+   "count": 1
+  },
+  {
+   "n": "tok_glint",
+   "g": "A",
+   "k": "token",
+   "offset": 94,
+   "count": 1
+  },
+  {
+   "n": "tok_blur",
+   "g": "A",
+   "k": "token",
+   "offset": 95,
+   "count": 1
+  },
+  {
+   "n": "tok_halo",
+   "g": "A",
+   "k": "token",
+   "offset": 96,
+   "count": 1
+  },
+  {
+   "n": "tok_neon",
+   "g": "A",
+   "k": "token",
+   "offset": 97,
+   "count": 1
+  },
+  {
+   "n": "tok_emission",
+   "g": "A",
+   "k": "token",
+   "offset": 98,
+   "count": 1
+  },
+  {
+   "n": "tok_energy2",
+   "g": "A",
+   "k": "token",
+   "offset": 99,
+   "count": 1
+  },
+  {
+   "n": "tok_magic",
+   "g": "A",
+   "k": "token",
+   "offset": 100,
+   "count": 1
+  },
+  {
+   "n": "tok_fx",
+   "g": "A",
+   "k": "token",
+   "offset": 101,
+   "count": 1
+  },
+  {
+   "n": "tok_effect",
+   "g": "A",
+   "k": "token",
+   "offset": 102,
+   "count": 1
+  },
+  {
+   "n": "tok_stud",
+   "g": "A",
+   "k": "token",
+   "offset": 103,
+   "count": 1
+  },
+  {
+   "n": "tok_studs",
+   "g": "A",
+   "k": "token",
+   "offset": 104,
+   "count": 1
+  },
+  {
+   "n": "tok_brick",
+   "g": "A",
+   "k": "token",
+   "offset": 105,
+   "count": 1
+  },
+  {
+   "n": "tok_civi",
+   "g": "A",
+   "k": "token",
+   "offset": 106,
+   "count": 1
+  },
+  {
+   "n": "tok_civili",
+   "g": "A",
+   "k": "token",
+   "offset": 107,
+   "count": 1
+  },
+  {
+   "n": "tok_texture",
+   "g": "A",
+   "k": "token",
+   "offset": 108,
+   "count": 1
+  },
+  {
+   "n": "tok_pattern",
+   "g": "A",
+   "k": "token",
+   "offset": 109,
+   "count": 1
+  },
+  {
+   "n": "tok_isik",
+   "g": "A",
+   "k": "token",
+   "offset": 110,
+   "count": 1
+  },
+  {
+   "n": "tok_parlama",
+   "g": "A",
+   "k": "token",
+   "offset": 111,
+   "count": 1
+  },
+  {
+   "n": "tok_parilti",
+   "g": "A",
+   "k": "token",
+   "offset": 112,
+   "count": 1
+  },
+  {
+   "n": "tok_huzme",
+   "g": "A",
+   "k": "token",
+   "offset": 113,
+   "count": 1
+  },
+  {
+   "n": "tok_toz",
+   "g": "A",
+   "k": "token",
+   "offset": 114,
+   "count": 1
+  },
+  {
+   "n": "tok_duman",
+   "g": "A",
+   "k": "token",
+   "offset": 115,
+   "count": 1
+  },
+  {
+   "n": "tok_halka",
+   "g": "A",
+   "k": "token",
+   "offset": 116,
+   "count": 1
+  },
+  {
+   "n": "tok_efekt",
+   "g": "A",
+   "k": "token",
+   "offset": 117,
+   "count": 1
+  },
+  {
+   "n": "name_hasUnderscoreTag",
+   "g": "A",
+   "k": "bool",
+   "offset": 118,
+   "count": 1
+  },
+  {
+   "n": "name_hasDigit",
+   "g": "A",
+   "k": "bool",
+   "offset": 119,
+   "count": 1
+  },
+  {
+   "n": "name_isCamel",
+   "g": "A",
+   "k": "bool",
+   "offset": 120,
+   "count": 1
+  },
+  {
+   "n": "name_allUpper",
+   "g": "A",
+   "k": "bool",
+   "offset": 121,
+   "count": 1
+  },
+  {
+   "n": "name_empty",
+   "g": "A",
+   "k": "bool",
+   "offset": 122,
+   "count": 1
+  },
+  {
+   "n": "name_wordCount",
+   "g": "A",
+   "k": "num",
+   "offset": 123,
+   "count": 1
+  },
+  {
+   "n": "name_charLen",
+   "g": "A",
+   "k": "num",
+   "offset": 124,
+   "count": 1
+  },
+  {
+   "n": "geo_w_ratio",
+   "g": "B",
+   "k": "num",
+   "offset": 125,
+   "count": 1
+  },
+  {
+   "n": "geo_h_ratio",
+   "g": "B",
+   "k": "num",
+   "offset": 126,
+   "count": 1
+  },
+  {
+   "n": "geo_area_log",
+   "g": "B",
+   "k": "num",
+   "offset": 127,
+   "count": 1
+  },
+  {
+   "n": "geo_aspect_log",
+   "g": "B",
+   "k": "num",
+   "offset": 128,
+   "count": 1
+  },
+  {
+   "n": "geo_minDim_ratio",
+   "g": "B",
+   "k": "num",
+   "offset": 129,
+   "count": 1
+  },
+  {
+   "n": "geo_maxDim_ratio",
+   "g": "B",
+   "k": "num",
+   "offset": 130,
+   "count": 1
+  },
+  {
+   "n": "geo_cx",
+   "g": "B",
+   "k": "num",
+   "offset": 131,
+   "count": 1
+  },
+  {
+   "n": "geo_cy",
+   "g": "B",
+   "k": "num",
+   "offset": 132,
+   "count": 1
+  },
+  {
+   "n": "geo_distCenter",
+   "g": "B",
+   "k": "num",
+   "offset": 133,
+   "count": 1
+  },
+  {
+   "n": "geo_edgeTop",
+   "g": "B",
+   "k": "num",
+   "offset": 134,
+   "count": 1
+  },
+  {
+   "n": "geo_edgeBottom",
+   "g": "B",
+   "k": "num",
+   "offset": 135,
+   "count": 1
+  },
+  {
+   "n": "geo_edgeLeft",
+   "g": "B",
+   "k": "num",
+   "offset": 136,
+   "count": 1
+  },
+  {
+   "n": "geo_edgeRight",
+   "g": "B",
+   "k": "num",
+   "offset": 137,
+   "count": 1
+  },
+  {
+   "n": "geo_aspect_bucket",
+   "g": "B",
+   "k": "bucket",
+   "offset": 138,
+   "count": 8
+  },
+  {
+   "n": "geo_area_bucket",
+   "g": "B",
+   "k": "bucket",
+   "offset": 146,
+   "count": 7
+  },
+  {
+   "n": "geo_cornerRegion",
+   "g": "B",
+   "k": "onehot",
+   "offset": 153,
+   "count": 9
+  },
+  {
+   "n": "geo_rot",
+   "g": "B",
+   "k": "num",
+   "offset": 162,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_rank",
+   "g": "C",
+   "k": "num",
+   "offset": 163,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_count",
+   "g": "C",
+   "k": "num",
+   "offset": 164,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_singleton",
+   "g": "C",
+   "k": "bool",
+   "offset": 165,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_w_ratio",
+   "g": "C",
+   "k": "num",
+   "offset": 166,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_h_ratio",
+   "g": "C",
+   "k": "num",
+   "offset": 167,
+   "count": 1
+  },
+  {
+   "n": "ctx_cluster_aspect_log",
+   "g": "C",
+   "k": "num",
+   "offset": 168,
+   "count": 1
+  },
+  {
+   "n": "ctx_w_over_parentW",
+   "g": "C",
+   "k": "num",
+   "offset": 169,
+   "count": 1
+  },
+  {
+   "n": "ctx_h_over_parentH",
+   "g": "C",
+   "k": "num",
+   "offset": 170,
+   "count": 1
+  },
+  {
+   "n": "ctx_area_over_parent",
+   "g": "C",
+   "k": "num",
+   "offset": 171,
+   "count": 1
+  },
+  {
+   "n": "ctx_w_over_sibMean",
+   "g": "C",
+   "k": "num",
+   "offset": 172,
+   "count": 1
+  },
+  {
+   "n": "ctx_h_over_sibMean",
+   "g": "C",
+   "k": "num",
+   "offset": 173,
+   "count": 1
+  },
+  {
+   "n": "ctx_w_over_maxW",
+   "g": "C",
+   "k": "num",
+   "offset": 174,
+   "count": 1
+  },
+  {
+   "n": "ctx_h_over_maxH",
+   "g": "C",
+   "k": "num",
+   "offset": 175,
+   "count": 1
+  },
+  {
+   "n": "ctx_sizeRank",
+   "g": "C",
+   "k": "num",
+   "offset": 176,
+   "count": 1
+  },
+  {
+   "n": "ctx_sizePercentile",
+   "g": "C",
+   "k": "num",
+   "offset": 177,
+   "count": 1
+  },
+  {
+   "n": "ctx_nSameSize",
+   "g": "C",
+   "k": "num",
+   "offset": 178,
+   "count": 1
+  },
+  {
+   "n": "ctx_sibSizeVar",
+   "g": "C",
+   "k": "num",
+   "offset": 179,
+   "count": 1
+  },
+  {
+   "n": "ctx_alignedX",
+   "g": "C",
+   "k": "bool",
+   "offset": 180,
+   "count": 1
+  },
+  {
+   "n": "ctx_alignedY",
+   "g": "C",
+   "k": "bool",
+   "offset": 181,
+   "count": 1
+  },
+  {
+   "n": "ctx_depth",
+   "g": "C",
+   "k": "num",
+   "offset": 182,
+   "count": 1
+  },
+  {
+   "n": "ctx_depth_bucket",
+   "g": "C",
+   "k": "bucket",
+   "offset": 183,
+   "count": 6
+  },
+  {
+   "n": "ctx_depth_ratio",
+   "g": "C",
+   "k": "num",
+   "offset": 189,
+   "count": 1
+  },
+  {
+   "n": "fill_n",
+   "g": "D",
+   "k": "num",
+   "offset": 190,
+   "count": 1
+  },
+  {
+   "n": "fill_hasSolid",
+   "g": "D",
+   "k": "bool",
+   "offset": 191,
+   "count": 1
+  },
+  {
+   "n": "fill_hasGradient",
+   "g": "D",
+   "k": "bool",
+   "offset": 192,
+   "count": 1
+  },
+  {
+   "n": "fill_hasImage",
+   "g": "D",
+   "k": "bool",
+   "offset": 193,
+   "count": 1
+  },
+  {
+   "n": "fill_transparent",
+   "g": "D",
+   "k": "bool",
+   "offset": 194,
+   "count": 1
+  },
+  {
+   "n": "fill_opacity",
+   "g": "D",
+   "k": "num",
+   "offset": 195,
+   "count": 1
+  },
+  {
+   "n": "fill_alpha",
+   "g": "D",
+   "k": "num",
+   "offset": 196,
+   "count": 1
+  },
+  {
+   "n": "fill_hue",
+   "g": "D",
+   "k": "num",
+   "offset": 197,
+   "count": 1
+  },
+  {
+   "n": "fill_sat",
+   "g": "D",
+   "k": "num",
+   "offset": 198,
+   "count": 1
+  },
+  {
+   "n": "fill_val",
+   "g": "D",
+   "k": "num",
+   "offset": 199,
+   "count": 1
+  },
+  {
+   "n": "fill_isDark",
+   "g": "D",
+   "k": "bool",
+   "offset": 200,
+   "count": 1
+  },
+  {
+   "n": "fill_isNeon",
+   "g": "D",
+   "k": "bool",
+   "offset": 201,
+   "count": 1
+  },
+  {
+   "n": "fill_paletteBucket",
+   "g": "D",
+   "k": "onehot",
+   "offset": 202,
+   "count": 12
+  },
+  {
+   "n": "grad_stops",
+   "g": "D",
+   "k": "num",
+   "offset": 214,
+   "count": 1
+  },
+  {
+   "n": "grad_type",
+   "g": "D",
+   "k": "onehot",
+   "offset": 215,
+   "count": 4
+  },
+  {
+   "n": "grad_angle_bucket",
+   "g": "D",
+   "k": "num",
+   "offset": 219,
+   "count": 1
+  },
+  {
+   "n": "color_nDistinct",
+   "g": "D",
+   "k": "num",
+   "offset": 220,
+   "count": 1
+  },
+  {
+   "n": "color_strokeDarker",
+   "g": "D",
+   "k": "bool",
+   "offset": 221,
+   "count": 1
+  },
+  {
+   "n": "color_contrast",
+   "g": "D",
+   "k": "num",
+   "offset": 222,
+   "count": 1
+  },
+  {
+   "n": "color_isMonochrome",
+   "g": "D",
+   "k": "bool",
+   "offset": 223,
+   "count": 1
+  },
+  {
+   "n": "stroke_has",
+   "g": "E",
+   "k": "bool",
+   "offset": 224,
+   "count": 1
+  },
+  {
+   "n": "stroke_w_log",
+   "g": "E",
+   "k": "num",
+   "offset": 225,
+   "count": 1
+  },
+  {
+   "n": "stroke_w_bucket",
+   "g": "E",
+   "k": "bucket",
+   "offset": 226,
+   "count": 6
+  },
+  {
+   "n": "stroke_w_over_minDim",
+   "g": "E",
+   "k": "num",
+   "offset": 232,
+   "count": 1
+  },
+  {
+   "n": "stroke_align",
+   "g": "E",
+   "k": "onehot",
+   "offset": 233,
+   "count": 3
+  },
+  {
+   "n": "stroke_join",
+   "g": "E",
+   "k": "onehot",
+   "offset": 236,
+   "count": 3
+  },
+  {
+   "n": "stroke_hasDash",
+   "g": "E",
+   "k": "bool",
+   "offset": 239,
+   "count": 1
+  },
+  {
+   "n": "stroke_perSideDiff",
+   "g": "E",
+   "k": "bool",
+   "offset": 240,
+   "count": 1
+  },
+  {
+   "n": "stroke_sat",
+   "g": "E",
+   "k": "num",
+   "offset": 241,
+   "count": 1
+  },
+  {
+   "n": "stroke_val",
+   "g": "E",
+   "k": "num",
+   "offset": 242,
+   "count": 1
+  },
+  {
+   "n": "stroke_opacity",
+   "g": "E",
+   "k": "num",
+   "offset": 243,
+   "count": 1
+  },
+  {
+   "n": "corner_r_log",
+   "g": "E",
+   "k": "num",
+   "offset": 244,
+   "count": 1
+  },
+  {
+   "n": "corner_r_bucket",
+   "g": "E",
+   "k": "bucket",
+   "offset": 245,
+   "count": 6
+  },
+  {
+   "n": "corner_r_over_minDim",
+   "g": "E",
+   "k": "num",
+   "offset": 251,
+   "count": 1
+  },
+  {
+   "n": "corner_perSideDiff",
+   "g": "E",
+   "k": "bool",
+   "offset": 252,
+   "count": 1
+  },
+  {
+   "n": "corner_isFull",
+   "g": "E",
+   "k": "bool",
+   "offset": 253,
+   "count": 1
+  },
+  {
+   "n": "shape_isPill",
+   "g": "E",
+   "k": "bool",
+   "offset": 254,
+   "count": 1
+  },
+  {
+   "n": "shape_isCircle",
+   "g": "E",
+   "k": "bool",
+   "offset": 255,
+   "count": 1
+  },
+  {
+   "n": "stroke_and_radius",
+   "g": "E",
+   "k": "bool",
+   "offset": 256,
+   "count": 1
+  },
+  {
+   "n": "shape_borderRatio",
+   "g": "E",
+   "k": "num",
+   "offset": 257,
+   "count": 1
+  },
+  {
+   "n": "text_isText",
+   "g": "F",
+   "k": "bool",
+   "offset": 258,
+   "count": 1
+  },
+  {
+   "n": "text_len",
+   "g": "F",
+   "k": "num",
+   "offset": 259,
+   "count": 1
+  },
+  {
+   "n": "text_words",
+   "g": "F",
+   "k": "num",
+   "offset": 260,
+   "count": 1
+  },
+  {
+   "n": "text_hasDigit",
+   "g": "F",
+   "k": "bool",
+   "offset": 261,
+   "count": 1
+  },
+  {
+   "n": "text_isNumeric",
+   "g": "F",
+   "k": "bool",
+   "offset": 262,
+   "count": 1
+  },
+  {
+   "n": "text_allUpper",
+   "g": "F",
+   "k": "bool",
+   "offset": 263,
+   "count": 1
+  },
+  {
+   "n": "text_fontSize_ratio",
+   "g": "F",
+   "k": "num",
+   "offset": 264,
+   "count": 1
+  },
+  {
+   "n": "text_fontWeight",
+   "g": "F",
+   "k": "num",
+   "offset": 265,
+   "count": 1
+  },
+  {
+   "n": "text_italic",
+   "g": "F",
+   "k": "bool",
+   "offset": 266,
+   "count": 1
+  },
+  {
+   "n": "text_alignH",
+   "g": "F",
+   "k": "onehot",
+   "offset": 267,
+   "count": 3
+  },
+  {
+   "n": "text_alignV",
+   "g": "F",
+   "k": "onehot",
+   "offset": 270,
+   "count": 3
+  },
+  {
+   "n": "text_wrap",
+   "g": "F",
+   "k": "bool",
+   "offset": 273,
+   "count": 1
+  },
+  {
+   "n": "text_nLines",
+   "g": "F",
+   "k": "num",
+   "offset": 274,
+   "count": 1
+  },
+  {
+   "n": "text_val",
+   "g": "F",
+   "k": "num",
+   "offset": 275,
+   "count": 1
+  },
+  {
+   "n": "text_sat",
+   "g": "F",
+   "k": "num",
+   "offset": 276,
+   "count": 1
+  },
+  {
+   "n": "text_density",
+   "g": "F",
+   "k": "num",
+   "offset": 277,
+   "count": 1
+  },
+  {
+   "n": "tree_nChildren",
+   "g": "G",
+   "k": "num",
+   "offset": 278,
+   "count": 1
+  },
+  {
+   "n": "tree_hasChildren",
+   "g": "G",
+   "k": "bool",
+   "offset": 279,
+   "count": 1
+  },
+  {
+   "n": "tree_nTextChildren",
+   "g": "G",
+   "k": "num",
+   "offset": 280,
+   "count": 1
+  },
+  {
+   "n": "tree_nImageChildren",
+   "g": "G",
+   "k": "num",
+   "offset": 281,
+   "count": 1
+  },
+  {
+   "n": "tree_nFrameChildren",
+   "g": "G",
+   "k": "num",
+   "offset": 282,
+   "count": 1
+  },
+  {
+   "n": "tree_isLeaf",
+   "g": "G",
+   "k": "bool",
+   "offset": 283,
+   "count": 1
+  },
+  {
+   "n": "tree_isRoot",
+   "g": "G",
+   "k": "bool",
+   "offset": 284,
+   "count": 1
+  },
+  {
+   "n": "tree_siblingIndex",
+   "g": "G",
+   "k": "num",
+   "offset": 285,
+   "count": 1
+  },
+  {
+   "n": "tree_isFirstChild",
+   "g": "G",
+   "k": "bool",
+   "offset": 286,
+   "count": 1
+  },
+  {
+   "n": "tree_isLastChild",
+   "g": "G",
+   "k": "bool",
+   "offset": 287,
+   "count": 1
+  },
+  {
+   "n": "tree_clips",
+   "g": "G",
+   "k": "bool",
+   "offset": 288,
+   "count": 1
+  },
+  {
+   "n": "tree_hasScroll",
+   "g": "G",
+   "k": "bool",
+   "offset": 289,
+   "count": 1
+  },
+  {
+   "n": "layout_mode",
+   "g": "G",
+   "k": "onehot",
+   "offset": 290,
+   "count": 4
+  },
+  {
+   "n": "layout_gap",
+   "g": "G",
+   "k": "num",
+   "offset": 294,
+   "count": 1
+  },
+  {
+   "n": "layout_padAvg",
+   "g": "G",
+   "k": "num",
+   "offset": 295,
+   "count": 1
+  },
+  {
+   "n": "tree_childSizeVar",
+   "g": "G",
+   "k": "num",
+   "offset": 296,
+   "count": 1
+  },
+  {
+   "n": "fx_nShadows",
+   "g": "H",
+   "k": "num",
+   "offset": 297,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowOffsetX",
+   "g": "H",
+   "k": "num",
+   "offset": 298,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowOffsetY",
+   "g": "H",
+   "k": "num",
+   "offset": 299,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowBlur",
+   "g": "H",
+   "k": "num",
+   "offset": 300,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowSpread",
+   "g": "H",
+   "k": "num",
+   "offset": 301,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowAlpha",
+   "g": "H",
+   "k": "num",
+   "offset": 302,
+   "count": 1
+  },
+  {
+   "n": "fx_shadowIsMulti",
+   "g": "H",
+   "k": "bool",
+   "offset": 303,
+   "count": 1
+  },
+  {
+   "n": "fx_hasInnerShadow",
+   "g": "H",
+   "k": "bool",
+   "offset": 304,
+   "count": 1
+  },
+  {
+   "n": "fx_hasLayerBlur",
+   "g": "H",
+   "k": "bool",
+   "offset": 305,
+   "count": 1
+  },
+  {
+   "n": "fx_hasBgBlur",
+   "g": "H",
+   "k": "bool",
+   "offset": 306,
+   "count": 1
+  },
+  {
+   "n": "fx_blurRadius",
+   "g": "H",
+   "k": "num",
+   "offset": 307,
+   "count": 1
+  },
+  {
+   "n": "fx_hasGlowPattern",
+   "g": "H",
+   "k": "bool",
+   "offset": 308,
+   "count": 1
+  },
+  {
+   "n": "fx_nGlow",
+   "g": "H",
+   "k": "num",
+   "offset": 309,
+   "count": 1
+  },
+  {
+   "n": "fx_hasAnyEffect",
+   "g": "H",
+   "k": "bool",
+   "offset": 310,
+   "count": 1
+  },
+  {
+   "n": "fx_opacity",
+   "g": "H",
+   "k": "num",
+   "offset": 311,
+   "count": 1
+  },
+  {
+   "n": "img_hasImageFill",
+   "g": "I",
+   "k": "bool",
+   "offset": 312,
+   "count": 1
+  },
+  {
+   "n": "img_aspectMatch",
+   "g": "I",
+   "k": "bool",
+   "offset": 313,
+   "count": 1
+  },
+  {
+   "n": "img_isVectorKind",
+   "g": "I",
+   "k": "bool",
+   "offset": 314,
+   "count": 1
+  },
+  {
+   "n": "img_tile",
+   "g": "I",
+   "k": "bool",
+   "offset": 315,
+   "count": 1
+  },
+  {
+   "n": "img_reuse",
+   "g": "I",
+   "k": "num",
+   "offset": 316,
+   "count": 1
+  },
+  {
+   "n": "img_largerThanParent",
+   "g": "I",
+   "k": "bool",
+   "offset": 317,
+   "count": 1
+  },
+  {
+   "n": "d_isFx",
+   "g": "I",
+   "k": "bool",
+   "offset": 318,
+   "count": 1
+  },
+  {
+   "n": "d_fxKind",
+   "g": "I",
+   "k": "onehot",
+   "offset": 319,
+   "count": 16
+  },
+  {
+   "n": "d_blendFx",
+   "g": "I",
+   "k": "onehot",
+   "offset": 335,
+   "count": 7
+  },
+  {
+   "n": "d_isShineFrame",
+   "g": "I",
+   "k": "bool",
+   "offset": 342,
+   "count": 1
+  },
+  {
+   "n": "d_isDarkerUnderlay",
+   "g": "I",
+   "k": "bool",
+   "offset": 343,
+   "count": 1
+  },
+  {
+   "n": "d_textureLike",
+   "g": "I",
+   "k": "bool",
+   "offset": 344,
+   "count": 1
+  },
+  {
+   "n": "d_hasStudToken",
+   "g": "I",
+   "k": "bool",
+   "offset": 345,
+   "count": 1
+  },
+  {
+   "n": "sty_stud",
+   "g": "J",
+   "k": "bool",
+   "offset": 346,
+   "count": 1
+  },
+  {
+   "n": "sty_anime",
+   "g": "J",
+   "k": "bool",
+   "offset": 347,
+   "count": 1
+  },
+  {
+   "n": "sty_cartoon",
+   "g": "J",
+   "k": "bool",
+   "offset": 348,
+   "count": 1
+  },
+  {
+   "n": "sty_belirsiz",
+   "g": "J",
+   "k": "bool",
+   "offset": 349,
+   "count": 1
+  },
+  {
+   "n": "sty_conf",
+   "g": "J",
+   "k": "num",
+   "offset": 350,
+   "count": 1
+  },
+  {
+   "n": "sty_darkness",
+   "g": "J",
+   "k": "num",
+   "offset": 351,
+   "count": 1
+  },
+  {
+   "n": "sty_mutedBase",
+   "g": "J",
+   "k": "num",
+   "offset": 352,
+   "count": 1
+  },
+  {
+   "n": "sty_hueDiversity",
+   "g": "J",
+   "k": "num",
+   "offset": 353,
+   "count": 1
+  },
+  {
+   "n": "sty_accentPop",
+   "g": "J",
+   "k": "num",
+   "offset": 354,
+   "count": 1
+  },
+  {
+   "n": "sty_effectDensity",
+   "g": "J",
+   "k": "num",
+   "offset": 355,
+   "count": 1
+  },
+  {
+   "n": "sty_gradientRate",
+   "g": "J",
+   "k": "num",
+   "offset": 356,
+   "count": 1
+  },
+  {
+   "n": "sty_reuseRate",
+   "g": "J",
+   "k": "num",
+   "offset": 357,
+   "count": 1
+  },
+  {
+   "n": "sty_imageDriven",
+   "g": "J",
+   "k": "num",
+   "offset": 358,
+   "count": 1
+  },
+  {
+   "n": "sty_darkerUnderlayRate",
+   "g": "J",
+   "k": "num",
+   "offset": 359,
+   "count": 1
+  },
+  {
+   "n": "sty_shineFrameRate",
+   "g": "J",
+   "k": "num",
+   "offset": 360,
+   "count": 1
+  },
+  {
+   "n": "par_cls",
+   "g": "K",
+   "k": "onehot",
+   "offset": 361,
+   "count": 12
+  },
+  {
+   "n": "par_clusterRank",
+   "g": "K",
+   "k": "num",
+   "offset": 373,
+   "count": 1
+  },
+  {
+   "n": "par_isRoot",
+   "g": "K",
+   "k": "bool",
+   "offset": 374,
+   "count": 1
+  },
+  {
+   "n": "par_depth",
+   "g": "K",
+   "k": "num",
+   "offset": 375,
+   "count": 1
+  },
+  {
+   "n": "par_hasScroll",
+   "g": "K",
+   "k": "bool",
+   "offset": 376,
+   "count": 1
+  },
+  {
+   "n": "par_w_ratio",
+   "g": "K",
+   "k": "num",
+   "offset": 377,
+   "count": 1
+  },
+  {
+   "n": "par_h_ratio",
+   "g": "K",
+   "k": "num",
+   "offset": 378,
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "fengari",
+  "version": "0.1.5",
+  "description": "Lua 5.3 VM in JavaScript (vendored, MIT) — used only by tools/verify_runtime.py",
+  "main": "fengari.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengari-lua/fengari.git"
+  },
+  "keywords": [
+    "lua",
+    "vm"
+  ],
+  "contributors": [
+    "Benoit Giannangeli",
+    "Daurnimator <quae@daurnimator.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fengari-lua/fengari/issues"
+  },
+  "homepage": "https://github.com/fengari-lua/fengari#readme",
+  "sideEffects": false
+}

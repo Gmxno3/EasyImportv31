@@ -1,0 +1,31 @@
+  .as-row { display: flex; align-items: center; gap: 8px; padding: 7px 14px; border-top: 1px solid var(--line); font-size: 12px; }
+  .as-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .as-row .kd { font: 10px ui-monospace, monospace; color: var(--mut); width: 60px; }
+  .as-row select { background: var(--card2); color: var(--txt); border: 1px solid var(--line); border-radius: 8px; padding: 4px 6px; font-size: 12px; font-family: inherit; max-width: 140px; }
+  .as-row .src { font: 10px ui-monospace, monospace; width: 96px; text-align: right; }
+  .as-src-learn { color: var(--acct); } .as-src-model { color: var(--ok); } .as-src-low { color: var(--mut); }
+  .as-list { max-height: 260px; overflow: auto; }
+  .as-fxwrap { padding: 10px 14px 6px; display: grid; gap: 10px; }
+  #fxList { display: flex; flex-direction: column; gap: 6px; max-height: 140px; overflow: auto; }
+  .as-fxrow { text-align: left; background: var(--card2); color: var(--txt); border: 1px solid var(--line);
+    border-radius: 8px; padding: 7px 10px; font-size: 12px; cursor: pointer; }
+  .as-fxrow.on { border-color: var(--acc); background: #241f45; }
+  .as-fxparams { font-size: 12px; color: var(--mut); display: grid; gap: 8px; }
+  .as-fxtitle { color: var(--txt); font-weight: 600; font-size: 13px; }
+  .as-fxline { display: grid; grid-template-columns: 1fr 1.2fr 64px; align-items: center; gap: 8px; }
+  .as-fxline input[type=range] { width: 100%; accent-color: var(--acc); }
+  .as-fxnum { width: 64px; background: var(--card2); color: var(--txt); border: 1px solid var(--line);
+    border-radius: 6px; padding: 3px 5px; font: 12px ui-monospace, monospace; }
+  .as-fxpics { display: grid; gap: 6px; }
+  .as-fxpics input[type=file] { font-size: 11px; color: var(--mut); }
+  .as-fxthumbs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .as-fxthumb { position: relative; width: 52px; height: 52px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--card2); }
+  .as-fxthumb img { width: 100%; height: 100%; object-fit: contain; }
+  .as-fxthumb button { position: absolute; top: 0; right: 0; width: 18px; height: 18px; padding: 0; font-size: 12px; background: #3a1d24; color: var(--bad); border-radius: 0 0 0 6px; }
+  .as-fxlib { display: grid; gap: 6px; }
+  .as-fxbar { display: flex; gap: 6px; }
+  .as-fxbar select, .as-fxbar input { flex: 1; min-width: 0; background: var(--card2); color: var(--txt); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; font-size: 11px; }
+  .as-fxgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 5px; max-height: 190px; overflow: auto; font-size: 11px; color: var(--mut); }
+  .as-fxicon { background: var(--card2); border: 1px solid var(--line); border-radius: 8px; padding: 3px; height: 44px; cursor: pointer; }
+  .as-fxicon img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+  .as-fxicon.on { border-color: var(--acc); background: #241f45; }

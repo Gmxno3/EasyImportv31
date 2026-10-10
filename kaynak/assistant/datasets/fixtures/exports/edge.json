@@ -1,0 +1,1343 @@
+{
+ "format": "wispfree",
+ "version": 9,
+ "maskMerged": 0,
+ "name": "Edge",
+ "width": 100,
+ "height": 100,
+ "root": {
+  "name": "Edge",
+  "kind": "frame",
+  "x": 0,
+  "y": 0,
+  "w": 100,
+  "h": 100,
+  "rot": 0,
+  "opacity": 1,
+  "fills": [],
+  "radius": 0,
+  "clips": false,
+  "children": [
+   {
+    "name": "",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "rot": 0,
+    "opacity": 1,
+    "fills": []
+   },
+   {
+    "name": "Sıfır Yükseklik",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 50,
+    "h": 0,
+    "rot": 0,
+    "opacity": 1,
+    "fills": []
+   },
+   {
+    "name": "Negatif",
+    "kind": "frame",
+    "x": -500,
+    "y": -500,
+    "w": 40,
+    "h": 40,
+    "rot": 0,
+    "opacity": 1,
+    "fills": []
+   },
+   {
+    "name": "Yazısız",
+    "kind": "text",
+    "x": 0,
+    "y": 0,
+    "w": 30,
+    "h": 30,
+    "rot": 0,
+    "opacity": 1,
+    "text": {
+     "characters": "",
+     "fontSize": 0,
+     "fontFamily": "GothamSSm",
+     "fontWeight": 700,
+     "italic": false,
+     "color": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+     },
+     "opacity": 1,
+     "align": "CENTER",
+     "vAlign": "CENTER",
+     "wrap": true,
+     "autoW": false
+    }
+   },
+   {
+    "name": "Uç",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 10000000.0,
+    "h": 0.001,
+    "rot": 359.5,
+    "opacity": 0.0,
+    "fills": [
+     {
+      "type": "SOLID",
+      "color": {
+       "r": 255,
+       "g": 255,
+       "b": 255
+      },
+      "opacity": 1.0
+     }
+    ],
+    "stroke": {
+     "color": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+     },
+     "opacity": 1,
+     "weight": 100000.0
+    },
+    "strokeWeight": 100000.0,
+    "strokeAlign": "CENTER",
+    "radius": 1000000.0,
+    "shadows": [
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 0,
+      "color": {
+       "r": 0,
+       "g": 0,
+       "b": 0
+      },
+      "opacity": 0.0
+     }
+    ]
+   },
+   {
+    "name": "Tek Çocuk",
+    "kind": "frame",
+    "x": 0,
+    "y": 0,
+    "w": 10,
+    "h": 10,
+    "rot": 0,
+    "opacity": 1,
+    "fills": [],
+    "children": [
+     {
+      "name": "Derin",
+      "kind": "frame",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 1,
+      "rot": 0,
+      "opacity": 1,
+      "fills": [],
+      "children": [
+       {
+        "name": "Daha Derin",
+        "kind": "frame",
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1,
+        "rot": 0,
+        "opacity": 1,
+        "fills": []
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

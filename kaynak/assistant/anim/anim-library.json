@@ -1,0 +1,6768 @@
+{
+  "_meta": {
+    "format": "ei-anim-library",
+    "version": 1,
+    "createdAt": "2026-10-05",
+    "note": "EasyImport Asistan animasyon kutuphanesi. Asistan = SINIF ATAMASI + ANIMASYON ATAMASI yapar; efekt render etmez.",
+    "luaTarget": "TweenService (LocalScript), TweenInfo.new(dur, Enum.EasingStyle.<e>, Enum.EasingDirection.<ed>, rep, rev, dl)"
+  },
+  "_timing": {
+    "instant": 0.08,
+    "fast": 0.16,
+    "base": 0.24,
+    "medium": 0.36,
+    "slow": 0.52,
+    "glacial": 0.8,
+    "_rule": "Giris > Cikis (cikis, girisin ~2/3'u kadar olmali). Hover 0.08-0.15. Basma 0.06-0.12. Panel 0.30-0.40."
+  },
+  "_easing": {
+    "enter": {
+      "e": "Quart",
+      "ed": "Out",
+      "alt": [
+        "Quint/Out",
+        "Expo/Out",
+        "Back/Out"
+      ]
+    },
+    "exit": {
+      "e": "Quad",
+      "ed": "In",
+      "alt": [
+        "Quart/In",
+        "Cubic/In",
+        "Expo/In"
+      ]
+    },
+    "move": {
+      "e": "Sine",
+      "ed": "InOut",
+      "alt": [
+        "Cubic/InOut",
+        "Quart/InOut"
+      ]
+    },
+    "spring": {
+      "e": "Back",
+      "ed": "Out",
+      "alt": [
+        "Elastic/Out",
+        "Bounce/Out"
+      ]
+    },
+    "snap": {
+      "e": "Quint",
+      "ed": "Out",
+      "alt": [
+        "Expo/Out"
+      ]
+    },
+    "linear": {
+      "e": "Linear",
+      "ed": "InOut",
+      "alt": []
+    }
+  },
+  "_categories": [
+    {
+      "id": "giris",
+      "name": "Giriş",
+      "trigger": "show",
+      "desc": "Öğe/GUI ekrana girerken"
+    },
+    {
+      "id": "cikis",
+      "name": "Çıkış",
+      "trigger": "hide",
+      "desc": "Öğe/GUI ekrandan çıkarken (girişten hızlı)"
+    },
+    {
+      "id": "hover",
+      "name": "Hover",
+      "trigger": "mouseEnter/mouseLeave",
+      "desc": "Fare üzerine gelince"
+    },
+    {
+      "id": "basma",
+      "name": "Basma",
+      "trigger": "mouseDown/mouseUp/click",
+      "desc": "Tıklama geri bildirimi"
+    },
+    {
+      "id": "dongu",
+      "name": "Döngü",
+      "trigger": "always",
+      "desc": "Sürekli çalışan ortam animasyonu"
+    },
+    {
+      "id": "dikkat",
+      "name": "Dikkat",
+      "trigger": "event",
+      "desc": "Kullanıcının dikkatini çekme (uyarı, ödül, claim)"
+    },
+    {
+      "id": "gecis",
+      "name": "Geçiş",
+      "trigger": "pageChange",
+      "desc": "Ekran/sekme değişimi"
+    },
+    {
+      "id": "durum",
+      "name": "Durum",
+      "trigger": "stateChange",
+      "desc": "Açma/kapama, kilit, ilerleme"
+    },
+    {
+      "id": "fx",
+      "name": "Efekt Görseli",
+      "trigger": "always|event",
+      "desc": "Figma'da EFEKT olarak kullanılan ImageLabel'lar (glow, ray, sparkle, shine, vignette...)"
+    },
+    {
+      "id": "metin",
+      "name": "Metin",
+      "trigger": "show|event",
+      "desc": "Metne özel animasyonlar"
+    }
+  ],
+  "_roles": [
+    "button",
+    "primary-button",
+    "icon-button",
+    "close-button",
+    "panel",
+    "modal",
+    "card",
+    "slot",
+    "icon",
+    "title",
+    "label",
+    "value",
+    "bar",
+    "progress",
+    "badge",
+    "tooltip",
+    "background",
+    "divider",
+    "avatar",
+    "currency",
+    "reward",
+    "tab",
+    "toggle",
+    "slider",
+    "list"
+  ],
+  "_fxKinds": [
+    "glow",
+    "rays",
+    "sparkle",
+    "shine",
+    "vignette",
+    "noise",
+    "dust",
+    "ring",
+    "aura",
+    "beam",
+    "gloss",
+    "bubble",
+    "star",
+    "flare",
+    "smoke",
+    "gradient-overlay"
+  ],
+  "_fxDetection": {
+    "desc": "Figma'da bir katmanın EFEKT katmanı olup olmadığının tespiti. ⚠️ KULLANICI UYARISI: 'Figma efek tiplerinde Texture ve Effect'i bulamazsın, çünkü onları IMAGE olarak alıyoruz, bazen de frame'de biz yapıyoruz.' -> Tespit FIGMA effects[] TİPLERİNDEN DEĞİL, IMAGE ve FRAME kanallarından yapılır. Figma'nın TEXTURE/NOISE/GLASS/SHADER efekt tipleri bu Uİ'larda KULLANILMIYOR (hepsi PNG olarak geliyor).",
+    "_primaryChannels": [
+      "IMAGE",
+      "FRAME"
+    ],
+    "_ignoredChannels": [
+      "figma.effects[].type == TEXTURE/NOISE/GLASS/SHADER  ->  bu Uİ'larda yok, PNG olarak geliyor"
+    ],
+    "nameTokens": [
+      "glow",
+      "gloww",
+      "shadow",
+      "light",
+      "lights",
+      "ray",
+      "rays",
+      "shine",
+      "shining",
+      "sparkle",
+      "sparkles",
+      "star",
+      "stars",
+      "twinkle",
+      "particle",
+      "particles",
+      "flare",
+      "bloom",
+      "vignette",
+      "noise",
+      "grain",
+      "dust",
+      "smoke",
+      "fog",
+      "ring",
+      "pulse",
+      "aura",
+      "beam",
+      "streak",
+      "gloss",
+      "shimmer",
+      "glint",
+      "blur",
+      "overlay",
+      "gradient",
+      "halo",
+      "neon",
+      "emission",
+      "emit",
+      "energy",
+      "magic",
+      "aura_",
+      "fx",
+      "effect",
+      "efekt",
+      "isik",
+      "isilti",
+      "parlama",
+      "parilti",
+      "huzme",
+      "pırıltı",
+      "toz",
+      "duman",
+      "halka"
+    ],
+    "blendModes": [
+      "SCREEN",
+      "LINEAR_DODGE",
+      "COLOR_DODGE",
+      "LIGHTEN",
+      "ADD",
+      "PLUS_LIGHTER",
+      "PLUS_DARKER"
+    ],
+    "geometry": {
+      "largerThanParent": "glow / halo / aura spill",
+      "aspectNear1": 0.15,
+      "veryTransparent": 0.35,
+      "spansParent": "vignette / gradient-overlay"
+    },
+    "imageChannel": {
+      "desc": "⭐ ANA KANAL — efektler IMAGE olarak gelir. Bir ImageLabel efekt midir?",
+      "rules": [
+        "adında FX token'ı var (nameTokens listesi)",
+        "blendMode SCREEN / ADD / LINEAR_DODGE / COLOR_DODGE / LIGHTEN",
+        "ebeveyninden BÜYÜK (spill) VE çok saydam (<0.35) -> glow / halo / aura",
+        "scaleMode == 'TILE' -> DOKU (texture): stud, noise, grain",
+        "aynı image dosyası birden fazla yerde kullanılıyor (reuseRate yüksek) -> doku",
+        "aspect≈1 VE çok küçük VE çok sayısı fazla -> sparkle / particle / dust"
+      ]
+    },
+    "frameChannel": {
+      "desc": "⭐ İKİNCİ KANAL — bazı efektler FRAME ile ELLE yapılır. Kullanıcı: 'shine efektini Frame ile yapılır, güzel gözüksün diye.'",
+      "rules": [
+        "Frame + gradyan dolgu + yarım saydam + bir elemanın ÜSTÜNDE biniyor -> SHINE / GLOSS katmanı",
+        "Frame + aynı hue'nun koyusu + bir elemanın ALTINDA -> 3D UNDERLAY (süs, ayrı sınıf değil)",
+        "Frame + tam ekranı kaplıyor + koyu + yarım saydam -> VIGNETTE",
+        "Frame + ince + yüksek aspect + yarım saydam -> DIVIDER / STREAK"
+      ],
+      "classImpact": "Bu katmanlar 'Frame' olarak SINIFLANDIRILMAMALI; FX katmanı olarak işaretlenip fx animasyonu almalı (3D underlay hariç: o Frame kalır ama süs olarak işaretlenir)"
+    },
+    "decision": "imageChannel OR frameChannel => fx=true",
+    "_note": "Figma effects[] yalnızca DOLAYLI kanıt olarak okunur (DROP_SHADOW=glow göstergesi, BACKGROUND_BLUR=cam göstergesi). Ana tespit IMAGE ve FRAME'den."
+  },
+  "_tweenability": {
+    "_desc": "Roblox TweenService hangi özellikleri tween EDEBİLİR? Kritik kısıtlar — kütüphane buna göre yazıldı.",
+    "tweenable": {
+      "UIScale.Scale": "float ✔",
+      "self.Position": "UDim2 ✔ (tercih edilen konum yöntemi)",
+      "self.Rotation": "float ✔",
+      "self.Size": "UDim2 ✔ ama LAYOUT YENİDEN HESAPLAR -> yavaş. Mümkünse UIScale kullan.",
+      "self.BackgroundTransparency / ImageTransparency / TextTransparency / GroupTransparency": "float ✔",
+      "self.BackgroundColor3 / ImageColor3 / TextColor3 / TextStrokeColor3": "Color3 ✔",
+      "UIStroke.Thickness": "float ✔",
+      "UIStroke.Color": "Color3 ✔",
+      "UIShadow.BlurRadius": "UDim ✔ (scale = kısa kenara göre)",
+      "UIShadow.Offset / Spread": "UDim2 ✔",
+      "UIShadow.Transparency": "float ✔",
+      "UIShadow.Color": "Color3 ✔",
+      "UIGradient.Offset": "Vector2 ✔ — RESMİ ÖNERİLEN YÖNTEM",
+      "UIGradient.Rotation": "float ✔ — RESMİ ÖNERİLEN YÖNTEM",
+      "self.MaxVisibleGraphemes": "int ✔ (daktilo efekti)",
+      "CanvasGroup.GroupTransparency": "float ✔"
+    },
+    "NOT_tweenable": {
+      "self.Text": "STRING — TweenService tween EDEMEZ. Sayaç (count-up) için elle döngü gerekir.",
+      "self.FontFace": "Font — tween edilemez",
+      "UIGradient.Color / Transparency": "ColorSequence / NumberSequence — tween etmek pahalı ve güvenilmez. Offset/Rotation kullan (Roblox'un kendi önerisi).",
+      "self.TextSize": "TEKNİK olarak tween edilir ama ALT PİKSEL YUVARLAR -> takılmalı görünür. UIScale kullan.",
+      "self.Size (sık değişiyorsa)": "layout recalc -> TweenSize/TweenPosition yerine UIScale"
+    },
+    "perfRules": [
+      "TweenService Stepped'de çalışır (RenderStepped'de değil) — UI için yeterli",
+      "TweenInfo ve TweenService referanslarını döngü DIŞINDA tut",
+      "Yeni tween başlatmadan önce eskisini Cancel() et",
+      "Sonsuz döngüleri Visible=false iken duraklat",
+      "Elle lerp gerekirse kare hızından bağımsız yap: alpha = 1 - math.exp(-rate * dt)",
+      "UIScale kullanırken AnchorPoint = 0.5,0.5 (merkezden ölçekleme)"
+    ]
+  },
+  "_trackSchema": {
+    "t": "hedef: self | UIScale | UIStroke | UIShadow | UIGradient | parent",
+    "p": "özellik (Scale, Position, Rotation, ImageTransparency, BackgroundTransparency, TextTransparency, GroupTransparency, Thickness, BlurRadius, Offset, Rotation...)",
+    "from": "başlangıç: sayı | 'cur' (mevcut değer) | [x,y]",
+    "to": "bitiş: sayı | [x,y]",
+    "d": "süre (saniye)",
+    "dl": "gecikme (saniye)",
+    "e": "EasingStyle: Linear|Sine|Back|Quad|Quart|Quint|Bounce|Elastic|Circular|Cubic|Exponential",
+    "ed": "EasingDirection: In|Out|InOut",
+    "rep": "tekrar (0=bir kez, -1=sonsuz)",
+    "rev": "geri dönsün mü"
+  },
+  "anims": [
+    {
+      "id": "enter_pop_scale",
+      "name": "Zıplayarak Giriş (Pop)",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel",
+        "TextButton",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "button",
+        "panel",
+        "card",
+        "modal",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.95
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.35,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.6,
+          "to": 1,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "En yaygın Roblox giriş animasyonu. Back/Out overshoot."
+    },
+    {
+      "id": "enter_fade",
+      "name": "Sadece Beliriş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel",
+        "TextButton",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "label",
+        "background"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0,
+          1
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 1,
+        "beauty": 2,
+        "snap": 3
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "En güvenli, her yerde çalışır."
+    },
+    {
+      "id": "enter_slide_up",
+      "name": "Aşağıdan Yükselerek",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel",
+        "TextButton",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "card",
+        "list"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.01,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            40
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.4,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.6,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Modal / bottom sheet için ideal."
+    },
+    {
+      "id": "enter_slide_down",
+      "name": "Yukarıdan İnerek",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "tooltip"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            -40
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.4,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.6,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Üst bildirim / banner için."
+    },
+    {
+      "id": "enter_slide_left",
+      "name": "Soldan Gelen",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "sidebar",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.38,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -60,
+            0
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.38,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.5,
+          "to": 0,
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Sol menü / drawer."
+    },
+    {
+      "id": "enter_slide_right",
+      "name": "Sağdan Gelen",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "sidebar",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.38,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            60,
+            0
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.38,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.5,
+          "to": 0,
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Sağ panel / envanter."
+    },
+    {
+      "id": "enter_zoom_out",
+      "name": "Uzaktan Yakınlaşma",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "modal",
+        "panel",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.02,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.42,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.35,
+          "to": 1,
+          "d": 0.42,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Ödül / seviye atlama ekranları."
+    },
+    {
+      "id": "enter_zoom_in",
+      "name": "İçinden Büyüme",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "modal",
+        "panel"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.02,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.36,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.35,
+          "to": 1,
+          "d": 0.36,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.8,
+          "to": 0,
+          "d": 0.22,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "enter_rotate_in",
+      "name": "Dönerek Giriş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "badge",
+        "reward",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.45,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -28,
+          "to": 0,
+          "d": 0.45,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.5,
+          "to": 1,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "AnchorPoint 0.5,0.5 gerekir."
+    },
+    {
+      "id": "enter_elastic_pop",
+      "name": "Elastik Patlama",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.7,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.2,
+          "to": 1,
+          "d": 0.7,
+          "dl": 0,
+          "e": "Elastic",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Cartoon style ile çok uyumlu. Abartılı."
+    },
+    {
+      "id": "enter_bounce_drop",
+      "name": "Yukarıdan Düşüş + Zıplama",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "card",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.75,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            -180
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.75,
+          "dl": 0,
+          "e": "Bounce",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Oyuncu tarzı, eğlenceli."
+    },
+    {
+      "id": "enter_punch",
+      "name": "Sert Vuruş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "TextLabel",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "title",
+        "value"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.5
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.25,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.3,
+          "to": 1,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Çok hızlı ve sert. Anime/dövüş UI'ları için."
+    },
+    {
+      "id": "enter_grow_from_center",
+      "name": "Merkezden Büyüme",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "tooltip"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.32,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.8,
+          "to": 1,
+          "d": 0.32,
+          "dl": 0,
+          "e": "Cubic",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.24,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "enter_scale_rotate",
+      "name": "Ölçek + Dönüş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "card",
+        "reward",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.001,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.5,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.4,
+          "to": 1,
+          "d": 0.5,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 180,
+          "to": 0,
+          "d": 0.5,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Kart açılma efekti."
+    },
+    {
+      "id": "enter_mask_reveal",
+      "name": "Soldan Açılan Perde",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "bar",
+        "progress",
+        "divider"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ],
+        "needsClips": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.45,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Size",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "d": 0.45,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "ClipsDescendants=true olan bir sarmalayıcı gerekir."
+    },
+    {
+      "id": "enter_stagger_list",
+      "name": "Liste Sırayla Giriş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageButton",
+        "ImageLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "list",
+        "slot",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ],
+        "minSiblings": 3
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.25,
+          "dl": "stagger:0.05",
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.85,
+          "to": 1,
+          "d": 0.3,
+          "dl": "stagger:0.05",
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "dl='stagger:0.05' -> her kardeş 0.05 sn gecikmeli başlar."
+    },
+    {
+      "id": "enter_flip_in",
+      "name": "Yatay Katlanarak Giriş",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "card",
+        "panel"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          0.8
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.55,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.05,
+          "to": 1,
+          "d": 0.55,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Roblox'ta gerçek 3D flip yok; ölçek + gölge ile taklit."
+    },
+    {
+      "id": "enter_soft_scale",
+      "name": "Yumuşak Ölçek Girişi",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "TextLabel",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "label",
+        "background"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.002,
+          1
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.28,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.94,
+          "to": 1,
+          "d": 0.28,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.5,
+          "to": 0,
+          "d": 0.24,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Minimal / kurumsal UI'lar için."
+    },
+    {
+      "id": "exit_fade",
+      "name": "Sönerek Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel",
+        "TextButton",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "label",
+        "background"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0,
+          1
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 1,
+        "beauty": 2,
+        "snap": 4
+      },
+      "dur": 0.2,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Çıkışlar girişten hızlı olmalı (2/3 kuralı)."
+    },
+    {
+      "id": "exit_shrink",
+      "name": "Küçülerek Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.22,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.85,
+          "d": 0.22,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_slide_down",
+      "name": "Aşağı Kayarak Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "bottom-sheet"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.01,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.28,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            60
+          ],
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.24,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_slide_up",
+      "name": "Yukarı Kayarak Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "modal",
+        "banner"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.28,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            -60
+          ],
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.24,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_pop_out",
+      "name": "Patlayarak Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "button",
+        "icon",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.25,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.3,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_rotate_away",
+      "name": "Dönerek Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "badge",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 24,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.7,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.24,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_wipe_left",
+      "name": "Sola Silinerek Çıkış",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "bar",
+        "divider"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ],
+        "needsClips": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.28,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Size",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_suck_in",
+      "name": "İçe Emiliş",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Back",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_drop_down",
+      "name": "Aşağı Düşüş",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "card",
+        "modal"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.45,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            240
+          ],
+          "d": 0.45,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "exit_blur_fade",
+      "name": "Bulanıklaşarak Sönme",
+      "cat": "cikis",
+      "trig": "hide",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "modal"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.01,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 3
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.08,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "GroupTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "CanvasGroup gerektirir (GroupTransparency). Küçük alanlarda kullan."
+    },
+    {
+      "id": "hover_scale_up",
+      "name": "Hover: Hafif Büyüme",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon-button",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.12,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.06,
+          "d": 0.12,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "En klasik Roblox hover. AnchorPoint 0.5,0.5 şart."
+    },
+    {
+      "id": "hover_scale_down",
+      "name": "Hover: Hafif Küçülme",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "icon-button",
+        "close-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.12,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.95,
+          "d": 0.12,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "hover_glow",
+      "name": "Hover: Parlaklık",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.14,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.15,
+          "to": 0,
+          "d": 0.14,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "BlurRadius",
+          "from": [
+            0,
+            8
+          ],
+          "to": [
+            0,
+            22
+          ],
+          "d": 0.14,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "UIShadow ile glow artışı. Roblox 2026."
+    },
+    {
+      "id": "hover_lift",
+      "name": "Hover: Yukarı Kalkma",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "card",
+        "slot"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.15,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            -3
+          ],
+          "d": 0.15,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "Offset",
+          "from": [
+            0,
+            0,
+            0,
+            4
+          ],
+          "to": [
+            0,
+            0,
+            0,
+            10
+          ],
+          "d": 0.15,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Gölge ile birlikte 'kalkma' hissi."
+    },
+    {
+      "id": "hover_rotate_tilt",
+      "name": "Hover: Hafif Eğim",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon-button",
+        "card",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.15,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 4,
+          "d": 0.15,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "hover_stroke_grow",
+      "name": "Hover: Kontur Kalınlaşması",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "Frame"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.5
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.14,
+      "tracks": [
+        {
+          "t": "UIStroke",
+          "p": "Thickness",
+          "from": 3,
+          "to": 5,
+          "d": 0.14,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Cartoon / Stud style ile çok uyumlu (kontur odaklı)."
+    },
+    {
+      "id": "hover_brighten",
+      "name": "Hover: Renk Açılması",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "TextButton",
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "slot",
+        "tab"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.13,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "BackgroundTransparency",
+          "from": 0,
+          "to": 0.15,
+          "d": 0.13,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "hover_shift_right",
+      "name": "Hover: Sağa Kayma",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "TextButton",
+        "ImageButton",
+        "TextLabel"
+      ],
+      "roles": [
+        "button",
+        "tab",
+        "list"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.14,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            4,
+            0
+          ],
+          "d": 0.14,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Menü öğeleri için ideal."
+    },
+    {
+      "id": "hover_bounce_small",
+      "name": "Hover: Küçük Zıplama",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon-button",
+        "reward",
+        "currency"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.28,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.1,
+          "d": 0.28,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "hover_shine_sweep",
+      "name": "Hover: Üzerinden Işık Geçişi",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "primary-button",
+        "reward",
+        "card"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0005,
+          0.5
+        ],
+        "fxKind": [
+          "shine",
+          "gloss"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 4
+      },
+      "dur": 0.55,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -1.2,
+            0
+          ],
+          "to": [
+            1.2,
+            0
+          ],
+          "d": 0.55,
+          "dl": 0,
+          "e": "Circular",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 0.9,
+          "d": 0.55,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Roblox'ta popüler 'UI Shine Effect' mantığı. FX ImageLabel üzerinde çalışır."
+    },
+    {
+      "id": "press_shrink_bounce",
+      "name": "Basma: Küçül & Zıpla",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon-button",
+        "close-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.9,
+          "d": 0.08,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.9,
+          "to": 1,
+          "d": 0.22,
+          "dl": 0.08,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "En popüler Roblox tıklama animasyonu."
+    },
+    {
+      "id": "press_shrink_only",
+      "name": "Basma: Sadece Küçül",
+      "cat": "basma",
+      "trig": "mouseDown",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "close-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.1,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.93,
+          "d": 0.1,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Minimal UI'lar için."
+    },
+    {
+      "id": "press_punch",
+      "name": "Basma: Sert Vuruş",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "primary-button",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.26,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.85,
+          "d": 0.06,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.85,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0.06,
+          "e": "Exponential",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "press_shake",
+      "name": "Basma: Titreme",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "Frame"
+      ],
+      "roles": [
+        "close-button",
+        "button",
+        "slot"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.32,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -5,
+          "to": 5,
+          "d": 0.08,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 3,
+          "rev": true
+        }
+      ],
+      "notes": "Kapama / reddetme butonları için."
+    },
+    {
+      "id": "press_flash",
+      "name": "Basma: Beyaz Parlama",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "primary-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.25,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageColor3",
+          "from": "cur",
+          "to": [
+            1,
+            1,
+            1
+          ],
+          "d": 0.06,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageColor3",
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": "cur",
+          "d": 0.19,
+          "dl": 0.06,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.94,
+          "d": 0.08,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.94,
+          "to": 1,
+          "d": 0.17,
+          "dl": 0.08,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "press_ripple",
+      "name": "Basma: Dalga Yayılması",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "ripple"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0002,
+          0.5
+        ],
+        "fxKind": [
+          "ring",
+          "glow"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 4
+      },
+      "dur": 0.5,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.1,
+          "to": 1.8,
+          "d": 0.5,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.4,
+          "to": 1,
+          "d": 0.5,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Material ripple taklidi. FX ImageLabel'da çalışır."
+    },
+    {
+      "id": "press_rotate_spin",
+      "name": "Basma: Tam Tur",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon-button",
+        "close-button",
+        "settings"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 3
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Ayarlar / yenile butonları."
+    },
+    {
+      "id": "press_depress",
+      "name": "Basma: İçeri Çökme",
+      "cat": "basma",
+      "trig": "mouseDown",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.12,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "d": 0.08,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "BlurRadius",
+          "from": [
+            0,
+            18
+          ],
+          "to": [
+            0,
+            6
+          ],
+          "d": 0.08,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.16,
+          "dl": 0.1,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Fiziksel buton hissi."
+    },
+    {
+      "id": "press_pop_scale",
+      "name": "Basma: Şişme & İnme",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "reward",
+        "currency"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.34,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.15,
+          "d": 0.12,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.15,
+          "to": 1,
+          "d": 0.22,
+          "dl": 0.12,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "press_squash",
+      "name": "Basma: Ezilme & Sallanma",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "primary-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.38,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.12,
+          "d": 0.1,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -4,
+          "to": 4,
+          "d": 0.09,
+          "dl": 0.1,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 1,
+          "rev": true
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.12,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0.18,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Cartoon style için çok uygun."
+    },
+    {
+      "id": "loop_pulse_scale",
+      "name": "Döngü: Nefes Alma",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.5
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 2
+      },
+      "dur": 1.6,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.05,
+          "d": 0.8,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Dikkat çekici ama yormayan."
+    },
+    {
+      "id": "loop_pulse_glow",
+      "name": "Döngü: Işıldama",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "primary-button",
+        "reward",
+        "title",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.8
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 1.8,
+      "tracks": [
+        {
+          "t": "UIShadow",
+          "p": "BlurRadius",
+          "from": [
+            0,
+            10
+          ],
+          "to": [
+            0,
+            30
+          ],
+          "d": 0.9,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        },
+        {
+          "t": "UIShadow",
+          "p": "Transparency",
+          "from": 0.6,
+          "to": 0.15,
+          "d": 0.9,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "UIShadow glow nefesi."
+    },
+    {
+      "id": "loop_breathe_transparency",
+      "name": "Döngü: Saydamlık Nefesi",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "Frame",
+        "TextLabel"
+      ],
+      "roles": [
+        "background",
+        "label",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 2
+      },
+      "dur": 2.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.25,
+          "to": 0.6,
+          "d": 1.2,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "loop_rotate_slow",
+      "name": "Döngü: Yavaş Dönüş",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon",
+        "loading"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ],
+        "fxKind": [
+          "rays",
+          "aura",
+          "ring",
+          "star"
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 12.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 12.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Işık huzmesi / yükleme ikonu."
+    },
+    {
+      "id": "loop_rotate_medium",
+      "name": "Döngü: Orta Hız Dönüş",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon",
+        "loading"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ],
+        "fxKind": [
+          "rays",
+          "aura",
+          "ring",
+          "gear"
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 2
+      },
+      "dur": 4.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 4.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "loop_rotate_reverse",
+      "name": "Döngü: Ters Yönde Dönüş",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ],
+        "fxKind": [
+          "rays",
+          "aura",
+          "ring"
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 1
+      },
+      "dur": 9.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 360,
+          "to": 0,
+          "d": 9.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "İki katmanlı huzmede ters yön derinlik verir."
+    },
+    {
+      "id": "loop_float",
+      "name": "Döngü: Süzülme",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "reward",
+        "card",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 3.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            -5
+          ],
+          "to": [
+            0,
+            5
+          ],
+          "d": 1.5,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "loop_shimmer",
+      "name": "Döngü: Parıltı Geçişi",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "TextLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "title",
+        "reward",
+        "primary-button",
+        "currency"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 2
+      },
+      "dur": 2.2,
+      "tracks": [
+        {
+          "t": "UIGradient",
+          "p": "Offset",
+          "from": [
+            -1.2,
+            0
+          ],
+          "to": [
+            1.2,
+            0
+          ],
+          "d": 2.2,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "UIGradient Offset tween — Roblox'ta resmi olarak önerilen yöntem."
+    },
+    {
+      "id": "loop_bobble",
+      "name": "Döngü: Sallanma",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "icon",
+        "badge",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 2
+      },
+      "dur": 2.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -7,
+          "to": 7,
+          "d": 1.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "loop_color_cycle",
+      "name": "Döngü: Renk Geçişi",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "TextLabel"
+      ],
+      "roles": [
+        "title",
+        "value",
+        "reward",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 3.0,
+      "tracks": [
+        {
+          "t": "UIGradient",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 3.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "loop_expand_ring",
+      "name": "Döngü: Halka Yayılma",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          0.6
+        ],
+        "fxKind": [
+          "ring",
+          "pulse",
+          "radar"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 1.8,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.7,
+          "to": 1.4,
+          "d": 1.8,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.1,
+          "to": 1,
+          "d": 1.8,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "In",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Radar / ping efekti."
+    },
+    {
+      "id": "loop_shake_slight",
+      "name": "Döngü: Hafif Titreşim",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 2,
+        "snap": 3
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -2,
+          "to": 2,
+          "d": 0.1,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Dikkat çeker ama yorucu olabilir — az kullan."
+    },
+    {
+      "id": "loop_gradient_sweep",
+      "name": "Döngü: Gradient Tara",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "background",
+        "bar"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.01,
+          1
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 4.0,
+      "tracks": [
+        {
+          "t": "UIGradient",
+          "p": "Offset",
+          "from": [
+            0,
+            -0.8
+          ],
+          "to": [
+            0,
+            0.8
+          ],
+          "d": 2.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "attention_shake_strong",
+      "name": "Dikkat: Güçlü Titreme",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame",
+        "TextLabel"
+      ],
+      "roles": [
+        "button",
+        "icon",
+        "badge",
+        "value"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.6
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.45,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -9,
+          "to": 9,
+          "d": 0.075,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 5,
+          "rev": true
+        }
+      ],
+      "notes": "Yetersiz bakiye, hata, kilitli öğe."
+    },
+    {
+      "id": "attention_ping",
+      "name": "Dikkat: Radar Ping",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon",
+        "badge"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ],
+        "fxKind": [
+          "ring",
+          "pulse"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.9,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.5,
+          "to": 2.0,
+          "d": 0.9,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 2,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.9,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 2,
+          "rev": false
+        }
+      ],
+      "notes": "Bildirim noktası (red dot) için."
+    },
+    {
+      "id": "attention_flash_red",
+      "name": "Dikkat: Kırmızı Yanıp Sönme",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "TextLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "bar",
+        "value",
+        "badge"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageColor3",
+          "from": "cur",
+          "to": [
+            1,
+            0.25,
+            0.25
+          ],
+          "d": 0.1,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 2,
+          "rev": true
+        }
+      ],
+      "notes": "Can barı azalınca."
+    },
+    {
+      "id": "attention_bounce_big",
+      "name": "Dikkat: Büyük Zıplama",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "reward",
+        "icon",
+        "badge",
+        "currency"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.9,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.25,
+          "d": 0.45,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "attention_wiggle",
+      "name": "Dikkat: Kıvranma",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "icon",
+        "reward",
+        "slot"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -12,
+          "to": 12,
+          "d": 0.1,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 2,
+          "rev": true
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.08,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "attention_glow_burst",
+      "name": "Dikkat: Parlama Patlaması",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel"
+      ],
+      "roles": [
+        "reward",
+        "primary-button",
+        "title"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 2
+      },
+      "dur": 0.7,
+      "tracks": [
+        {
+          "t": "UIShadow",
+          "p": "BlurRadius",
+          "from": [
+            0,
+            4
+          ],
+          "to": [
+            0,
+            60
+          ],
+          "d": 0.35,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "Transparency",
+          "from": 1,
+          "to": 0.05,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "BlurRadius",
+          "from": [
+            0,
+            60
+          ],
+          "to": [
+            0,
+            8
+          ],
+          "d": 0.35,
+          "dl": 0.35,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "Transparency",
+          "from": 0.05,
+          "to": 0.7,
+          "d": 0.35,
+          "dl": 0.35,
+          "e": "Quad",
+          "ed": "In",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "attention_bell_ring",
+      "name": "Dikkat: Çan Gibi Sallanma",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton"
+      ],
+      "roles": [
+        "icon",
+        "badge",
+        "notification"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.2
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.8,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -18,
+          "to": 18,
+          "d": 0.13,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 5,
+          "rev": true
+        }
+      ],
+      "notes": "Bildirim zili."
+    },
+    {
+      "id": "attention_zoom_punch",
+      "name": "Dikkat: Yakınlaş Vur",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "TextLabel",
+        "Frame"
+      ],
+      "roles": [
+        "value",
+        "title",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.8
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 5
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.35,
+          "to": 1,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Exponential",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Hasar sayısı, kazanç göstergesi."
+    },
+    {
+      "id": "attention_blink",
+      "name": "Dikkat: Göz Kırpma",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "TextLabel",
+        "Frame",
+        "ImageButton"
+      ],
+      "roles": [
+        "value",
+        "badge",
+        "bar"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.9
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 2,
+        "snap": 4
+      },
+      "dur": 0.9,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.15,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": 2,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "attention_pulse_scale_big",
+      "name": "Dikkat: Büyük Nefes",
+      "cat": "dikkat",
+      "trig": "event",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "primary-button",
+        "reward",
+        "claim"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.6
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 1.2,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.16,
+          "d": 0.6,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Claim / ödül toplama butonları."
+    },
+    {
+      "id": "page_slide_left",
+      "name": "Geçiş: Sayfa Soldan",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "page"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.36,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.36,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_slide_right",
+      "name": "Geçiş: Sayfa Sağdan",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "page"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.36,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -1,
+            0
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.36,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_fade_cross",
+      "name": "Geçiş: Çapraz Sönme",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "page"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 1,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 3
+      },
+      "dur": 0.3,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "GroupTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "CanvasGroup ile temiz geçiş."
+    },
+    {
+      "id": "page_scale_swap",
+      "name": "Geçiş: Ölçek Değişimi",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "page",
+        "modal"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.9,
+          "to": 1,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "GroupTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.28,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_push_up",
+      "name": "Geçiş: Yukarı İtme",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup",
+        "ScrollingFrame"
+      ],
+      "roles": [
+        "panel",
+        "page"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.36,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.36,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_zoom_through",
+      "name": "Geçiş: İçinden Geçme",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "panel",
+        "page",
+        "modal"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.44,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.4,
+          "to": 1,
+          "d": 0.44,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.3,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_wipe",
+      "name": "Geçiş: Silme",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "page"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ],
+        "needsClips": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.42,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Size",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "d": 0.42,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "page_flip_fold",
+      "name": "Geçiş: Katlanma",
+      "cat": "gecis",
+      "trig": "pageChange",
+      "cls": [
+        "Frame",
+        "CanvasGroup"
+      ],
+      "roles": [
+        "page",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.05,
+          1
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.5,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.02,
+          "to": 1,
+          "d": 0.5,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Roblox'ta 3D flip yok; ölçek ile taklit."
+    },
+    {
+      "id": "state_toggle_on",
+      "name": "Durum: Açma",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "toggle",
+        "tab",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.22,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.08,
+          "d": 0.11,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.08,
+          "to": 1,
+          "d": 0.11,
+          "dl": 0.11,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.4,
+          "to": 0,
+          "d": 0.22,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_toggle_off",
+      "name": "Durum: Kapatma",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "toggle",
+        "tab",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 5
+      },
+      "dur": 0.2,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 0.94,
+          "d": 0.1,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.94,
+          "to": 1,
+          "d": 0.1,
+          "dl": 0.1,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 0.45,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_unlock_pop",
+      "name": "Durum: Kilidin Açılması",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame"
+      ],
+      "roles": [
+        "slot",
+        "card",
+        "reward",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 3
+      },
+      "dur": 0.7,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.2,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quint",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -8,
+          "to": 8,
+          "d": 0.1,
+          "dl": 0.2,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 2,
+          "rev": true
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.2,
+          "to": 1,
+          "d": 0.3,
+          "dl": 0.4,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIShadow",
+          "p": "Transparency",
+          "from": 1,
+          "to": 0.4,
+          "d": 0.3,
+          "dl": 0.4,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_progress_fill",
+      "name": "Durum: Dolgu İlerlemesi",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "Frame",
+        "ImageLabel"
+      ],
+      "roles": [
+        "bar",
+        "progress"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.001,
+          1
+        ],
+        "aspect": [
+          2,
+          99
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 2,
+        "beauty": 3,
+        "snap": 3
+      },
+      "dur": 0.5,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Size",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "d": 0.5,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "EXP / can barı. 'to' değeri runtime'da hedef orana göre ayarlanır."
+    },
+    {
+      "id": "state_locked_shake",
+      "name": "Durum: Kilitli Titremesi",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "ImageButton",
+        "ImageLabel",
+        "Frame"
+      ],
+      "roles": [
+        "slot",
+        "button",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.35,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -6,
+          "to": 6,
+          "d": 0.07,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 4,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_success_check",
+      "name": "Durum: Başarı İşareti",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "ImageLabel",
+        "Frame"
+      ],
+      "roles": [
+        "icon",
+        "badge",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0002,
+          0.3
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 3
+      },
+      "dur": 0.65,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0,
+          "to": 1.15,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.15,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0.35,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -20,
+          "to": 0,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_error_shake",
+      "name": "Durum: Hata Titremesi",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "Frame",
+        "TextLabel",
+        "TextBox",
+        "ImageLabel"
+      ],
+      "roles": [
+        "panel",
+        "label",
+        "modal"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -6,
+            0
+          ],
+          "to": [
+            6,
+            0
+          ],
+          "d": 0.065,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 5,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "state_dissolve_in",
+      "name": "Durum: Eriyerek Belirme",
+      "cat": "durum",
+      "trig": "stateChange",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "TextLabel"
+      ],
+      "roles": [
+        "panel",
+        "label",
+        "value"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          1
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 0.55,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.06,
+          "to": 1,
+          "d": 0.55,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_glow_pulse",
+      "name": "FX: Glow Nefesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          1.5
+        ],
+        "fxKind": [
+          "glow",
+          "halo",
+          "aura",
+          "flare",
+          "bloom"
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 2.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.35,
+          "to": 0.75,
+          "d": 1.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Figma'da 'glow' adlı / SCREEN blend modlu ImageLabel."
+    },
+    {
+      "id": "fx_rays_rotate",
+      "name": "FX: Işık Huzmesi Dönüşü",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          2.0
+        ],
+        "fxKind": [
+          "rays",
+          "beam",
+          "sunburst"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 1
+      },
+      "dur": 14.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 14.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Ödül / seviye ekranlarının arkasındaki dönen huzme."
+    },
+    {
+      "id": "fx_rays_rotate_reverse",
+      "name": "FX: Huzme Ters Dönüş",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          2.0
+        ],
+        "fxKind": [
+          "rays",
+          "beam",
+          "sunburst"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 1
+      },
+      "dur": 10.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 360,
+          "to": 0,
+          "d": 10.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "İki huzme katmanı ters yönde dönerse derinlik artar."
+    },
+    {
+      "id": "fx_shine_sweep",
+      "name": "FX: Parlaklık Süzülmesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          1.0
+        ],
+        "fxKind": [
+          "shine",
+          "gloss",
+          "glint",
+          "shimmer"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 3
+      },
+      "dur": 2.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -1.3,
+            0
+          ],
+          "to": [
+            1.3,
+            0
+          ],
+          "d": 1.1,
+          "dl": 1.5,
+          "e": "Circular",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 0.85,
+          "d": 1.1,
+          "dl": 1.5,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Buton üstünde periyodik ışık geçişi. dl=bekleme süresi."
+    },
+    {
+      "id": "fx_sparkle_twinkle",
+      "name": "FX: Yıldız Parıltısı",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          5e-05,
+          0.05
+        ],
+        "fxKind": [
+          "sparkle",
+          "star",
+          "twinkle",
+          "glint"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 2
+      },
+      "dur": 1.6,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0,
+          "to": 1,
+          "d": 0.5,
+          "dl": "random:0:1.2",
+          "e": "Back",
+          "ed": "Out",
+          "rep": -1,
+          "rev": true
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 120,
+          "d": 1.6,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "dl='random:0:1.2' -> her sparkle'a rastgele gecikme (0-1.2 sn)."
+    },
+    {
+      "id": "fx_ring_ping",
+      "name": "FX: Halka Yayılma",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.001,
+          0.8
+        ],
+        "fxKind": [
+          "ring",
+          "pulse",
+          "radar",
+          "wave"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 2.0,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.6,
+          "to": 1.5,
+          "d": 2.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "Out",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.85,
+          "to": 1,
+          "d": 2.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "In",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_vignette_breathe",
+      "name": "FX: Kenar Karartma Nefesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "Frame"
+      ],
+      "roles": [
+        "background"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.3,
+          1.5
+        ],
+        "fxKind": [
+          "vignette",
+          "overlay",
+          "gradient-overlay"
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 4.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.55,
+          "to": 0.75,
+          "d": 2.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Tam ekran vignette katmanı."
+    },
+    {
+      "id": "fx_noise_drift",
+      "name": "FX: Gürültü Sürüklenmesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "background"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.1,
+          1.5
+        ],
+        "fxKind": [
+          "noise",
+          "grain",
+          "texture"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 3,
+        "snap": 1
+      },
+      "dur": 6.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0.05,
+            0.05
+          ],
+          "d": 3.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Film grain efekti. ScaleType=Tile gerekir."
+    },
+    {
+      "id": "fx_dust_float",
+      "name": "FX: Toz Süzülmesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "background"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          5e-05,
+          0.02
+        ],
+        "fxKind": [
+          "dust",
+          "particle",
+          "smoke",
+          "bubble"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 1
+      },
+      "dur": 7.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            30
+          ],
+          "to": [
+            0,
+            -60
+          ],
+          "d": 7.0,
+          "dl": "random:0:5",
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0.9,
+          "to": 0.2,
+          "d": 2.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Ortam parçacıkları. AnchorPoint 0.5,0.5."
+    },
+    {
+      "id": "fx_aura_rotate_pulse",
+      "name": "FX: Aura Dönüş + Nefes",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.005,
+          1.5
+        ],
+        "fxKind": [
+          "aura",
+          "energy",
+          "magic",
+          "halo"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 1
+      },
+      "dur": 8.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 8.0,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.95,
+          "to": 1.08,
+          "d": 1.6,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_beam_sweep",
+      "name": "FX: Işın Tarama",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.002,
+          1.0
+        ],
+        "fxKind": [
+          "beam",
+          "streak",
+          "scan"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 2.2,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -1.1,
+            0
+          ],
+          "to": [
+            1.1,
+            0
+          ],
+          "d": 1.0,
+          "dl": 1.2,
+          "e": "Quad",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_gloss_sweep",
+      "name": "FX: Cam Parlaması",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0005,
+          0.6
+        ],
+        "fxKind": [
+          "gloss",
+          "shine",
+          "glass"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 3
+      },
+      "dur": 3.2,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -1.2,
+            0.3
+          ],
+          "to": [
+            1.2,
+            -0.3
+          ],
+          "d": 1.2,
+          "dl": 2.0,
+          "e": "Circular",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Buton / kart üzerinde cam parlama geçişi."
+    },
+    {
+      "id": "fx_bubble_rise",
+      "name": "FX: Kabarcık Yükselişi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "background"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.0001,
+          0.03
+        ],
+        "fxKind": [
+          "bubble",
+          "particle"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 8.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            40
+          ],
+          "to": [
+            0,
+            -80
+          ],
+          "d": 8.0,
+          "dl": "random:0:6",
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.6,
+          "to": 1.1,
+          "d": 4.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_star_burst",
+      "name": "FX: Yıldız Patlaması",
+      "cat": "fx",
+      "trig": "event",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          5e-05,
+          0.1
+        ],
+        "fxKind": [
+          "star",
+          "sparkle",
+          "flare"
+        ]
+      },
+      "q": {
+        "detail": 4,
+        "variety": 5,
+        "beauty": 5,
+        "snap": 3
+      },
+      "dur": 0.7,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0,
+          "to": 1.4,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -45,
+          "to": 45,
+          "d": 0.7,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 1,
+          "d": 0.35,
+          "dl": 0.35,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fx_smoke_drift",
+      "name": "FX: Duman Sürüklenmesi",
+      "cat": "fx",
+      "trig": "always",
+      "cls": [
+        "ImageLabel"
+      ],
+      "roles": [
+        "background"
+      ],
+      "fx": true,
+      "fit": {
+        "area": [
+          0.005,
+          0.5
+        ],
+        "fxKind": [
+          "smoke",
+          "fog",
+          "cloud"
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 1
+      },
+      "dur": 10.0,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -30,
+            10
+          ],
+          "to": [
+            30,
+            -20
+          ],
+          "d": 10.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.15,
+          "d": 5.0,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "text_typewriter",
+      "name": "Metin: Daktilo",
+      "cat": "metin",
+      "trig": "show",
+      "cls": [
+        "TextLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "label",
+        "title",
+        "desc"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ],
+        "hasText": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 2
+      },
+      "dur": 1.2,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "MaxVisibleGraphemes",
+          "from": 0,
+          "to": "textLen",
+          "d": 1.2,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "to='textLen' -> runtime'da metin uzunluğuna göre hesaplanır."
+    },
+    {
+      "id": "text_count_up",
+      "name": "Metin: Sayaç Artışı",
+      "cat": "metin",
+      "trig": "show",
+      "cls": [
+        "TextLabel"
+      ],
+      "roles": [
+        "value",
+        "currency",
+        "label"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.5
+        ],
+        "hasText": true,
+        "textIsNumeric": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.8,
+      "manual": true,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Text",
+          "from": 0,
+          "to": "textNumber",
+          "d": 0.8,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "⚠️ TweenService STRING tween EDEMEZ. Text bir string -> özel sayım döngüsü (RenderStepped + math.floor) üretilir, TweenService değil."
+    },
+    {
+      "id": "text_pop_in",
+      "name": "Metin: Patlayarak Giriş",
+      "cat": "metin",
+      "trig": "show",
+      "cls": [
+        "TextLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "title",
+        "value",
+        "label"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ],
+        "hasText": true
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.5,
+          "to": 1,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "TextTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "text_slide_up_lines",
+      "name": "Metin: Aşağıdan Satır Çıkışı",
+      "cat": "metin",
+      "trig": "show",
+      "cls": [
+        "TextLabel"
+      ],
+      "roles": [
+        "title",
+        "desc",
+        "label"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ],
+        "hasText": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 3
+      },
+      "dur": 0.55,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            0,
+            24
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "d": 0.55,
+          "dl": 0,
+          "e": "Quart",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "TextTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.35,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "text_shake_error",
+      "name": "Metin: Hata Titremesi",
+      "cat": "metin",
+      "trig": "event",
+      "cls": [
+        "TextLabel",
+        "TextBox"
+      ],
+      "roles": [
+        "label",
+        "value"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ],
+        "hasText": true
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 2,
+        "snap": 5
+      },
+      "dur": 0.4,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Position",
+          "from": [
+            -5,
+            0
+          ],
+          "to": [
+            5,
+            0
+          ],
+          "d": 0.065,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 5,
+          "rev": true
+        },
+        {
+          "t": "self",
+          "p": "TextColor3",
+          "from": "cur",
+          "to": [
+            1,
+            0.3,
+            0.3
+          ],
+          "d": 0.1,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": true
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "text_glow_pulse",
+      "name": "Metin: Parıltı Nefesi",
+      "cat": "metin",
+      "trig": "always",
+      "cls": [
+        "TextLabel",
+        "TextButton"
+      ],
+      "roles": [
+        "title",
+        "value",
+        "reward"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.9
+        ],
+        "hasText": true
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 5,
+        "snap": 2
+      },
+      "dur": 1.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "TextStrokeTransparency",
+          "from": 0.9,
+          "to": 0.2,
+          "d": 0.8,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Metin konturu (TextStroke) ile glow. UIShadow metinde çalışmaz."
+    },
+    {
+      "id": "enter_reveal_showcase",
+      "name": "Vitrin Girişi (Reveal)",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextButton",
+        "TextLabel"
+      ],
+      "roles": [
+        "panel",
+        "card",
+        "modal",
+        "icon",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.001,
+          0.95
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.45,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.5,
+          "to": 1,
+          "d": 0.45,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": -6,
+          "to": 0,
+          "d": 0.45,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 1,
+          "to": 0,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Vitrin/ödül paneli: yarım boyuttan, hafif dönerek açılır (Framewisp _reveal referansı)."
+    },
+    {
+      "id": "enter_swing_door",
+      "name": "Kapı Gibi Sallanarak Giriş (Swing)",
+      "cat": "giris",
+      "trig": "show",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "card",
+        "panel",
+        "icon",
+        "button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.6
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 4,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.6,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 0.6,
+          "to": 1,
+          "d": 0.4,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 14,
+          "to": 0,
+          "d": 0.6,
+          "dl": 0,
+          "e": "Elastic",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Ödül kapısı: hızlı girer, elastik yaylanarak durur (Framewisp _swing referansı; gerçek 3D yerine açı)."
+    },
+    {
+      "id": "hover_wiggle_once",
+      "name": "Hover: Tek Sallanma (Wiggle)",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel"
+      ],
+      "roles": [
+        "button",
+        "card",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.16,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": -4,
+          "d": 0.08,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 1,
+          "rev": true
+        }
+      ],
+      "notes": "Hover'da bir kez sallanıp durur. Sürekli wiggle (döngü) planlayıcıya henüz bağlı değil."
+    },
+    {
+      "id": "press_select_pop",
+      "name": "Basma: Seçim Vurgusu",
+      "cat": "basma",
+      "trig": "click",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 3,
+        "snap": 4
+      },
+      "dur": 0.32,
+      "tracks": [
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.05,
+          "d": 0.12,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1.05,
+          "to": 1,
+          "d": 0.2,
+          "dl": 0.12,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Seçilen kartın kısa vurgusu. Kalıcı seçim çerçevesi (_select) henüz yok."
+    },
+    {
+      "id": "loop_blink_cta",
+      "name": "Sürekli Yanıp Sönme (CTA)",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "ImageLabel",
+        "TextLabel"
+      ],
+      "roles": [
+        "primary-button"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.6
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 5,
+        "snap": 4
+      },
+      "dur": 0.6,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "ImageTransparency",
+          "from": 0,
+          "to": 0.7,
+          "d": 0.6,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        },
+        {
+          "t": "self",
+          "p": "TextTransparency",
+          "from": 0,
+          "to": 0.7,
+          "d": 0.6,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "Ana eylem (BUY/CLAIM) sürekli yanıp söner. Kalıcı döngü: RepeatCount -1, Reverses."
+    },
+    {
+      "id": "loop_wiggle_icon",
+      "name": "Sürekli Sallanma (Wiggle)",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "ImageLabel",
+        "ImageButton",
+        "Frame",
+        "TextButton"
+      ],
+      "roles": [
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 3,
+        "beauty": 6,
+        "snap": 4
+      },
+      "dur": 0.5,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": -6,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": -1,
+          "rev": true
+        }
+      ],
+      "notes": "İkon sürekli hafifçe sallanır. Duraklama (çan gibi) TweenInfo ile yapılamaz; sürekli salınım. İkon için varsayılan (güzellik 6): otomatik seçimde dönüş animasyonlarının önüne geçer."
+    },
+    {
+      "id": "select_outline_pop",
+      "name": "Seçim Çerçevesi (Kalıcı)",
+      "cat": "secim",
+      "trig": "stateChange",
+      "cls": [
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "tab",
+        "slot",
+        "button",
+        "card"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.4
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.2,
+      "tracks": [
+        {
+          "t": "UIStroke",
+          "p": "Thickness",
+          "from": 0,
+          "to": 3,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Quad",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        },
+        {
+          "t": "UIScale",
+          "p": "Scale",
+          "from": 1,
+          "to": 1.03,
+          "d": 0.2,
+          "dl": 0,
+          "e": "Back",
+          "ed": "Out",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Seçilen öğede çerçeve kalır; grupta diğer seçim kapanır. Kalıcılık EIAnim grup mantığı ile sağlanır."
+    },
+    {
+      "id": "loop_border_spin",
+      "name": "Kenarlık Dönüşü (Border Spin)",
+      "cat": "dongu",
+      "trig": "always",
+      "cls": [
+        "Frame",
+        "ImageLabel",
+        "ImageButton",
+        "TextButton"
+      ],
+      "roles": [
+        "button",
+        "primary-button",
+        "icon",
+        "card",
+        "panel",
+        "modal",
+        "slot",
+        "tab"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.6
+        ]
+      },
+      "q": {
+        "detail": 2,
+        "variety": 2,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 2.5,
+      "tracks": [
+        {
+          "t": "UIGradient",
+          "p": "Rotation",
+          "from": 0,
+          "to": 360,
+          "d": 2.5,
+          "dl": 0,
+          "e": "Linear",
+          "ed": "In",
+          "rep": -1,
+          "rev": false
+        }
+      ],
+      "notes": "Kenarlığın (UIStroke) gradyanı sürekli döner. Gradyan yoksa kenarlığa beyaz gradyan eklenir. RenderStepped yerine TweenService (daha ucuz, kare bağımsız)."
+    },
+    {
+      "id": "hover_turn_card",
+      "name": "Hover: Kart Dönüşü (Turn)",
+      "cat": "hover",
+      "trig": "mouseEnter",
+      "cls": [
+        "ImageButton",
+        "TextButton",
+        "Frame"
+      ],
+      "roles": [
+        "card",
+        "button",
+        "icon"
+      ],
+      "fx": false,
+      "fit": {
+        "area": [
+          0.0005,
+          0.5
+        ]
+      },
+      "q": {
+        "detail": 3,
+        "variety": 3,
+        "beauty": 4,
+        "snap": 4
+      },
+      "dur": 0.25,
+      "tracks": [
+        {
+          "t": "self",
+          "p": "Rotation",
+          "from": 0,
+          "to": -5,
+          "d": 0.25,
+          "dl": 0,
+          "e": "Sine",
+          "ed": "InOut",
+          "rep": 0,
+          "rev": false
+        }
+      ],
+      "notes": "Kart üzerine gelince 5° döner, çıkınca eski açısına döner (Framewisp _turn). Açı ve hız kadranı henüz yok."
+    }
+  ]
+}
